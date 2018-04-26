@@ -37,25 +37,25 @@ createPipeline (CodePipeline.Service serviceImpl) = AWS.request serviceImpl meth
 
 
 -- | <p>Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for deletion. Only used for custom actions.</p> <important> <p>You cannot recreate a custom action after it has been deleted unless you increase the version number of the action.</p> </important>
-deleteCustomActionType :: forall eff. CodePipeline.Service -> CodePipelineTypes.DeleteCustomActionTypeInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteCustomActionType :: forall eff. CodePipeline.Service -> CodePipelineTypes.DeleteCustomActionTypeInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteCustomActionType (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteCustomActionType"
 
 
 -- | <p>Deletes the specified pipeline.</p>
-deletePipeline :: forall eff. CodePipeline.Service -> CodePipelineTypes.DeletePipelineInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deletePipeline :: forall eff. CodePipeline.Service -> CodePipelineTypes.DeletePipelineInput -> Aff (exception :: EXCEPTION | eff) Unit
 deletePipeline (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deletePipeline"
 
 
 -- | <p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>
-disableStageTransition :: forall eff. CodePipeline.Service -> CodePipelineTypes.DisableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+disableStageTransition :: forall eff. CodePipeline.Service -> CodePipelineTypes.DisableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) Unit
 disableStageTransition (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "disableStageTransition"
 
 
 -- | <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
-enableStageTransition :: forall eff. CodePipeline.Service -> CodePipelineTypes.EnableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+enableStageTransition :: forall eff. CodePipeline.Service -> CodePipelineTypes.EnableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) Unit
 enableStageTransition (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "enableStageTransition"
 
@@ -133,25 +133,25 @@ putApprovalResult (CodePipeline.Service serviceImpl) = AWS.request serviceImpl m
 
 
 -- | <p>Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>
-putJobFailureResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putJobFailureResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 putJobFailureResult (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putJobFailureResult"
 
 
 -- | <p>Represents the success of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>
-putJobSuccessResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putJobSuccessResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 putJobSuccessResult (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putJobSuccessResult"
 
 
 -- | <p>Represents the failure of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>
-putThirdPartyJobFailureResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutThirdPartyJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putThirdPartyJobFailureResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutThirdPartyJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 putThirdPartyJobFailureResult (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putThirdPartyJobFailureResult"
 
 
 -- | <p>Represents the success of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>
-putThirdPartyJobSuccessResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutThirdPartyJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putThirdPartyJobSuccessResult :: forall eff. CodePipeline.Service -> CodePipelineTypes.PutThirdPartyJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 putThirdPartyJobSuccessResult (CodePipeline.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putThirdPartyJobSuccessResult"
 

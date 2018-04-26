@@ -35,7 +35,7 @@ createPipeline :: forall eff. Service -> CreatePipelineInput -> Aff (exception :
 #### `deleteCustomActionType`
 
 ``` purescript
-deleteCustomActionType :: forall eff. Service -> DeleteCustomActionTypeInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteCustomActionType :: forall eff. Service -> DeleteCustomActionTypeInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for deletion. Only used for custom actions.</p> <important> <p>You cannot recreate a custom action after it has been deleted unless you increase the version number of the action.</p> </important>
@@ -43,7 +43,7 @@ deleteCustomActionType :: forall eff. Service -> DeleteCustomActionTypeInput -> 
 #### `deletePipeline`
 
 ``` purescript
-deletePipeline :: forall eff. Service -> DeletePipelineInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deletePipeline :: forall eff. Service -> DeletePipelineInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified pipeline.</p>
@@ -51,7 +51,7 @@ deletePipeline :: forall eff. Service -> DeletePipelineInput -> Aff (exception :
 #### `disableStageTransition`
 
 ``` purescript
-disableStageTransition :: forall eff. Service -> DisableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+disableStageTransition :: forall eff. Service -> DisableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>
@@ -59,7 +59,7 @@ disableStageTransition :: forall eff. Service -> DisableStageTransitionInput -> 
 #### `enableStageTransition`
 
 ``` purescript
-enableStageTransition :: forall eff. Service -> EnableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+enableStageTransition :: forall eff. Service -> EnableStageTransitionInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
@@ -163,7 +163,7 @@ putApprovalResult :: forall eff. Service -> PutApprovalResultInput -> Aff (excep
 #### `putJobFailureResult`
 
 ``` purescript
-putJobFailureResult :: forall eff. Service -> PutJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+putJobFailureResult :: forall eff. Service -> PutJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>
@@ -171,7 +171,7 @@ putJobFailureResult :: forall eff. Service -> PutJobFailureResultInput -> Aff (e
 #### `putJobSuccessResult`
 
 ``` purescript
-putJobSuccessResult :: forall eff. Service -> PutJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+putJobSuccessResult :: forall eff. Service -> PutJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Represents the success of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>
@@ -179,7 +179,7 @@ putJobSuccessResult :: forall eff. Service -> PutJobSuccessResultInput -> Aff (e
 #### `putThirdPartyJobFailureResult`
 
 ``` purescript
-putThirdPartyJobFailureResult :: forall eff. Service -> PutThirdPartyJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+putThirdPartyJobFailureResult :: forall eff. Service -> PutThirdPartyJobFailureResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Represents the failure of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>
@@ -187,7 +187,7 @@ putThirdPartyJobFailureResult :: forall eff. Service -> PutThirdPartyJobFailureR
 #### `putThirdPartyJobSuccessResult`
 
 ``` purescript
-putThirdPartyJobSuccessResult :: forall eff. Service -> PutThirdPartyJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+putThirdPartyJobSuccessResult :: forall eff. Service -> PutThirdPartyJobSuccessResultInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Represents the success of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>

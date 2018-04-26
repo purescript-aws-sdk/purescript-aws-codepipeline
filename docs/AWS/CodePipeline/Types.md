@@ -110,7 +110,7 @@ Constructs AcknowledgeJobInput's fields from required parameters
 
 ``` purescript
 newtype AcknowledgeJobOutput
-  = AcknowledgeJobOutput { status :: NullOrUndefined (JobStatus) }
+  = AcknowledgeJobOutput { status :: Maybe (JobStatus) }
 ```
 
 <p>Represents the output of an AcknowledgeJob action.</p>
@@ -135,7 +135,7 @@ Constructs AcknowledgeJobOutput from required parameters
 #### `newAcknowledgeJobOutput'`
 
 ``` purescript
-newAcknowledgeJobOutput' :: ({ status :: NullOrUndefined (JobStatus) } -> { status :: NullOrUndefined (JobStatus) }) -> AcknowledgeJobOutput
+newAcknowledgeJobOutput' :: ({ status :: Maybe (JobStatus) } -> { status :: Maybe (JobStatus) }) -> AcknowledgeJobOutput
 ```
 
 Constructs AcknowledgeJobOutput's fields from required parameters
@@ -178,7 +178,7 @@ Constructs AcknowledgeThirdPartyJobInput's fields from required parameters
 
 ``` purescript
 newtype AcknowledgeThirdPartyJobOutput
-  = AcknowledgeThirdPartyJobOutput { status :: NullOrUndefined (JobStatus) }
+  = AcknowledgeThirdPartyJobOutput { status :: Maybe (JobStatus) }
 ```
 
 <p>Represents the output of an AcknowledgeThirdPartyJob action.</p>
@@ -203,7 +203,7 @@ Constructs AcknowledgeThirdPartyJobOutput from required parameters
 #### `newAcknowledgeThirdPartyJobOutput'`
 
 ``` purescript
-newAcknowledgeThirdPartyJobOutput' :: ({ status :: NullOrUndefined (JobStatus) } -> { status :: NullOrUndefined (JobStatus) }) -> AcknowledgeThirdPartyJobOutput
+newAcknowledgeThirdPartyJobOutput' :: ({ status :: Maybe (JobStatus) } -> { status :: Maybe (JobStatus) }) -> AcknowledgeThirdPartyJobOutput
 ```
 
 Constructs AcknowledgeThirdPartyJobOutput's fields from required parameters
@@ -228,7 +228,7 @@ Encode ActionCategory
 
 ``` purescript
 newtype ActionConfiguration
-  = ActionConfiguration { configuration :: NullOrUndefined (ActionConfigurationMap) }
+  = ActionConfiguration { configuration :: Maybe (ActionConfigurationMap) }
 ```
 
 <p>Represents information about an action configuration.</p>
@@ -253,7 +253,7 @@ Constructs ActionConfiguration from required parameters
 #### `newActionConfiguration'`
 
 ``` purescript
-newActionConfiguration' :: ({ configuration :: NullOrUndefined (ActionConfigurationMap) } -> { configuration :: NullOrUndefined (ActionConfigurationMap) }) -> ActionConfiguration
+newActionConfiguration' :: ({ configuration :: Maybe (ActionConfigurationMap) } -> { configuration :: Maybe (ActionConfigurationMap) }) -> ActionConfiguration
 ```
 
 Constructs ActionConfiguration's fields from required parameters
@@ -294,7 +294,7 @@ Encode ActionConfigurationMap
 
 ``` purescript
 newtype ActionConfigurationProperty
-  = ActionConfigurationProperty { name :: ActionConfigurationKey, required :: Boolean, key :: Boolean, secret :: Boolean, queryable :: NullOrUndefined (Boolean), description :: NullOrUndefined (Description), "type" :: NullOrUndefined (ActionConfigurationPropertyType) }
+  = ActionConfigurationProperty { name :: ActionConfigurationKey, required :: Boolean, key :: Boolean, secret :: Boolean, queryable :: Maybe (Boolean), description :: Maybe (Description), "type" :: Maybe (ActionConfigurationPropertyType) }
 ```
 
 <p>Represents information about an action configuration property.</p>
@@ -319,7 +319,7 @@ Constructs ActionConfigurationProperty from required parameters
 #### `newActionConfigurationProperty'`
 
 ``` purescript
-newActionConfigurationProperty' :: Boolean -> ActionConfigurationKey -> Boolean -> Boolean -> ({ name :: ActionConfigurationKey, required :: Boolean, key :: Boolean, secret :: Boolean, queryable :: NullOrUndefined (Boolean), description :: NullOrUndefined (Description), "type" :: NullOrUndefined (ActionConfigurationPropertyType) } -> { name :: ActionConfigurationKey, required :: Boolean, key :: Boolean, secret :: Boolean, queryable :: NullOrUndefined (Boolean), description :: NullOrUndefined (Description), "type" :: NullOrUndefined (ActionConfigurationPropertyType) }) -> ActionConfigurationProperty
+newActionConfigurationProperty' :: Boolean -> ActionConfigurationKey -> Boolean -> Boolean -> ({ name :: ActionConfigurationKey, required :: Boolean, key :: Boolean, secret :: Boolean, queryable :: Maybe (Boolean), description :: Maybe (Description), "type" :: Maybe (ActionConfigurationPropertyType) } -> { name :: ActionConfigurationKey, required :: Boolean, key :: Boolean, secret :: Boolean, queryable :: Maybe (Boolean), description :: Maybe (Description), "type" :: Maybe (ActionConfigurationPropertyType) }) -> ActionConfigurationProperty
 ```
 
 Constructs ActionConfigurationProperty's fields from required parameters
@@ -392,7 +392,7 @@ Encode ActionConfigurationValue
 
 ``` purescript
 newtype ActionContext
-  = ActionContext { name :: NullOrUndefined (ActionName) }
+  = ActionContext { name :: Maybe (ActionName) }
 ```
 
 <p>Represents the context of an action within the stage of a pipeline to a job worker.</p>
@@ -417,7 +417,7 @@ Constructs ActionContext from required parameters
 #### `newActionContext'`
 
 ``` purescript
-newActionContext' :: ({ name :: NullOrUndefined (ActionName) } -> { name :: NullOrUndefined (ActionName) }) -> ActionContext
+newActionContext' :: ({ name :: Maybe (ActionName) } -> { name :: Maybe (ActionName) }) -> ActionContext
 ```
 
 Constructs ActionContext's fields from required parameters
@@ -426,7 +426,7 @@ Constructs ActionContext's fields from required parameters
 
 ``` purescript
 newtype ActionDeclaration
-  = ActionDeclaration { name :: ActionName, actionTypeId :: ActionTypeId, runOrder :: NullOrUndefined (ActionRunOrder), configuration :: NullOrUndefined (ActionConfigurationMap), outputArtifacts :: NullOrUndefined (OutputArtifactList), inputArtifacts :: NullOrUndefined (InputArtifactList), roleArn :: NullOrUndefined (RoleArn) }
+  = ActionDeclaration { name :: ActionName, actionTypeId :: ActionTypeId, runOrder :: Maybe (ActionRunOrder), configuration :: Maybe (ActionConfigurationMap), outputArtifacts :: Maybe (OutputArtifactList), inputArtifacts :: Maybe (InputArtifactList), roleArn :: Maybe (RoleArn) }
 ```
 
 <p>Represents information about an action declaration.</p>
@@ -451,7 +451,7 @@ Constructs ActionDeclaration from required parameters
 #### `newActionDeclaration'`
 
 ``` purescript
-newActionDeclaration' :: ActionTypeId -> ActionName -> ({ name :: ActionName, actionTypeId :: ActionTypeId, runOrder :: NullOrUndefined (ActionRunOrder), configuration :: NullOrUndefined (ActionConfigurationMap), outputArtifacts :: NullOrUndefined (OutputArtifactList), inputArtifacts :: NullOrUndefined (InputArtifactList), roleArn :: NullOrUndefined (RoleArn) } -> { name :: ActionName, actionTypeId :: ActionTypeId, runOrder :: NullOrUndefined (ActionRunOrder), configuration :: NullOrUndefined (ActionConfigurationMap), outputArtifacts :: NullOrUndefined (OutputArtifactList), inputArtifacts :: NullOrUndefined (InputArtifactList), roleArn :: NullOrUndefined (RoleArn) }) -> ActionDeclaration
+newActionDeclaration' :: ActionTypeId -> ActionName -> ({ name :: ActionName, actionTypeId :: ActionTypeId, runOrder :: Maybe (ActionRunOrder), configuration :: Maybe (ActionConfigurationMap), outputArtifacts :: Maybe (OutputArtifactList), inputArtifacts :: Maybe (InputArtifactList), roleArn :: Maybe (RoleArn) } -> { name :: ActionName, actionTypeId :: ActionTypeId, runOrder :: Maybe (ActionRunOrder), configuration :: Maybe (ActionConfigurationMap), outputArtifacts :: Maybe (OutputArtifactList), inputArtifacts :: Maybe (InputArtifactList), roleArn :: Maybe (RoleArn) }) -> ActionDeclaration
 ```
 
 Constructs ActionDeclaration's fields from required parameters
@@ -460,7 +460,7 @@ Constructs ActionDeclaration's fields from required parameters
 
 ``` purescript
 newtype ActionExecution
-  = ActionExecution { status :: NullOrUndefined (ActionExecutionStatus), summary :: NullOrUndefined (ExecutionSummary), lastStatusChange :: NullOrUndefined (Timestamp), token :: NullOrUndefined (ActionExecutionToken), lastUpdatedBy :: NullOrUndefined (LastUpdatedBy), externalExecutionId :: NullOrUndefined (ExecutionId), externalExecutionUrl :: NullOrUndefined (Url), percentComplete :: NullOrUndefined (Percentage), errorDetails :: NullOrUndefined (ErrorDetails) }
+  = ActionExecution { status :: Maybe (ActionExecutionStatus), summary :: Maybe (ExecutionSummary), lastStatusChange :: Maybe (Timestamp), token :: Maybe (ActionExecutionToken), lastUpdatedBy :: Maybe (LastUpdatedBy), externalExecutionId :: Maybe (ExecutionId), externalExecutionUrl :: Maybe (Url), percentComplete :: Maybe (Percentage), errorDetails :: Maybe (ErrorDetails) }
 ```
 
 <p>Represents information about the run of an action.</p>
@@ -485,7 +485,7 @@ Constructs ActionExecution from required parameters
 #### `newActionExecution'`
 
 ``` purescript
-newActionExecution' :: ({ status :: NullOrUndefined (ActionExecutionStatus), summary :: NullOrUndefined (ExecutionSummary), lastStatusChange :: NullOrUndefined (Timestamp), token :: NullOrUndefined (ActionExecutionToken), lastUpdatedBy :: NullOrUndefined (LastUpdatedBy), externalExecutionId :: NullOrUndefined (ExecutionId), externalExecutionUrl :: NullOrUndefined (Url), percentComplete :: NullOrUndefined (Percentage), errorDetails :: NullOrUndefined (ErrorDetails) } -> { status :: NullOrUndefined (ActionExecutionStatus), summary :: NullOrUndefined (ExecutionSummary), lastStatusChange :: NullOrUndefined (Timestamp), token :: NullOrUndefined (ActionExecutionToken), lastUpdatedBy :: NullOrUndefined (LastUpdatedBy), externalExecutionId :: NullOrUndefined (ExecutionId), externalExecutionUrl :: NullOrUndefined (Url), percentComplete :: NullOrUndefined (Percentage), errorDetails :: NullOrUndefined (ErrorDetails) }) -> ActionExecution
+newActionExecution' :: ({ status :: Maybe (ActionExecutionStatus), summary :: Maybe (ExecutionSummary), lastStatusChange :: Maybe (Timestamp), token :: Maybe (ActionExecutionToken), lastUpdatedBy :: Maybe (LastUpdatedBy), externalExecutionId :: Maybe (ExecutionId), externalExecutionUrl :: Maybe (Url), percentComplete :: Maybe (Percentage), errorDetails :: Maybe (ErrorDetails) } -> { status :: Maybe (ActionExecutionStatus), summary :: Maybe (ExecutionSummary), lastStatusChange :: Maybe (Timestamp), token :: Maybe (ActionExecutionToken), lastUpdatedBy :: Maybe (LastUpdatedBy), externalExecutionId :: Maybe (ExecutionId), externalExecutionUrl :: Maybe (Url), percentComplete :: Maybe (Percentage), errorDetails :: Maybe (ErrorDetails) }) -> ActionExecution
 ```
 
 Constructs ActionExecution's fields from required parameters
@@ -642,7 +642,7 @@ Encode ActionRunOrder
 
 ``` purescript
 newtype ActionState
-  = ActionState { actionName :: NullOrUndefined (ActionName), currentRevision :: NullOrUndefined (ActionRevision), latestExecution :: NullOrUndefined (ActionExecution), entityUrl :: NullOrUndefined (Url), revisionUrl :: NullOrUndefined (Url) }
+  = ActionState { actionName :: Maybe (ActionName), currentRevision :: Maybe (ActionRevision), latestExecution :: Maybe (ActionExecution), entityUrl :: Maybe (Url), revisionUrl :: Maybe (Url) }
 ```
 
 <p>Represents information about the state of an action.</p>
@@ -667,7 +667,7 @@ Constructs ActionState from required parameters
 #### `newActionState'`
 
 ``` purescript
-newActionState' :: ({ actionName :: NullOrUndefined (ActionName), currentRevision :: NullOrUndefined (ActionRevision), latestExecution :: NullOrUndefined (ActionExecution), entityUrl :: NullOrUndefined (Url), revisionUrl :: NullOrUndefined (Url) } -> { actionName :: NullOrUndefined (ActionName), currentRevision :: NullOrUndefined (ActionRevision), latestExecution :: NullOrUndefined (ActionExecution), entityUrl :: NullOrUndefined (Url), revisionUrl :: NullOrUndefined (Url) }) -> ActionState
+newActionState' :: ({ actionName :: Maybe (ActionName), currentRevision :: Maybe (ActionRevision), latestExecution :: Maybe (ActionExecution), entityUrl :: Maybe (Url), revisionUrl :: Maybe (Url) } -> { actionName :: Maybe (ActionName), currentRevision :: Maybe (ActionRevision), latestExecution :: Maybe (ActionExecution), entityUrl :: Maybe (Url), revisionUrl :: Maybe (Url) }) -> ActionState
 ```
 
 Constructs ActionState's fields from required parameters
@@ -692,7 +692,7 @@ Encode ActionStateList
 
 ``` purescript
 newtype ActionType
-  = ActionType { id :: ActionTypeId, settings :: NullOrUndefined (ActionTypeSettings), actionConfigurationProperties :: NullOrUndefined (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }
+  = ActionType { id :: ActionTypeId, settings :: Maybe (ActionTypeSettings), actionConfigurationProperties :: Maybe (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }
 ```
 
 <p>Returns information about the details of an action type.</p>
@@ -717,7 +717,7 @@ Constructs ActionType from required parameters
 #### `newActionType'`
 
 ``` purescript
-newActionType' :: ActionTypeId -> ArtifactDetails -> ArtifactDetails -> ({ id :: ActionTypeId, settings :: NullOrUndefined (ActionTypeSettings), actionConfigurationProperties :: NullOrUndefined (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails } -> { id :: ActionTypeId, settings :: NullOrUndefined (ActionTypeSettings), actionConfigurationProperties :: NullOrUndefined (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }) -> ActionType
+newActionType' :: ActionTypeId -> ArtifactDetails -> ArtifactDetails -> ({ id :: ActionTypeId, settings :: Maybe (ActionTypeSettings), actionConfigurationProperties :: Maybe (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails } -> { id :: ActionTypeId, settings :: Maybe (ActionTypeSettings), actionConfigurationProperties :: Maybe (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }) -> ActionType
 ```
 
 Constructs ActionType's fields from required parameters
@@ -794,7 +794,7 @@ Encode ActionTypeNotFoundException
 
 ``` purescript
 newtype ActionTypeSettings
-  = ActionTypeSettings { thirdPartyConfigurationUrl :: NullOrUndefined (Url), entityUrlTemplate :: NullOrUndefined (UrlTemplate), executionUrlTemplate :: NullOrUndefined (UrlTemplate), revisionUrlTemplate :: NullOrUndefined (UrlTemplate) }
+  = ActionTypeSettings { thirdPartyConfigurationUrl :: Maybe (Url), entityUrlTemplate :: Maybe (UrlTemplate), executionUrlTemplate :: Maybe (UrlTemplate), revisionUrlTemplate :: Maybe (UrlTemplate) }
 ```
 
 <p>Returns information about the settings for an action type.</p>
@@ -819,7 +819,7 @@ Constructs ActionTypeSettings from required parameters
 #### `newActionTypeSettings'`
 
 ``` purescript
-newActionTypeSettings' :: ({ thirdPartyConfigurationUrl :: NullOrUndefined (Url), entityUrlTemplate :: NullOrUndefined (UrlTemplate), executionUrlTemplate :: NullOrUndefined (UrlTemplate), revisionUrlTemplate :: NullOrUndefined (UrlTemplate) } -> { thirdPartyConfigurationUrl :: NullOrUndefined (Url), entityUrlTemplate :: NullOrUndefined (UrlTemplate), executionUrlTemplate :: NullOrUndefined (UrlTemplate), revisionUrlTemplate :: NullOrUndefined (UrlTemplate) }) -> ActionTypeSettings
+newActionTypeSettings' :: ({ thirdPartyConfigurationUrl :: Maybe (Url), entityUrlTemplate :: Maybe (UrlTemplate), executionUrlTemplate :: Maybe (UrlTemplate), revisionUrlTemplate :: Maybe (UrlTemplate) } -> { thirdPartyConfigurationUrl :: Maybe (Url), entityUrlTemplate :: Maybe (UrlTemplate), executionUrlTemplate :: Maybe (UrlTemplate), revisionUrlTemplate :: Maybe (UrlTemplate) }) -> ActionTypeSettings
 ```
 
 Constructs ActionTypeSettings's fields from required parameters
@@ -928,7 +928,7 @@ Encode ApprovalToken
 
 ``` purescript
 newtype Artifact
-  = Artifact { name :: NullOrUndefined (ArtifactName), revision :: NullOrUndefined (Revision), location :: NullOrUndefined (ArtifactLocation) }
+  = Artifact { name :: Maybe (ArtifactName), revision :: Maybe (Revision), location :: Maybe (ArtifactLocation) }
 ```
 
 <p>Represents information about an artifact that will be worked upon by actions in the pipeline.</p>
@@ -953,7 +953,7 @@ Constructs Artifact from required parameters
 #### `newArtifact'`
 
 ``` purescript
-newArtifact' :: ({ name :: NullOrUndefined (ArtifactName), revision :: NullOrUndefined (Revision), location :: NullOrUndefined (ArtifactLocation) } -> { name :: NullOrUndefined (ArtifactName), revision :: NullOrUndefined (Revision), location :: NullOrUndefined (ArtifactLocation) }) -> Artifact
+newArtifact' :: ({ name :: Maybe (ArtifactName), revision :: Maybe (Revision), location :: Maybe (ArtifactLocation) } -> { name :: Maybe (ArtifactName), revision :: Maybe (Revision), location :: Maybe (ArtifactLocation) }) -> Artifact
 ```
 
 Constructs Artifact's fields from required parameters
@@ -1012,7 +1012,7 @@ Encode ArtifactList
 
 ``` purescript
 newtype ArtifactLocation
-  = ArtifactLocation { "type" :: NullOrUndefined (ArtifactLocationType), s3Location :: NullOrUndefined (S3ArtifactLocation) }
+  = ArtifactLocation { "type" :: Maybe (ArtifactLocationType), s3Location :: Maybe (S3ArtifactLocation) }
 ```
 
 <p>Represents information about the location of an artifact.</p>
@@ -1037,7 +1037,7 @@ Constructs ArtifactLocation from required parameters
 #### `newArtifactLocation'`
 
 ``` purescript
-newArtifactLocation' :: ({ "type" :: NullOrUndefined (ArtifactLocationType), s3Location :: NullOrUndefined (S3ArtifactLocation) } -> { "type" :: NullOrUndefined (ArtifactLocationType), s3Location :: NullOrUndefined (S3ArtifactLocation) }) -> ArtifactLocation
+newArtifactLocation' :: ({ "type" :: Maybe (ArtifactLocationType), s3Location :: Maybe (S3ArtifactLocation) } -> { "type" :: Maybe (ArtifactLocationType), s3Location :: Maybe (S3ArtifactLocation) }) -> ArtifactLocation
 ```
 
 Constructs ArtifactLocation's fields from required parameters
@@ -1078,7 +1078,7 @@ Encode ArtifactName
 
 ``` purescript
 newtype ArtifactRevision
-  = ArtifactRevision { name :: NullOrUndefined (ArtifactName), revisionId :: NullOrUndefined (Revision), revisionChangeIdentifier :: NullOrUndefined (RevisionChangeIdentifier), revisionSummary :: NullOrUndefined (RevisionSummary), created :: NullOrUndefined (Timestamp), revisionUrl :: NullOrUndefined (Url) }
+  = ArtifactRevision { name :: Maybe (ArtifactName), revisionId :: Maybe (Revision), revisionChangeIdentifier :: Maybe (RevisionChangeIdentifier), revisionSummary :: Maybe (RevisionSummary), created :: Maybe (Timestamp), revisionUrl :: Maybe (Url) }
 ```
 
 <p>Represents revision details of an artifact. </p>
@@ -1103,7 +1103,7 @@ Constructs ArtifactRevision from required parameters
 #### `newArtifactRevision'`
 
 ``` purescript
-newArtifactRevision' :: ({ name :: NullOrUndefined (ArtifactName), revisionId :: NullOrUndefined (Revision), revisionChangeIdentifier :: NullOrUndefined (RevisionChangeIdentifier), revisionSummary :: NullOrUndefined (RevisionSummary), created :: NullOrUndefined (Timestamp), revisionUrl :: NullOrUndefined (Url) } -> { name :: NullOrUndefined (ArtifactName), revisionId :: NullOrUndefined (Revision), revisionChangeIdentifier :: NullOrUndefined (RevisionChangeIdentifier), revisionSummary :: NullOrUndefined (RevisionSummary), created :: NullOrUndefined (Timestamp), revisionUrl :: NullOrUndefined (Url) }) -> ArtifactRevision
+newArtifactRevision' :: ({ name :: Maybe (ArtifactName), revisionId :: Maybe (Revision), revisionChangeIdentifier :: Maybe (RevisionChangeIdentifier), revisionSummary :: Maybe (RevisionSummary), created :: Maybe (Timestamp), revisionUrl :: Maybe (Url) } -> { name :: Maybe (ArtifactName), revisionId :: Maybe (Revision), revisionChangeIdentifier :: Maybe (RevisionChangeIdentifier), revisionSummary :: Maybe (RevisionSummary), created :: Maybe (Timestamp), revisionUrl :: Maybe (Url) }) -> ArtifactRevision
 ```
 
 Constructs ArtifactRevision's fields from required parameters
@@ -1128,7 +1128,7 @@ Encode ArtifactRevisionList
 
 ``` purescript
 newtype ArtifactStore
-  = ArtifactStore { "type" :: ArtifactStoreType, location :: ArtifactStoreLocation, encryptionKey :: NullOrUndefined (EncryptionKey) }
+  = ArtifactStore { "type" :: ArtifactStoreType, location :: ArtifactStoreLocation, encryptionKey :: Maybe (EncryptionKey) }
 ```
 
 <p>The Amazon S3 bucket where artifacts are stored for the pipeline.</p>
@@ -1153,7 +1153,7 @@ Constructs ArtifactStore from required parameters
 #### `newArtifactStore'`
 
 ``` purescript
-newArtifactStore' :: ArtifactStoreLocation -> ArtifactStoreType -> ({ "type" :: ArtifactStoreType, location :: ArtifactStoreLocation, encryptionKey :: NullOrUndefined (EncryptionKey) } -> { "type" :: ArtifactStoreType, location :: ArtifactStoreLocation, encryptionKey :: NullOrUndefined (EncryptionKey) }) -> ArtifactStore
+newArtifactStore' :: ArtifactStoreLocation -> ArtifactStoreType -> ({ "type" :: ArtifactStoreType, location :: ArtifactStoreLocation, encryptionKey :: Maybe (EncryptionKey) } -> { "type" :: ArtifactStoreType, location :: ArtifactStoreLocation, encryptionKey :: Maybe (EncryptionKey) }) -> ArtifactStore
 ```
 
 Constructs ArtifactStore's fields from required parameters
@@ -1324,7 +1324,7 @@ Encode ContinuationToken
 
 ``` purescript
 newtype CreateCustomActionTypeInput
-  = CreateCustomActionTypeInput { category :: ActionCategory, provider :: ActionProvider, version :: Version, settings :: NullOrUndefined (ActionTypeSettings), configurationProperties :: NullOrUndefined (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }
+  = CreateCustomActionTypeInput { category :: ActionCategory, provider :: ActionProvider, version :: Version, settings :: Maybe (ActionTypeSettings), configurationProperties :: Maybe (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }
 ```
 
 <p>Represents the input of a CreateCustomActionType operation.</p>
@@ -1349,7 +1349,7 @@ Constructs CreateCustomActionTypeInput from required parameters
 #### `newCreateCustomActionTypeInput'`
 
 ``` purescript
-newCreateCustomActionTypeInput' :: ActionCategory -> ArtifactDetails -> ArtifactDetails -> ActionProvider -> Version -> ({ category :: ActionCategory, provider :: ActionProvider, version :: Version, settings :: NullOrUndefined (ActionTypeSettings), configurationProperties :: NullOrUndefined (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails } -> { category :: ActionCategory, provider :: ActionProvider, version :: Version, settings :: NullOrUndefined (ActionTypeSettings), configurationProperties :: NullOrUndefined (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }) -> CreateCustomActionTypeInput
+newCreateCustomActionTypeInput' :: ActionCategory -> ArtifactDetails -> ArtifactDetails -> ActionProvider -> Version -> ({ category :: ActionCategory, provider :: ActionProvider, version :: Version, settings :: Maybe (ActionTypeSettings), configurationProperties :: Maybe (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails } -> { category :: ActionCategory, provider :: ActionProvider, version :: Version, settings :: Maybe (ActionTypeSettings), configurationProperties :: Maybe (ActionConfigurationPropertyList), inputArtifactDetails :: ArtifactDetails, outputArtifactDetails :: ArtifactDetails }) -> CreateCustomActionTypeInput
 ```
 
 Constructs CreateCustomActionTypeInput's fields from required parameters
@@ -1426,7 +1426,7 @@ Constructs CreatePipelineInput's fields from required parameters
 
 ``` purescript
 newtype CreatePipelineOutput
-  = CreatePipelineOutput { pipeline :: NullOrUndefined (PipelineDeclaration) }
+  = CreatePipelineOutput { pipeline :: Maybe (PipelineDeclaration) }
 ```
 
 <p>Represents the output of a CreatePipeline action.</p>
@@ -1451,7 +1451,7 @@ Constructs CreatePipelineOutput from required parameters
 #### `newCreatePipelineOutput'`
 
 ``` purescript
-newCreatePipelineOutput' :: ({ pipeline :: NullOrUndefined (PipelineDeclaration) } -> { pipeline :: NullOrUndefined (PipelineDeclaration) }) -> CreatePipelineOutput
+newCreatePipelineOutput' :: ({ pipeline :: Maybe (PipelineDeclaration) } -> { pipeline :: Maybe (PipelineDeclaration) }) -> CreatePipelineOutput
 ```
 
 Constructs CreatePipelineOutput's fields from required parameters
@@ -1460,7 +1460,7 @@ Constructs CreatePipelineOutput's fields from required parameters
 
 ``` purescript
 newtype CurrentRevision
-  = CurrentRevision { revision :: Revision, changeIdentifier :: RevisionChangeIdentifier, created :: NullOrUndefined (Time), revisionSummary :: NullOrUndefined (RevisionSummary) }
+  = CurrentRevision { revision :: Revision, changeIdentifier :: RevisionChangeIdentifier, created :: Maybe (Time), revisionSummary :: Maybe (RevisionSummary) }
 ```
 
 <p>Represents information about a current revision.</p>
@@ -1485,7 +1485,7 @@ Constructs CurrentRevision from required parameters
 #### `newCurrentRevision'`
 
 ``` purescript
-newCurrentRevision' :: RevisionChangeIdentifier -> Revision -> ({ revision :: Revision, changeIdentifier :: RevisionChangeIdentifier, created :: NullOrUndefined (Time), revisionSummary :: NullOrUndefined (RevisionSummary) } -> { revision :: Revision, changeIdentifier :: RevisionChangeIdentifier, created :: NullOrUndefined (Time), revisionSummary :: NullOrUndefined (RevisionSummary) }) -> CurrentRevision
+newCurrentRevision' :: RevisionChangeIdentifier -> Revision -> ({ revision :: Revision, changeIdentifier :: RevisionChangeIdentifier, created :: Maybe (Time), revisionSummary :: Maybe (RevisionSummary) } -> { revision :: Revision, changeIdentifier :: RevisionChangeIdentifier, created :: Maybe (Time), revisionSummary :: Maybe (RevisionSummary) }) -> CurrentRevision
 ```
 
 Constructs CurrentRevision's fields from required parameters
@@ -1744,7 +1744,7 @@ Encode EncryptionKeyType
 
 ``` purescript
 newtype ErrorDetails
-  = ErrorDetails { code :: NullOrUndefined (Code), message :: NullOrUndefined (Message) }
+  = ErrorDetails { code :: Maybe (Code), message :: Maybe (Message) }
 ```
 
 <p>Represents information about an error in AWS CodePipeline.</p>
@@ -1769,7 +1769,7 @@ Constructs ErrorDetails from required parameters
 #### `newErrorDetails'`
 
 ``` purescript
-newErrorDetails' :: ({ code :: NullOrUndefined (Code), message :: NullOrUndefined (Message) } -> { code :: NullOrUndefined (Code), message :: NullOrUndefined (Message) }) -> ErrorDetails
+newErrorDetails' :: ({ code :: Maybe (Code), message :: Maybe (Message) } -> { code :: Maybe (Code), message :: Maybe (Message) }) -> ErrorDetails
 ```
 
 Constructs ErrorDetails's fields from required parameters
@@ -1778,7 +1778,7 @@ Constructs ErrorDetails's fields from required parameters
 
 ``` purescript
 newtype ExecutionDetails
-  = ExecutionDetails { summary :: NullOrUndefined (ExecutionSummary), externalExecutionId :: NullOrUndefined (ExecutionId), percentComplete :: NullOrUndefined (Percentage) }
+  = ExecutionDetails { summary :: Maybe (ExecutionSummary), externalExecutionId :: Maybe (ExecutionId), percentComplete :: Maybe (Percentage) }
 ```
 
 <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
@@ -1803,7 +1803,7 @@ Constructs ExecutionDetails from required parameters
 #### `newExecutionDetails'`
 
 ``` purescript
-newExecutionDetails' :: ({ summary :: NullOrUndefined (ExecutionSummary), externalExecutionId :: NullOrUndefined (ExecutionId), percentComplete :: NullOrUndefined (Percentage) } -> { summary :: NullOrUndefined (ExecutionSummary), externalExecutionId :: NullOrUndefined (ExecutionId), percentComplete :: NullOrUndefined (Percentage) }) -> ExecutionDetails
+newExecutionDetails' :: ({ summary :: Maybe (ExecutionSummary), externalExecutionId :: Maybe (ExecutionId), percentComplete :: Maybe (Percentage) } -> { summary :: Maybe (ExecutionSummary), externalExecutionId :: Maybe (ExecutionId), percentComplete :: Maybe (Percentage) }) -> ExecutionDetails
 ```
 
 Constructs ExecutionDetails's fields from required parameters
@@ -1844,7 +1844,7 @@ Encode ExecutionSummary
 
 ``` purescript
 newtype FailureDetails
-  = FailureDetails { "type" :: FailureType, message :: Message, externalExecutionId :: NullOrUndefined (ExecutionId) }
+  = FailureDetails { "type" :: FailureType, message :: Message, externalExecutionId :: Maybe (ExecutionId) }
 ```
 
 <p>Represents information about failure details.</p>
@@ -1869,7 +1869,7 @@ Constructs FailureDetails from required parameters
 #### `newFailureDetails'`
 
 ``` purescript
-newFailureDetails' :: Message -> FailureType -> ({ "type" :: FailureType, message :: Message, externalExecutionId :: NullOrUndefined (ExecutionId) } -> { "type" :: FailureType, message :: Message, externalExecutionId :: NullOrUndefined (ExecutionId) }) -> FailureDetails
+newFailureDetails' :: Message -> FailureType -> ({ "type" :: FailureType, message :: Message, externalExecutionId :: Maybe (ExecutionId) } -> { "type" :: FailureType, message :: Message, externalExecutionId :: Maybe (ExecutionId) }) -> FailureDetails
 ```
 
 Constructs FailureDetails's fields from required parameters
@@ -1928,7 +1928,7 @@ Constructs GetJobDetailsInput's fields from required parameters
 
 ``` purescript
 newtype GetJobDetailsOutput
-  = GetJobDetailsOutput { jobDetails :: NullOrUndefined (JobDetails) }
+  = GetJobDetailsOutput { jobDetails :: Maybe (JobDetails) }
 ```
 
 <p>Represents the output of a GetJobDetails action.</p>
@@ -1953,7 +1953,7 @@ Constructs GetJobDetailsOutput from required parameters
 #### `newGetJobDetailsOutput'`
 
 ``` purescript
-newGetJobDetailsOutput' :: ({ jobDetails :: NullOrUndefined (JobDetails) } -> { jobDetails :: NullOrUndefined (JobDetails) }) -> GetJobDetailsOutput
+newGetJobDetailsOutput' :: ({ jobDetails :: Maybe (JobDetails) } -> { jobDetails :: Maybe (JobDetails) }) -> GetJobDetailsOutput
 ```
 
 Constructs GetJobDetailsOutput's fields from required parameters
@@ -1996,7 +1996,7 @@ Constructs GetPipelineExecutionInput's fields from required parameters
 
 ``` purescript
 newtype GetPipelineExecutionOutput
-  = GetPipelineExecutionOutput { pipelineExecution :: NullOrUndefined (PipelineExecution) }
+  = GetPipelineExecutionOutput { pipelineExecution :: Maybe (PipelineExecution) }
 ```
 
 <p>Represents the output of a GetPipelineExecution action.</p>
@@ -2021,7 +2021,7 @@ Constructs GetPipelineExecutionOutput from required parameters
 #### `newGetPipelineExecutionOutput'`
 
 ``` purescript
-newGetPipelineExecutionOutput' :: ({ pipelineExecution :: NullOrUndefined (PipelineExecution) } -> { pipelineExecution :: NullOrUndefined (PipelineExecution) }) -> GetPipelineExecutionOutput
+newGetPipelineExecutionOutput' :: ({ pipelineExecution :: Maybe (PipelineExecution) } -> { pipelineExecution :: Maybe (PipelineExecution) }) -> GetPipelineExecutionOutput
 ```
 
 Constructs GetPipelineExecutionOutput's fields from required parameters
@@ -2030,7 +2030,7 @@ Constructs GetPipelineExecutionOutput's fields from required parameters
 
 ``` purescript
 newtype GetPipelineInput
-  = GetPipelineInput { name :: PipelineName, version :: NullOrUndefined (PipelineVersion) }
+  = GetPipelineInput { name :: PipelineName, version :: Maybe (PipelineVersion) }
 ```
 
 <p>Represents the input of a GetPipeline action.</p>
@@ -2055,7 +2055,7 @@ Constructs GetPipelineInput from required parameters
 #### `newGetPipelineInput'`
 
 ``` purescript
-newGetPipelineInput' :: PipelineName -> ({ name :: PipelineName, version :: NullOrUndefined (PipelineVersion) } -> { name :: PipelineName, version :: NullOrUndefined (PipelineVersion) }) -> GetPipelineInput
+newGetPipelineInput' :: PipelineName -> ({ name :: PipelineName, version :: Maybe (PipelineVersion) } -> { name :: PipelineName, version :: Maybe (PipelineVersion) }) -> GetPipelineInput
 ```
 
 Constructs GetPipelineInput's fields from required parameters
@@ -2064,7 +2064,7 @@ Constructs GetPipelineInput's fields from required parameters
 
 ``` purescript
 newtype GetPipelineOutput
-  = GetPipelineOutput { pipeline :: NullOrUndefined (PipelineDeclaration), metadata :: NullOrUndefined (PipelineMetadata) }
+  = GetPipelineOutput { pipeline :: Maybe (PipelineDeclaration), metadata :: Maybe (PipelineMetadata) }
 ```
 
 <p>Represents the output of a GetPipeline action.</p>
@@ -2089,7 +2089,7 @@ Constructs GetPipelineOutput from required parameters
 #### `newGetPipelineOutput'`
 
 ``` purescript
-newGetPipelineOutput' :: ({ pipeline :: NullOrUndefined (PipelineDeclaration), metadata :: NullOrUndefined (PipelineMetadata) } -> { pipeline :: NullOrUndefined (PipelineDeclaration), metadata :: NullOrUndefined (PipelineMetadata) }) -> GetPipelineOutput
+newGetPipelineOutput' :: ({ pipeline :: Maybe (PipelineDeclaration), metadata :: Maybe (PipelineMetadata) } -> { pipeline :: Maybe (PipelineDeclaration), metadata :: Maybe (PipelineMetadata) }) -> GetPipelineOutput
 ```
 
 Constructs GetPipelineOutput's fields from required parameters
@@ -2132,7 +2132,7 @@ Constructs GetPipelineStateInput's fields from required parameters
 
 ``` purescript
 newtype GetPipelineStateOutput
-  = GetPipelineStateOutput { pipelineName :: NullOrUndefined (PipelineName), pipelineVersion :: NullOrUndefined (PipelineVersion), stageStates :: NullOrUndefined (StageStateList), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) }
+  = GetPipelineStateOutput { pipelineName :: Maybe (PipelineName), pipelineVersion :: Maybe (PipelineVersion), stageStates :: Maybe (StageStateList), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) }
 ```
 
 <p>Represents the output of a GetPipelineState action.</p>
@@ -2157,7 +2157,7 @@ Constructs GetPipelineStateOutput from required parameters
 #### `newGetPipelineStateOutput'`
 
 ``` purescript
-newGetPipelineStateOutput' :: ({ pipelineName :: NullOrUndefined (PipelineName), pipelineVersion :: NullOrUndefined (PipelineVersion), stageStates :: NullOrUndefined (StageStateList), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) } -> { pipelineName :: NullOrUndefined (PipelineName), pipelineVersion :: NullOrUndefined (PipelineVersion), stageStates :: NullOrUndefined (StageStateList), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) }) -> GetPipelineStateOutput
+newGetPipelineStateOutput' :: ({ pipelineName :: Maybe (PipelineName), pipelineVersion :: Maybe (PipelineVersion), stageStates :: Maybe (StageStateList), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) } -> { pipelineName :: Maybe (PipelineName), pipelineVersion :: Maybe (PipelineVersion), stageStates :: Maybe (StageStateList), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) }) -> GetPipelineStateOutput
 ```
 
 Constructs GetPipelineStateOutput's fields from required parameters
@@ -2200,7 +2200,7 @@ Constructs GetThirdPartyJobDetailsInput's fields from required parameters
 
 ``` purescript
 newtype GetThirdPartyJobDetailsOutput
-  = GetThirdPartyJobDetailsOutput { jobDetails :: NullOrUndefined (ThirdPartyJobDetails) }
+  = GetThirdPartyJobDetailsOutput { jobDetails :: Maybe (ThirdPartyJobDetails) }
 ```
 
 <p>Represents the output of a GetThirdPartyJobDetails action.</p>
@@ -2225,7 +2225,7 @@ Constructs GetThirdPartyJobDetailsOutput from required parameters
 #### `newGetThirdPartyJobDetailsOutput'`
 
 ``` purescript
-newGetThirdPartyJobDetailsOutput' :: ({ jobDetails :: NullOrUndefined (ThirdPartyJobDetails) } -> { jobDetails :: NullOrUndefined (ThirdPartyJobDetails) }) -> GetThirdPartyJobDetailsOutput
+newGetThirdPartyJobDetailsOutput' :: ({ jobDetails :: Maybe (ThirdPartyJobDetails) } -> { jobDetails :: Maybe (ThirdPartyJobDetails) }) -> GetThirdPartyJobDetailsOutput
 ```
 
 Constructs GetThirdPartyJobDetailsOutput's fields from required parameters
@@ -2464,7 +2464,7 @@ Encode InvalidStructureException
 
 ``` purescript
 newtype Job
-  = Job { id :: NullOrUndefined (JobId), "data" :: NullOrUndefined (JobData), nonce :: NullOrUndefined (Nonce), accountId :: NullOrUndefined (AccountId) }
+  = Job { id :: Maybe (JobId), "data" :: Maybe (JobData), nonce :: Maybe (Nonce), accountId :: Maybe (AccountId) }
 ```
 
 <p>Represents information about a job.</p>
@@ -2489,7 +2489,7 @@ Constructs Job from required parameters
 #### `newJob'`
 
 ``` purescript
-newJob' :: ({ id :: NullOrUndefined (JobId), "data" :: NullOrUndefined (JobData), nonce :: NullOrUndefined (Nonce), accountId :: NullOrUndefined (AccountId) } -> { id :: NullOrUndefined (JobId), "data" :: NullOrUndefined (JobData), nonce :: NullOrUndefined (Nonce), accountId :: NullOrUndefined (AccountId) }) -> Job
+newJob' :: ({ id :: Maybe (JobId), "data" :: Maybe (JobData), nonce :: Maybe (Nonce), accountId :: Maybe (AccountId) } -> { id :: Maybe (JobId), "data" :: Maybe (JobData), nonce :: Maybe (Nonce), accountId :: Maybe (AccountId) }) -> Job
 ```
 
 Constructs Job's fields from required parameters
@@ -2498,7 +2498,7 @@ Constructs Job's fields from required parameters
 
 ``` purescript
 newtype JobData
-  = JobData { actionTypeId :: NullOrUndefined (ActionTypeId), actionConfiguration :: NullOrUndefined (ActionConfiguration), pipelineContext :: NullOrUndefined (PipelineContext), inputArtifacts :: NullOrUndefined (ArtifactList), outputArtifacts :: NullOrUndefined (ArtifactList), artifactCredentials :: NullOrUndefined (AWSSessionCredentials), continuationToken :: NullOrUndefined (ContinuationToken), encryptionKey :: NullOrUndefined (EncryptionKey) }
+  = JobData { actionTypeId :: Maybe (ActionTypeId), actionConfiguration :: Maybe (ActionConfiguration), pipelineContext :: Maybe (PipelineContext), inputArtifacts :: Maybe (ArtifactList), outputArtifacts :: Maybe (ArtifactList), artifactCredentials :: Maybe (AWSSessionCredentials), continuationToken :: Maybe (ContinuationToken), encryptionKey :: Maybe (EncryptionKey) }
 ```
 
 <p>Represents additional information about a job required for a job worker to complete the job.</p>
@@ -2523,7 +2523,7 @@ Constructs JobData from required parameters
 #### `newJobData'`
 
 ``` purescript
-newJobData' :: ({ actionTypeId :: NullOrUndefined (ActionTypeId), actionConfiguration :: NullOrUndefined (ActionConfiguration), pipelineContext :: NullOrUndefined (PipelineContext), inputArtifacts :: NullOrUndefined (ArtifactList), outputArtifacts :: NullOrUndefined (ArtifactList), artifactCredentials :: NullOrUndefined (AWSSessionCredentials), continuationToken :: NullOrUndefined (ContinuationToken), encryptionKey :: NullOrUndefined (EncryptionKey) } -> { actionTypeId :: NullOrUndefined (ActionTypeId), actionConfiguration :: NullOrUndefined (ActionConfiguration), pipelineContext :: NullOrUndefined (PipelineContext), inputArtifacts :: NullOrUndefined (ArtifactList), outputArtifacts :: NullOrUndefined (ArtifactList), artifactCredentials :: NullOrUndefined (AWSSessionCredentials), continuationToken :: NullOrUndefined (ContinuationToken), encryptionKey :: NullOrUndefined (EncryptionKey) }) -> JobData
+newJobData' :: ({ actionTypeId :: Maybe (ActionTypeId), actionConfiguration :: Maybe (ActionConfiguration), pipelineContext :: Maybe (PipelineContext), inputArtifacts :: Maybe (ArtifactList), outputArtifacts :: Maybe (ArtifactList), artifactCredentials :: Maybe (AWSSessionCredentials), continuationToken :: Maybe (ContinuationToken), encryptionKey :: Maybe (EncryptionKey) } -> { actionTypeId :: Maybe (ActionTypeId), actionConfiguration :: Maybe (ActionConfiguration), pipelineContext :: Maybe (PipelineContext), inputArtifacts :: Maybe (ArtifactList), outputArtifacts :: Maybe (ArtifactList), artifactCredentials :: Maybe (AWSSessionCredentials), continuationToken :: Maybe (ContinuationToken), encryptionKey :: Maybe (EncryptionKey) }) -> JobData
 ```
 
 Constructs JobData's fields from required parameters
@@ -2532,7 +2532,7 @@ Constructs JobData's fields from required parameters
 
 ``` purescript
 newtype JobDetails
-  = JobDetails { id :: NullOrUndefined (JobId), "data" :: NullOrUndefined (JobData), accountId :: NullOrUndefined (AccountId) }
+  = JobDetails { id :: Maybe (JobId), "data" :: Maybe (JobData), accountId :: Maybe (AccountId) }
 ```
 
 <p>Represents information about the details of a job.</p>
@@ -2557,7 +2557,7 @@ Constructs JobDetails from required parameters
 #### `newJobDetails'`
 
 ``` purescript
-newJobDetails' :: ({ id :: NullOrUndefined (JobId), "data" :: NullOrUndefined (JobData), accountId :: NullOrUndefined (AccountId) } -> { id :: NullOrUndefined (JobId), "data" :: NullOrUndefined (JobData), accountId :: NullOrUndefined (AccountId) }) -> JobDetails
+newJobDetails' :: ({ id :: Maybe (JobId), "data" :: Maybe (JobData), accountId :: Maybe (AccountId) } -> { id :: Maybe (JobId), "data" :: Maybe (JobData), accountId :: Maybe (AccountId) }) -> JobDetails
 ```
 
 Constructs JobDetails's fields from required parameters
@@ -2698,7 +2698,7 @@ Encode LimitExceededException
 
 ``` purescript
 newtype ListActionTypesInput
-  = ListActionTypesInput { actionOwnerFilter :: NullOrUndefined (ActionOwner), nextToken :: NullOrUndefined (NextToken) }
+  = ListActionTypesInput { actionOwnerFilter :: Maybe (ActionOwner), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListActionTypes action.</p>
@@ -2723,7 +2723,7 @@ Constructs ListActionTypesInput from required parameters
 #### `newListActionTypesInput'`
 
 ``` purescript
-newListActionTypesInput' :: ({ actionOwnerFilter :: NullOrUndefined (ActionOwner), nextToken :: NullOrUndefined (NextToken) } -> { actionOwnerFilter :: NullOrUndefined (ActionOwner), nextToken :: NullOrUndefined (NextToken) }) -> ListActionTypesInput
+newListActionTypesInput' :: ({ actionOwnerFilter :: Maybe (ActionOwner), nextToken :: Maybe (NextToken) } -> { actionOwnerFilter :: Maybe (ActionOwner), nextToken :: Maybe (NextToken) }) -> ListActionTypesInput
 ```
 
 Constructs ListActionTypesInput's fields from required parameters
@@ -2732,7 +2732,7 @@ Constructs ListActionTypesInput's fields from required parameters
 
 ``` purescript
 newtype ListActionTypesOutput
-  = ListActionTypesOutput { actionTypes :: ActionTypeList, nextToken :: NullOrUndefined (NextToken) }
+  = ListActionTypesOutput { actionTypes :: ActionTypeList, nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListActionTypes action.</p>
@@ -2757,7 +2757,7 @@ Constructs ListActionTypesOutput from required parameters
 #### `newListActionTypesOutput'`
 
 ``` purescript
-newListActionTypesOutput' :: ActionTypeList -> ({ actionTypes :: ActionTypeList, nextToken :: NullOrUndefined (NextToken) } -> { actionTypes :: ActionTypeList, nextToken :: NullOrUndefined (NextToken) }) -> ListActionTypesOutput
+newListActionTypesOutput' :: ActionTypeList -> ({ actionTypes :: ActionTypeList, nextToken :: Maybe (NextToken) } -> { actionTypes :: ActionTypeList, nextToken :: Maybe (NextToken) }) -> ListActionTypesOutput
 ```
 
 Constructs ListActionTypesOutput's fields from required parameters
@@ -2766,7 +2766,7 @@ Constructs ListActionTypesOutput's fields from required parameters
 
 ``` purescript
 newtype ListPipelineExecutionsInput
-  = ListPipelineExecutionsInput { pipelineName :: PipelineName, maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) }
+  = ListPipelineExecutionsInput { pipelineName :: PipelineName, maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListPipelineExecutions action.</p>
@@ -2791,7 +2791,7 @@ Constructs ListPipelineExecutionsInput from required parameters
 #### `newListPipelineExecutionsInput'`
 
 ``` purescript
-newListPipelineExecutionsInput' :: PipelineName -> ({ pipelineName :: PipelineName, maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) } -> { pipelineName :: PipelineName, maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) }) -> ListPipelineExecutionsInput
+newListPipelineExecutionsInput' :: PipelineName -> ({ pipelineName :: PipelineName, maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) } -> { pipelineName :: PipelineName, maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) }) -> ListPipelineExecutionsInput
 ```
 
 Constructs ListPipelineExecutionsInput's fields from required parameters
@@ -2800,7 +2800,7 @@ Constructs ListPipelineExecutionsInput's fields from required parameters
 
 ``` purescript
 newtype ListPipelineExecutionsOutput
-  = ListPipelineExecutionsOutput { pipelineExecutionSummaries :: NullOrUndefined (PipelineExecutionSummaryList), nextToken :: NullOrUndefined (NextToken) }
+  = ListPipelineExecutionsOutput { pipelineExecutionSummaries :: Maybe (PipelineExecutionSummaryList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListPipelineExecutions action.</p>
@@ -2825,7 +2825,7 @@ Constructs ListPipelineExecutionsOutput from required parameters
 #### `newListPipelineExecutionsOutput'`
 
 ``` purescript
-newListPipelineExecutionsOutput' :: ({ pipelineExecutionSummaries :: NullOrUndefined (PipelineExecutionSummaryList), nextToken :: NullOrUndefined (NextToken) } -> { pipelineExecutionSummaries :: NullOrUndefined (PipelineExecutionSummaryList), nextToken :: NullOrUndefined (NextToken) }) -> ListPipelineExecutionsOutput
+newListPipelineExecutionsOutput' :: ({ pipelineExecutionSummaries :: Maybe (PipelineExecutionSummaryList), nextToken :: Maybe (NextToken) } -> { pipelineExecutionSummaries :: Maybe (PipelineExecutionSummaryList), nextToken :: Maybe (NextToken) }) -> ListPipelineExecutionsOutput
 ```
 
 Constructs ListPipelineExecutionsOutput's fields from required parameters
@@ -2834,7 +2834,7 @@ Constructs ListPipelineExecutionsOutput's fields from required parameters
 
 ``` purescript
 newtype ListPipelinesInput
-  = ListPipelinesInput { nextToken :: NullOrUndefined (NextToken) }
+  = ListPipelinesInput { nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListPipelines action.</p>
@@ -2859,7 +2859,7 @@ Constructs ListPipelinesInput from required parameters
 #### `newListPipelinesInput'`
 
 ``` purescript
-newListPipelinesInput' :: ({ nextToken :: NullOrUndefined (NextToken) } -> { nextToken :: NullOrUndefined (NextToken) }) -> ListPipelinesInput
+newListPipelinesInput' :: ({ nextToken :: Maybe (NextToken) } -> { nextToken :: Maybe (NextToken) }) -> ListPipelinesInput
 ```
 
 Constructs ListPipelinesInput's fields from required parameters
@@ -2868,7 +2868,7 @@ Constructs ListPipelinesInput's fields from required parameters
 
 ``` purescript
 newtype ListPipelinesOutput
-  = ListPipelinesOutput { pipelines :: NullOrUndefined (PipelineList), nextToken :: NullOrUndefined (NextToken) }
+  = ListPipelinesOutput { pipelines :: Maybe (PipelineList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListPipelines action.</p>
@@ -2893,7 +2893,7 @@ Constructs ListPipelinesOutput from required parameters
 #### `newListPipelinesOutput'`
 
 ``` purescript
-newListPipelinesOutput' :: ({ pipelines :: NullOrUndefined (PipelineList), nextToken :: NullOrUndefined (NextToken) } -> { pipelines :: NullOrUndefined (PipelineList), nextToken :: NullOrUndefined (NextToken) }) -> ListPipelinesOutput
+newListPipelinesOutput' :: ({ pipelines :: Maybe (PipelineList), nextToken :: Maybe (NextToken) } -> { pipelines :: Maybe (PipelineList), nextToken :: Maybe (NextToken) }) -> ListPipelinesOutput
 ```
 
 Constructs ListPipelinesOutput's fields from required parameters
@@ -3114,7 +3114,7 @@ Encode PipelineArn
 
 ``` purescript
 newtype PipelineContext
-  = PipelineContext { pipelineName :: NullOrUndefined (PipelineName), stage :: NullOrUndefined (StageContext), action :: NullOrUndefined (ActionContext) }
+  = PipelineContext { pipelineName :: Maybe (PipelineName), stage :: Maybe (StageContext), action :: Maybe (ActionContext) }
 ```
 
 <p>Represents information about a pipeline to a job worker.</p>
@@ -3139,7 +3139,7 @@ Constructs PipelineContext from required parameters
 #### `newPipelineContext'`
 
 ``` purescript
-newPipelineContext' :: ({ pipelineName :: NullOrUndefined (PipelineName), stage :: NullOrUndefined (StageContext), action :: NullOrUndefined (ActionContext) } -> { pipelineName :: NullOrUndefined (PipelineName), stage :: NullOrUndefined (StageContext), action :: NullOrUndefined (ActionContext) }) -> PipelineContext
+newPipelineContext' :: ({ pipelineName :: Maybe (PipelineName), stage :: Maybe (StageContext), action :: Maybe (ActionContext) } -> { pipelineName :: Maybe (PipelineName), stage :: Maybe (StageContext), action :: Maybe (ActionContext) }) -> PipelineContext
 ```
 
 Constructs PipelineContext's fields from required parameters
@@ -3148,7 +3148,7 @@ Constructs PipelineContext's fields from required parameters
 
 ``` purescript
 newtype PipelineDeclaration
-  = PipelineDeclaration { name :: PipelineName, roleArn :: RoleArn, artifactStore :: ArtifactStore, stages :: PipelineStageDeclarationList, version :: NullOrUndefined (PipelineVersion) }
+  = PipelineDeclaration { name :: PipelineName, roleArn :: RoleArn, artifactStore :: ArtifactStore, stages :: PipelineStageDeclarationList, version :: Maybe (PipelineVersion) }
 ```
 
 <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
@@ -3173,7 +3173,7 @@ Constructs PipelineDeclaration from required parameters
 #### `newPipelineDeclaration'`
 
 ``` purescript
-newPipelineDeclaration' :: ArtifactStore -> PipelineName -> RoleArn -> PipelineStageDeclarationList -> ({ name :: PipelineName, roleArn :: RoleArn, artifactStore :: ArtifactStore, stages :: PipelineStageDeclarationList, version :: NullOrUndefined (PipelineVersion) } -> { name :: PipelineName, roleArn :: RoleArn, artifactStore :: ArtifactStore, stages :: PipelineStageDeclarationList, version :: NullOrUndefined (PipelineVersion) }) -> PipelineDeclaration
+newPipelineDeclaration' :: ArtifactStore -> PipelineName -> RoleArn -> PipelineStageDeclarationList -> ({ name :: PipelineName, roleArn :: RoleArn, artifactStore :: ArtifactStore, stages :: PipelineStageDeclarationList, version :: Maybe (PipelineVersion) } -> { name :: PipelineName, roleArn :: RoleArn, artifactStore :: ArtifactStore, stages :: PipelineStageDeclarationList, version :: Maybe (PipelineVersion) }) -> PipelineDeclaration
 ```
 
 Constructs PipelineDeclaration's fields from required parameters
@@ -3182,7 +3182,7 @@ Constructs PipelineDeclaration's fields from required parameters
 
 ``` purescript
 newtype PipelineExecution
-  = PipelineExecution { pipelineName :: NullOrUndefined (PipelineName), pipelineVersion :: NullOrUndefined (PipelineVersion), pipelineExecutionId :: NullOrUndefined (PipelineExecutionId), status :: NullOrUndefined (PipelineExecutionStatus), artifactRevisions :: NullOrUndefined (ArtifactRevisionList) }
+  = PipelineExecution { pipelineName :: Maybe (PipelineName), pipelineVersion :: Maybe (PipelineVersion), pipelineExecutionId :: Maybe (PipelineExecutionId), status :: Maybe (PipelineExecutionStatus), artifactRevisions :: Maybe (ArtifactRevisionList) }
 ```
 
 <p>Represents information about an execution of a pipeline.</p>
@@ -3207,7 +3207,7 @@ Constructs PipelineExecution from required parameters
 #### `newPipelineExecution'`
 
 ``` purescript
-newPipelineExecution' :: ({ pipelineName :: NullOrUndefined (PipelineName), pipelineVersion :: NullOrUndefined (PipelineVersion), pipelineExecutionId :: NullOrUndefined (PipelineExecutionId), status :: NullOrUndefined (PipelineExecutionStatus), artifactRevisions :: NullOrUndefined (ArtifactRevisionList) } -> { pipelineName :: NullOrUndefined (PipelineName), pipelineVersion :: NullOrUndefined (PipelineVersion), pipelineExecutionId :: NullOrUndefined (PipelineExecutionId), status :: NullOrUndefined (PipelineExecutionStatus), artifactRevisions :: NullOrUndefined (ArtifactRevisionList) }) -> PipelineExecution
+newPipelineExecution' :: ({ pipelineName :: Maybe (PipelineName), pipelineVersion :: Maybe (PipelineVersion), pipelineExecutionId :: Maybe (PipelineExecutionId), status :: Maybe (PipelineExecutionStatus), artifactRevisions :: Maybe (ArtifactRevisionList) } -> { pipelineName :: Maybe (PipelineName), pipelineVersion :: Maybe (PipelineVersion), pipelineExecutionId :: Maybe (PipelineExecutionId), status :: Maybe (PipelineExecutionStatus), artifactRevisions :: Maybe (ArtifactRevisionList) }) -> PipelineExecution
 ```
 
 Constructs PipelineExecution's fields from required parameters
@@ -3266,7 +3266,7 @@ Encode PipelineExecutionStatus
 
 ``` purescript
 newtype PipelineExecutionSummary
-  = PipelineExecutionSummary { pipelineExecutionId :: NullOrUndefined (PipelineExecutionId), status :: NullOrUndefined (PipelineExecutionStatus), startTime :: NullOrUndefined (Timestamp), lastUpdateTime :: NullOrUndefined (Timestamp) }
+  = PipelineExecutionSummary { pipelineExecutionId :: Maybe (PipelineExecutionId), status :: Maybe (PipelineExecutionStatus), startTime :: Maybe (Timestamp), lastUpdateTime :: Maybe (Timestamp) }
 ```
 
 <p>Summary information about a pipeline execution.</p>
@@ -3291,7 +3291,7 @@ Constructs PipelineExecutionSummary from required parameters
 #### `newPipelineExecutionSummary'`
 
 ``` purescript
-newPipelineExecutionSummary' :: ({ pipelineExecutionId :: NullOrUndefined (PipelineExecutionId), status :: NullOrUndefined (PipelineExecutionStatus), startTime :: NullOrUndefined (Timestamp), lastUpdateTime :: NullOrUndefined (Timestamp) } -> { pipelineExecutionId :: NullOrUndefined (PipelineExecutionId), status :: NullOrUndefined (PipelineExecutionStatus), startTime :: NullOrUndefined (Timestamp), lastUpdateTime :: NullOrUndefined (Timestamp) }) -> PipelineExecutionSummary
+newPipelineExecutionSummary' :: ({ pipelineExecutionId :: Maybe (PipelineExecutionId), status :: Maybe (PipelineExecutionStatus), startTime :: Maybe (Timestamp), lastUpdateTime :: Maybe (Timestamp) } -> { pipelineExecutionId :: Maybe (PipelineExecutionId), status :: Maybe (PipelineExecutionStatus), startTime :: Maybe (Timestamp), lastUpdateTime :: Maybe (Timestamp) }) -> PipelineExecutionSummary
 ```
 
 Constructs PipelineExecutionSummary's fields from required parameters
@@ -3332,7 +3332,7 @@ Encode PipelineList
 
 ``` purescript
 newtype PipelineMetadata
-  = PipelineMetadata { pipelineArn :: NullOrUndefined (PipelineArn), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) }
+  = PipelineMetadata { pipelineArn :: Maybe (PipelineArn), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) }
 ```
 
 <p>Information about a pipeline.</p>
@@ -3357,7 +3357,7 @@ Constructs PipelineMetadata from required parameters
 #### `newPipelineMetadata'`
 
 ``` purescript
-newPipelineMetadata' :: ({ pipelineArn :: NullOrUndefined (PipelineArn), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) } -> { pipelineArn :: NullOrUndefined (PipelineArn), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) }) -> PipelineMetadata
+newPipelineMetadata' :: ({ pipelineArn :: Maybe (PipelineArn), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) } -> { pipelineArn :: Maybe (PipelineArn), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) }) -> PipelineMetadata
 ```
 
 Constructs PipelineMetadata's fields from required parameters
@@ -3434,7 +3434,7 @@ Encode PipelineStageDeclarationList
 
 ``` purescript
 newtype PipelineSummary
-  = PipelineSummary { name :: NullOrUndefined (PipelineName), version :: NullOrUndefined (PipelineVersion), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) }
+  = PipelineSummary { name :: Maybe (PipelineName), version :: Maybe (PipelineVersion), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) }
 ```
 
 <p>Returns a summary of a pipeline.</p>
@@ -3459,7 +3459,7 @@ Constructs PipelineSummary from required parameters
 #### `newPipelineSummary'`
 
 ``` purescript
-newPipelineSummary' :: ({ name :: NullOrUndefined (PipelineName), version :: NullOrUndefined (PipelineVersion), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) } -> { name :: NullOrUndefined (PipelineName), version :: NullOrUndefined (PipelineVersion), created :: NullOrUndefined (Timestamp), updated :: NullOrUndefined (Timestamp) }) -> PipelineSummary
+newPipelineSummary' :: ({ name :: Maybe (PipelineName), version :: Maybe (PipelineVersion), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) } -> { name :: Maybe (PipelineName), version :: Maybe (PipelineVersion), created :: Maybe (Timestamp), updated :: Maybe (Timestamp) }) -> PipelineSummary
 ```
 
 Constructs PipelineSummary's fields from required parameters
@@ -3502,7 +3502,7 @@ Encode PipelineVersionNotFoundException
 
 ``` purescript
 newtype PollForJobsInput
-  = PollForJobsInput { actionTypeId :: ActionTypeId, maxBatchSize :: NullOrUndefined (MaxBatchSize), queryParam :: NullOrUndefined (QueryParamMap) }
+  = PollForJobsInput { actionTypeId :: ActionTypeId, maxBatchSize :: Maybe (MaxBatchSize), queryParam :: Maybe (QueryParamMap) }
 ```
 
 <p>Represents the input of a PollForJobs action.</p>
@@ -3527,7 +3527,7 @@ Constructs PollForJobsInput from required parameters
 #### `newPollForJobsInput'`
 
 ``` purescript
-newPollForJobsInput' :: ActionTypeId -> ({ actionTypeId :: ActionTypeId, maxBatchSize :: NullOrUndefined (MaxBatchSize), queryParam :: NullOrUndefined (QueryParamMap) } -> { actionTypeId :: ActionTypeId, maxBatchSize :: NullOrUndefined (MaxBatchSize), queryParam :: NullOrUndefined (QueryParamMap) }) -> PollForJobsInput
+newPollForJobsInput' :: ActionTypeId -> ({ actionTypeId :: ActionTypeId, maxBatchSize :: Maybe (MaxBatchSize), queryParam :: Maybe (QueryParamMap) } -> { actionTypeId :: ActionTypeId, maxBatchSize :: Maybe (MaxBatchSize), queryParam :: Maybe (QueryParamMap) }) -> PollForJobsInput
 ```
 
 Constructs PollForJobsInput's fields from required parameters
@@ -3536,7 +3536,7 @@ Constructs PollForJobsInput's fields from required parameters
 
 ``` purescript
 newtype PollForJobsOutput
-  = PollForJobsOutput { jobs :: NullOrUndefined (JobList) }
+  = PollForJobsOutput { jobs :: Maybe (JobList) }
 ```
 
 <p>Represents the output of a PollForJobs action.</p>
@@ -3561,7 +3561,7 @@ Constructs PollForJobsOutput from required parameters
 #### `newPollForJobsOutput'`
 
 ``` purescript
-newPollForJobsOutput' :: ({ jobs :: NullOrUndefined (JobList) } -> { jobs :: NullOrUndefined (JobList) }) -> PollForJobsOutput
+newPollForJobsOutput' :: ({ jobs :: Maybe (JobList) } -> { jobs :: Maybe (JobList) }) -> PollForJobsOutput
 ```
 
 Constructs PollForJobsOutput's fields from required parameters
@@ -3570,7 +3570,7 @@ Constructs PollForJobsOutput's fields from required parameters
 
 ``` purescript
 newtype PollForThirdPartyJobsInput
-  = PollForThirdPartyJobsInput { actionTypeId :: ActionTypeId, maxBatchSize :: NullOrUndefined (MaxBatchSize) }
+  = PollForThirdPartyJobsInput { actionTypeId :: ActionTypeId, maxBatchSize :: Maybe (MaxBatchSize) }
 ```
 
 <p>Represents the input of a PollForThirdPartyJobs action.</p>
@@ -3595,7 +3595,7 @@ Constructs PollForThirdPartyJobsInput from required parameters
 #### `newPollForThirdPartyJobsInput'`
 
 ``` purescript
-newPollForThirdPartyJobsInput' :: ActionTypeId -> ({ actionTypeId :: ActionTypeId, maxBatchSize :: NullOrUndefined (MaxBatchSize) } -> { actionTypeId :: ActionTypeId, maxBatchSize :: NullOrUndefined (MaxBatchSize) }) -> PollForThirdPartyJobsInput
+newPollForThirdPartyJobsInput' :: ActionTypeId -> ({ actionTypeId :: ActionTypeId, maxBatchSize :: Maybe (MaxBatchSize) } -> { actionTypeId :: ActionTypeId, maxBatchSize :: Maybe (MaxBatchSize) }) -> PollForThirdPartyJobsInput
 ```
 
 Constructs PollForThirdPartyJobsInput's fields from required parameters
@@ -3604,7 +3604,7 @@ Constructs PollForThirdPartyJobsInput's fields from required parameters
 
 ``` purescript
 newtype PollForThirdPartyJobsOutput
-  = PollForThirdPartyJobsOutput { jobs :: NullOrUndefined (ThirdPartyJobList) }
+  = PollForThirdPartyJobsOutput { jobs :: Maybe (ThirdPartyJobList) }
 ```
 
 <p>Represents the output of a PollForThirdPartyJobs action.</p>
@@ -3629,7 +3629,7 @@ Constructs PollForThirdPartyJobsOutput from required parameters
 #### `newPollForThirdPartyJobsOutput'`
 
 ``` purescript
-newPollForThirdPartyJobsOutput' :: ({ jobs :: NullOrUndefined (ThirdPartyJobList) } -> { jobs :: NullOrUndefined (ThirdPartyJobList) }) -> PollForThirdPartyJobsOutput
+newPollForThirdPartyJobsOutput' :: ({ jobs :: Maybe (ThirdPartyJobList) } -> { jobs :: Maybe (ThirdPartyJobList) }) -> PollForThirdPartyJobsOutput
 ```
 
 Constructs PollForThirdPartyJobsOutput's fields from required parameters
@@ -3672,7 +3672,7 @@ Constructs PutActionRevisionInput's fields from required parameters
 
 ``` purescript
 newtype PutActionRevisionOutput
-  = PutActionRevisionOutput { newRevision :: NullOrUndefined (Boolean), pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) }
+  = PutActionRevisionOutput { newRevision :: Maybe (Boolean), pipelineExecutionId :: Maybe (PipelineExecutionId) }
 ```
 
 <p>Represents the output of a PutActionRevision action.</p>
@@ -3697,7 +3697,7 @@ Constructs PutActionRevisionOutput from required parameters
 #### `newPutActionRevisionOutput'`
 
 ``` purescript
-newPutActionRevisionOutput' :: ({ newRevision :: NullOrUndefined (Boolean), pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) } -> { newRevision :: NullOrUndefined (Boolean), pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) }) -> PutActionRevisionOutput
+newPutActionRevisionOutput' :: ({ newRevision :: Maybe (Boolean), pipelineExecutionId :: Maybe (PipelineExecutionId) } -> { newRevision :: Maybe (Boolean), pipelineExecutionId :: Maybe (PipelineExecutionId) }) -> PutActionRevisionOutput
 ```
 
 Constructs PutActionRevisionOutput's fields from required parameters
@@ -3740,7 +3740,7 @@ Constructs PutApprovalResultInput's fields from required parameters
 
 ``` purescript
 newtype PutApprovalResultOutput
-  = PutApprovalResultOutput { approvedAt :: NullOrUndefined (Timestamp) }
+  = PutApprovalResultOutput { approvedAt :: Maybe (Timestamp) }
 ```
 
 <p>Represents the output of a PutApprovalResult action.</p>
@@ -3765,7 +3765,7 @@ Constructs PutApprovalResultOutput from required parameters
 #### `newPutApprovalResultOutput'`
 
 ``` purescript
-newPutApprovalResultOutput' :: ({ approvedAt :: NullOrUndefined (Timestamp) } -> { approvedAt :: NullOrUndefined (Timestamp) }) -> PutApprovalResultOutput
+newPutApprovalResultOutput' :: ({ approvedAt :: Maybe (Timestamp) } -> { approvedAt :: Maybe (Timestamp) }) -> PutApprovalResultOutput
 ```
 
 Constructs PutApprovalResultOutput's fields from required parameters
@@ -3808,7 +3808,7 @@ Constructs PutJobFailureResultInput's fields from required parameters
 
 ``` purescript
 newtype PutJobSuccessResultInput
-  = PutJobSuccessResultInput { jobId :: JobId, currentRevision :: NullOrUndefined (CurrentRevision), continuationToken :: NullOrUndefined (ContinuationToken), executionDetails :: NullOrUndefined (ExecutionDetails) }
+  = PutJobSuccessResultInput { jobId :: JobId, currentRevision :: Maybe (CurrentRevision), continuationToken :: Maybe (ContinuationToken), executionDetails :: Maybe (ExecutionDetails) }
 ```
 
 <p>Represents the input of a PutJobSuccessResult action.</p>
@@ -3833,7 +3833,7 @@ Constructs PutJobSuccessResultInput from required parameters
 #### `newPutJobSuccessResultInput'`
 
 ``` purescript
-newPutJobSuccessResultInput' :: JobId -> ({ jobId :: JobId, currentRevision :: NullOrUndefined (CurrentRevision), continuationToken :: NullOrUndefined (ContinuationToken), executionDetails :: NullOrUndefined (ExecutionDetails) } -> { jobId :: JobId, currentRevision :: NullOrUndefined (CurrentRevision), continuationToken :: NullOrUndefined (ContinuationToken), executionDetails :: NullOrUndefined (ExecutionDetails) }) -> PutJobSuccessResultInput
+newPutJobSuccessResultInput' :: JobId -> ({ jobId :: JobId, currentRevision :: Maybe (CurrentRevision), continuationToken :: Maybe (ContinuationToken), executionDetails :: Maybe (ExecutionDetails) } -> { jobId :: JobId, currentRevision :: Maybe (CurrentRevision), continuationToken :: Maybe (ContinuationToken), executionDetails :: Maybe (ExecutionDetails) }) -> PutJobSuccessResultInput
 ```
 
 Constructs PutJobSuccessResultInput's fields from required parameters
@@ -3876,7 +3876,7 @@ Constructs PutThirdPartyJobFailureResultInput's fields from required parameters
 
 ``` purescript
 newtype PutThirdPartyJobSuccessResultInput
-  = PutThirdPartyJobSuccessResultInput { jobId :: ThirdPartyJobId, clientToken :: ClientToken, currentRevision :: NullOrUndefined (CurrentRevision), continuationToken :: NullOrUndefined (ContinuationToken), executionDetails :: NullOrUndefined (ExecutionDetails) }
+  = PutThirdPartyJobSuccessResultInput { jobId :: ThirdPartyJobId, clientToken :: ClientToken, currentRevision :: Maybe (CurrentRevision), continuationToken :: Maybe (ContinuationToken), executionDetails :: Maybe (ExecutionDetails) }
 ```
 
 <p>Represents the input of a PutThirdPartyJobSuccessResult action.</p>
@@ -3901,7 +3901,7 @@ Constructs PutThirdPartyJobSuccessResultInput from required parameters
 #### `newPutThirdPartyJobSuccessResultInput'`
 
 ``` purescript
-newPutThirdPartyJobSuccessResultInput' :: ClientToken -> ThirdPartyJobId -> ({ jobId :: ThirdPartyJobId, clientToken :: ClientToken, currentRevision :: NullOrUndefined (CurrentRevision), continuationToken :: NullOrUndefined (ContinuationToken), executionDetails :: NullOrUndefined (ExecutionDetails) } -> { jobId :: ThirdPartyJobId, clientToken :: ClientToken, currentRevision :: NullOrUndefined (CurrentRevision), continuationToken :: NullOrUndefined (ContinuationToken), executionDetails :: NullOrUndefined (ExecutionDetails) }) -> PutThirdPartyJobSuccessResultInput
+newPutThirdPartyJobSuccessResultInput' :: ClientToken -> ThirdPartyJobId -> ({ jobId :: ThirdPartyJobId, clientToken :: ClientToken, currentRevision :: Maybe (CurrentRevision), continuationToken :: Maybe (ContinuationToken), executionDetails :: Maybe (ExecutionDetails) } -> { jobId :: ThirdPartyJobId, clientToken :: ClientToken, currentRevision :: Maybe (CurrentRevision), continuationToken :: Maybe (ContinuationToken), executionDetails :: Maybe (ExecutionDetails) }) -> PutThirdPartyJobSuccessResultInput
 ```
 
 Constructs PutThirdPartyJobSuccessResultInput's fields from required parameters
@@ -3960,7 +3960,7 @@ Constructs RetryStageExecutionInput's fields from required parameters
 
 ``` purescript
 newtype RetryStageExecutionOutput
-  = RetryStageExecutionOutput { pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) }
+  = RetryStageExecutionOutput { pipelineExecutionId :: Maybe (PipelineExecutionId) }
 ```
 
 <p>Represents the output of a RetryStageExecution action.</p>
@@ -3985,7 +3985,7 @@ Constructs RetryStageExecutionOutput from required parameters
 #### `newRetryStageExecutionOutput'`
 
 ``` purescript
-newRetryStageExecutionOutput' :: ({ pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) } -> { pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) }) -> RetryStageExecutionOutput
+newRetryStageExecutionOutput' :: ({ pipelineExecutionId :: Maybe (PipelineExecutionId) } -> { pipelineExecutionId :: Maybe (PipelineExecutionId) }) -> RetryStageExecutionOutput
 ```
 
 Constructs RetryStageExecutionOutput's fields from required parameters
@@ -4188,7 +4188,7 @@ Encode StageBlockerDeclarationList
 
 ``` purescript
 newtype StageContext
-  = StageContext { name :: NullOrUndefined (StageName) }
+  = StageContext { name :: Maybe (StageName) }
 ```
 
 <p>Represents information about a stage to a job worker.</p>
@@ -4213,7 +4213,7 @@ Constructs StageContext from required parameters
 #### `newStageContext'`
 
 ``` purescript
-newStageContext' :: ({ name :: NullOrUndefined (StageName) } -> { name :: NullOrUndefined (StageName) }) -> StageContext
+newStageContext' :: ({ name :: Maybe (StageName) } -> { name :: Maybe (StageName) }) -> StageContext
 ```
 
 Constructs StageContext's fields from required parameters
@@ -4222,7 +4222,7 @@ Constructs StageContext's fields from required parameters
 
 ``` purescript
 newtype StageDeclaration
-  = StageDeclaration { name :: StageName, blockers :: NullOrUndefined (StageBlockerDeclarationList), actions :: StageActionDeclarationList }
+  = StageDeclaration { name :: StageName, blockers :: Maybe (StageBlockerDeclarationList), actions :: StageActionDeclarationList }
 ```
 
 <p>Represents information about a stage and its definition.</p>
@@ -4247,7 +4247,7 @@ Constructs StageDeclaration from required parameters
 #### `newStageDeclaration'`
 
 ``` purescript
-newStageDeclaration' :: StageActionDeclarationList -> StageName -> ({ name :: StageName, blockers :: NullOrUndefined (StageBlockerDeclarationList), actions :: StageActionDeclarationList } -> { name :: StageName, blockers :: NullOrUndefined (StageBlockerDeclarationList), actions :: StageActionDeclarationList }) -> StageDeclaration
+newStageDeclaration' :: StageActionDeclarationList -> StageName -> ({ name :: StageName, blockers :: Maybe (StageBlockerDeclarationList), actions :: StageActionDeclarationList } -> { name :: StageName, blockers :: Maybe (StageBlockerDeclarationList), actions :: StageActionDeclarationList }) -> StageDeclaration
 ```
 
 Constructs StageDeclaration's fields from required parameters
@@ -4374,7 +4374,7 @@ Encode StageRetryMode
 
 ``` purescript
 newtype StageState
-  = StageState { stageName :: NullOrUndefined (StageName), inboundTransitionState :: NullOrUndefined (TransitionState), actionStates :: NullOrUndefined (ActionStateList), latestExecution :: NullOrUndefined (StageExecution) }
+  = StageState { stageName :: Maybe (StageName), inboundTransitionState :: Maybe (TransitionState), actionStates :: Maybe (ActionStateList), latestExecution :: Maybe (StageExecution) }
 ```
 
 <p>Represents information about the state of the stage.</p>
@@ -4399,7 +4399,7 @@ Constructs StageState from required parameters
 #### `newStageState'`
 
 ``` purescript
-newStageState' :: ({ stageName :: NullOrUndefined (StageName), inboundTransitionState :: NullOrUndefined (TransitionState), actionStates :: NullOrUndefined (ActionStateList), latestExecution :: NullOrUndefined (StageExecution) } -> { stageName :: NullOrUndefined (StageName), inboundTransitionState :: NullOrUndefined (TransitionState), actionStates :: NullOrUndefined (ActionStateList), latestExecution :: NullOrUndefined (StageExecution) }) -> StageState
+newStageState' :: ({ stageName :: Maybe (StageName), inboundTransitionState :: Maybe (TransitionState), actionStates :: Maybe (ActionStateList), latestExecution :: Maybe (StageExecution) } -> { stageName :: Maybe (StageName), inboundTransitionState :: Maybe (TransitionState), actionStates :: Maybe (ActionStateList), latestExecution :: Maybe (StageExecution) }) -> StageState
 ```
 
 Constructs StageState's fields from required parameters
@@ -4474,7 +4474,7 @@ Constructs StartPipelineExecutionInput's fields from required parameters
 
 ``` purescript
 newtype StartPipelineExecutionOutput
-  = StartPipelineExecutionOutput { pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) }
+  = StartPipelineExecutionOutput { pipelineExecutionId :: Maybe (PipelineExecutionId) }
 ```
 
 <p>Represents the output of a StartPipelineExecution action.</p>
@@ -4499,7 +4499,7 @@ Constructs StartPipelineExecutionOutput from required parameters
 #### `newStartPipelineExecutionOutput'`
 
 ``` purescript
-newStartPipelineExecutionOutput' :: ({ pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) } -> { pipelineExecutionId :: NullOrUndefined (PipelineExecutionId) }) -> StartPipelineExecutionOutput
+newStartPipelineExecutionOutput' :: ({ pipelineExecutionId :: Maybe (PipelineExecutionId) } -> { pipelineExecutionId :: Maybe (PipelineExecutionId) }) -> StartPipelineExecutionOutput
 ```
 
 Constructs StartPipelineExecutionOutput's fields from required parameters
@@ -4508,7 +4508,7 @@ Constructs StartPipelineExecutionOutput's fields from required parameters
 
 ``` purescript
 newtype ThirdPartyJob
-  = ThirdPartyJob { clientId :: NullOrUndefined (ClientId), jobId :: NullOrUndefined (JobId) }
+  = ThirdPartyJob { clientId :: Maybe (ClientId), jobId :: Maybe (JobId) }
 ```
 
 <p>A response to a PollForThirdPartyJobs request returned by AWS CodePipeline when there is a job to be worked upon by a partner action.</p>
@@ -4533,7 +4533,7 @@ Constructs ThirdPartyJob from required parameters
 #### `newThirdPartyJob'`
 
 ``` purescript
-newThirdPartyJob' :: ({ clientId :: NullOrUndefined (ClientId), jobId :: NullOrUndefined (JobId) } -> { clientId :: NullOrUndefined (ClientId), jobId :: NullOrUndefined (JobId) }) -> ThirdPartyJob
+newThirdPartyJob' :: ({ clientId :: Maybe (ClientId), jobId :: Maybe (JobId) } -> { clientId :: Maybe (ClientId), jobId :: Maybe (JobId) }) -> ThirdPartyJob
 ```
 
 Constructs ThirdPartyJob's fields from required parameters
@@ -4542,7 +4542,7 @@ Constructs ThirdPartyJob's fields from required parameters
 
 ``` purescript
 newtype ThirdPartyJobData
-  = ThirdPartyJobData { actionTypeId :: NullOrUndefined (ActionTypeId), actionConfiguration :: NullOrUndefined (ActionConfiguration), pipelineContext :: NullOrUndefined (PipelineContext), inputArtifacts :: NullOrUndefined (ArtifactList), outputArtifacts :: NullOrUndefined (ArtifactList), artifactCredentials :: NullOrUndefined (AWSSessionCredentials), continuationToken :: NullOrUndefined (ContinuationToken), encryptionKey :: NullOrUndefined (EncryptionKey) }
+  = ThirdPartyJobData { actionTypeId :: Maybe (ActionTypeId), actionConfiguration :: Maybe (ActionConfiguration), pipelineContext :: Maybe (PipelineContext), inputArtifacts :: Maybe (ArtifactList), outputArtifacts :: Maybe (ArtifactList), artifactCredentials :: Maybe (AWSSessionCredentials), continuationToken :: Maybe (ContinuationToken), encryptionKey :: Maybe (EncryptionKey) }
 ```
 
 <p>Represents information about the job data for a partner action.</p>
@@ -4567,7 +4567,7 @@ Constructs ThirdPartyJobData from required parameters
 #### `newThirdPartyJobData'`
 
 ``` purescript
-newThirdPartyJobData' :: ({ actionTypeId :: NullOrUndefined (ActionTypeId), actionConfiguration :: NullOrUndefined (ActionConfiguration), pipelineContext :: NullOrUndefined (PipelineContext), inputArtifacts :: NullOrUndefined (ArtifactList), outputArtifacts :: NullOrUndefined (ArtifactList), artifactCredentials :: NullOrUndefined (AWSSessionCredentials), continuationToken :: NullOrUndefined (ContinuationToken), encryptionKey :: NullOrUndefined (EncryptionKey) } -> { actionTypeId :: NullOrUndefined (ActionTypeId), actionConfiguration :: NullOrUndefined (ActionConfiguration), pipelineContext :: NullOrUndefined (PipelineContext), inputArtifacts :: NullOrUndefined (ArtifactList), outputArtifacts :: NullOrUndefined (ArtifactList), artifactCredentials :: NullOrUndefined (AWSSessionCredentials), continuationToken :: NullOrUndefined (ContinuationToken), encryptionKey :: NullOrUndefined (EncryptionKey) }) -> ThirdPartyJobData
+newThirdPartyJobData' :: ({ actionTypeId :: Maybe (ActionTypeId), actionConfiguration :: Maybe (ActionConfiguration), pipelineContext :: Maybe (PipelineContext), inputArtifacts :: Maybe (ArtifactList), outputArtifacts :: Maybe (ArtifactList), artifactCredentials :: Maybe (AWSSessionCredentials), continuationToken :: Maybe (ContinuationToken), encryptionKey :: Maybe (EncryptionKey) } -> { actionTypeId :: Maybe (ActionTypeId), actionConfiguration :: Maybe (ActionConfiguration), pipelineContext :: Maybe (PipelineContext), inputArtifacts :: Maybe (ArtifactList), outputArtifacts :: Maybe (ArtifactList), artifactCredentials :: Maybe (AWSSessionCredentials), continuationToken :: Maybe (ContinuationToken), encryptionKey :: Maybe (EncryptionKey) }) -> ThirdPartyJobData
 ```
 
 Constructs ThirdPartyJobData's fields from required parameters
@@ -4576,7 +4576,7 @@ Constructs ThirdPartyJobData's fields from required parameters
 
 ``` purescript
 newtype ThirdPartyJobDetails
-  = ThirdPartyJobDetails { id :: NullOrUndefined (ThirdPartyJobId), "data" :: NullOrUndefined (ThirdPartyJobData), nonce :: NullOrUndefined (Nonce) }
+  = ThirdPartyJobDetails { id :: Maybe (ThirdPartyJobId), "data" :: Maybe (ThirdPartyJobData), nonce :: Maybe (Nonce) }
 ```
 
 <p>The details of a job sent in response to a GetThirdPartyJobDetails request.</p>
@@ -4601,7 +4601,7 @@ Constructs ThirdPartyJobDetails from required parameters
 #### `newThirdPartyJobDetails'`
 
 ``` purescript
-newThirdPartyJobDetails' :: ({ id :: NullOrUndefined (ThirdPartyJobId), "data" :: NullOrUndefined (ThirdPartyJobData), nonce :: NullOrUndefined (Nonce) } -> { id :: NullOrUndefined (ThirdPartyJobId), "data" :: NullOrUndefined (ThirdPartyJobData), nonce :: NullOrUndefined (Nonce) }) -> ThirdPartyJobDetails
+newThirdPartyJobDetails' :: ({ id :: Maybe (ThirdPartyJobId), "data" :: Maybe (ThirdPartyJobData), nonce :: Maybe (Nonce) } -> { id :: Maybe (ThirdPartyJobId), "data" :: Maybe (ThirdPartyJobData), nonce :: Maybe (Nonce) }) -> ThirdPartyJobDetails
 ```
 
 Constructs ThirdPartyJobDetails's fields from required parameters
@@ -4658,7 +4658,7 @@ Encode Time
 
 ``` purescript
 newtype TransitionState
-  = TransitionState { enabled :: NullOrUndefined (Enabled), lastChangedBy :: NullOrUndefined (LastChangedBy), lastChangedAt :: NullOrUndefined (LastChangedAt), disabledReason :: NullOrUndefined (DisabledReason) }
+  = TransitionState { enabled :: Maybe (Enabled), lastChangedBy :: Maybe (LastChangedBy), lastChangedAt :: Maybe (LastChangedAt), disabledReason :: Maybe (DisabledReason) }
 ```
 
 <p>Represents information about the state of transitions between one stage and another stage.</p>
@@ -4683,7 +4683,7 @@ Constructs TransitionState from required parameters
 #### `newTransitionState'`
 
 ``` purescript
-newTransitionState' :: ({ enabled :: NullOrUndefined (Enabled), lastChangedBy :: NullOrUndefined (LastChangedBy), lastChangedAt :: NullOrUndefined (LastChangedAt), disabledReason :: NullOrUndefined (DisabledReason) } -> { enabled :: NullOrUndefined (Enabled), lastChangedBy :: NullOrUndefined (LastChangedBy), lastChangedAt :: NullOrUndefined (LastChangedAt), disabledReason :: NullOrUndefined (DisabledReason) }) -> TransitionState
+newTransitionState' :: ({ enabled :: Maybe (Enabled), lastChangedBy :: Maybe (LastChangedBy), lastChangedAt :: Maybe (LastChangedAt), disabledReason :: Maybe (DisabledReason) } -> { enabled :: Maybe (Enabled), lastChangedBy :: Maybe (LastChangedBy), lastChangedAt :: Maybe (LastChangedAt), disabledReason :: Maybe (DisabledReason) }) -> TransitionState
 ```
 
 Constructs TransitionState's fields from required parameters
@@ -4726,7 +4726,7 @@ Constructs UpdatePipelineInput's fields from required parameters
 
 ``` purescript
 newtype UpdatePipelineOutput
-  = UpdatePipelineOutput { pipeline :: NullOrUndefined (PipelineDeclaration) }
+  = UpdatePipelineOutput { pipeline :: Maybe (PipelineDeclaration) }
 ```
 
 <p>Represents the output of an UpdatePipeline action.</p>
@@ -4751,7 +4751,7 @@ Constructs UpdatePipelineOutput from required parameters
 #### `newUpdatePipelineOutput'`
 
 ``` purescript
-newUpdatePipelineOutput' :: ({ pipeline :: NullOrUndefined (PipelineDeclaration) } -> { pipeline :: NullOrUndefined (PipelineDeclaration) }) -> UpdatePipelineOutput
+newUpdatePipelineOutput' :: ({ pipeline :: Maybe (PipelineDeclaration) } -> { pipeline :: Maybe (PipelineDeclaration) }) -> UpdatePipelineOutput
 ```
 
 Constructs UpdatePipelineOutput's fields from required parameters

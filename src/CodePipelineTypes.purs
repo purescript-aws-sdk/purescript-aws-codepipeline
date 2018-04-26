@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -83,7 +82,7 @@ newAcknowledgeJobInput' _jobId _nonce customize = (AcknowledgeJobInput <<< custo
 
 -- | <p>Represents the output of an AcknowledgeJob action.</p>
 newtype AcknowledgeJobOutput = AcknowledgeJobOutput 
-  { "status" :: NullOrUndefined (JobStatus)
+  { "status" :: Maybe (JobStatus)
   }
 derive instance newtypeAcknowledgeJobOutput :: Newtype AcknowledgeJobOutput _
 derive instance repGenericAcknowledgeJobOutput :: Generic AcknowledgeJobOutput _
@@ -93,12 +92,12 @@ instance encodeAcknowledgeJobOutput :: Encode AcknowledgeJobOutput where encode 
 
 -- | Constructs AcknowledgeJobOutput from required parameters
 newAcknowledgeJobOutput :: AcknowledgeJobOutput
-newAcknowledgeJobOutput  = AcknowledgeJobOutput { "status": (NullOrUndefined Nothing) }
+newAcknowledgeJobOutput  = AcknowledgeJobOutput { "status": Nothing }
 
 -- | Constructs AcknowledgeJobOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAcknowledgeJobOutput' :: ( { "status" :: NullOrUndefined (JobStatus) } -> {"status" :: NullOrUndefined (JobStatus) } ) -> AcknowledgeJobOutput
-newAcknowledgeJobOutput'  customize = (AcknowledgeJobOutput <<< customize) { "status": (NullOrUndefined Nothing) }
+newAcknowledgeJobOutput' :: ( { "status" :: Maybe (JobStatus) } -> {"status" :: Maybe (JobStatus) } ) -> AcknowledgeJobOutput
+newAcknowledgeJobOutput'  customize = (AcknowledgeJobOutput <<< customize) { "status": Nothing }
 
 
 
@@ -127,7 +126,7 @@ newAcknowledgeThirdPartyJobInput' _clientToken _jobId _nonce customize = (Acknow
 
 -- | <p>Represents the output of an AcknowledgeThirdPartyJob action.</p>
 newtype AcknowledgeThirdPartyJobOutput = AcknowledgeThirdPartyJobOutput 
-  { "status" :: NullOrUndefined (JobStatus)
+  { "status" :: Maybe (JobStatus)
   }
 derive instance newtypeAcknowledgeThirdPartyJobOutput :: Newtype AcknowledgeThirdPartyJobOutput _
 derive instance repGenericAcknowledgeThirdPartyJobOutput :: Generic AcknowledgeThirdPartyJobOutput _
@@ -137,12 +136,12 @@ instance encodeAcknowledgeThirdPartyJobOutput :: Encode AcknowledgeThirdPartyJob
 
 -- | Constructs AcknowledgeThirdPartyJobOutput from required parameters
 newAcknowledgeThirdPartyJobOutput :: AcknowledgeThirdPartyJobOutput
-newAcknowledgeThirdPartyJobOutput  = AcknowledgeThirdPartyJobOutput { "status": (NullOrUndefined Nothing) }
+newAcknowledgeThirdPartyJobOutput  = AcknowledgeThirdPartyJobOutput { "status": Nothing }
 
 -- | Constructs AcknowledgeThirdPartyJobOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAcknowledgeThirdPartyJobOutput' :: ( { "status" :: NullOrUndefined (JobStatus) } -> {"status" :: NullOrUndefined (JobStatus) } ) -> AcknowledgeThirdPartyJobOutput
-newAcknowledgeThirdPartyJobOutput'  customize = (AcknowledgeThirdPartyJobOutput <<< customize) { "status": (NullOrUndefined Nothing) }
+newAcknowledgeThirdPartyJobOutput' :: ( { "status" :: Maybe (JobStatus) } -> {"status" :: Maybe (JobStatus) } ) -> AcknowledgeThirdPartyJobOutput
+newAcknowledgeThirdPartyJobOutput'  customize = (AcknowledgeThirdPartyJobOutput <<< customize) { "status": Nothing }
 
 
 
@@ -157,7 +156,7 @@ instance encodeActionCategory :: Encode ActionCategory where encode = genericEnc
 
 -- | <p>Represents information about an action configuration.</p>
 newtype ActionConfiguration = ActionConfiguration 
-  { "configuration" :: NullOrUndefined (ActionConfigurationMap)
+  { "configuration" :: Maybe (ActionConfigurationMap)
   }
 derive instance newtypeActionConfiguration :: Newtype ActionConfiguration _
 derive instance repGenericActionConfiguration :: Generic ActionConfiguration _
@@ -167,12 +166,12 @@ instance encodeActionConfiguration :: Encode ActionConfiguration where encode = 
 
 -- | Constructs ActionConfiguration from required parameters
 newActionConfiguration :: ActionConfiguration
-newActionConfiguration  = ActionConfiguration { "configuration": (NullOrUndefined Nothing) }
+newActionConfiguration  = ActionConfiguration { "configuration": Nothing }
 
 -- | Constructs ActionConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionConfiguration' :: ( { "configuration" :: NullOrUndefined (ActionConfigurationMap) } -> {"configuration" :: NullOrUndefined (ActionConfigurationMap) } ) -> ActionConfiguration
-newActionConfiguration'  customize = (ActionConfiguration <<< customize) { "configuration": (NullOrUndefined Nothing) }
+newActionConfiguration' :: ( { "configuration" :: Maybe (ActionConfigurationMap) } -> {"configuration" :: Maybe (ActionConfigurationMap) } ) -> ActionConfiguration
+newActionConfiguration'  customize = (ActionConfiguration <<< customize) { "configuration": Nothing }
 
 
 
@@ -200,9 +199,9 @@ newtype ActionConfigurationProperty = ActionConfigurationProperty
   , "required" :: (Boolean)
   , "key" :: (Boolean)
   , "secret" :: (Boolean)
-  , "queryable" :: NullOrUndefined (Boolean)
-  , "description" :: NullOrUndefined (Description)
-  , "type" :: NullOrUndefined (ActionConfigurationPropertyType)
+  , "queryable" :: Maybe (Boolean)
+  , "description" :: Maybe (Description)
+  , "type" :: Maybe (ActionConfigurationPropertyType)
   }
 derive instance newtypeActionConfigurationProperty :: Newtype ActionConfigurationProperty _
 derive instance repGenericActionConfigurationProperty :: Generic ActionConfigurationProperty _
@@ -212,12 +211,12 @@ instance encodeActionConfigurationProperty :: Encode ActionConfigurationProperty
 
 -- | Constructs ActionConfigurationProperty from required parameters
 newActionConfigurationProperty :: Boolean -> ActionConfigurationKey -> Boolean -> Boolean -> ActionConfigurationProperty
-newActionConfigurationProperty _key _name _required _secret = ActionConfigurationProperty { "key": _key, "name": _name, "required": _required, "secret": _secret, "description": (NullOrUndefined Nothing), "queryable": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newActionConfigurationProperty _key _name _required _secret = ActionConfigurationProperty { "key": _key, "name": _name, "required": _required, "secret": _secret, "description": Nothing, "queryable": Nothing, "type": Nothing }
 
 -- | Constructs ActionConfigurationProperty's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionConfigurationProperty' :: Boolean -> ActionConfigurationKey -> Boolean -> Boolean -> ( { "name" :: (ActionConfigurationKey) , "required" :: (Boolean) , "key" :: (Boolean) , "secret" :: (Boolean) , "queryable" :: NullOrUndefined (Boolean) , "description" :: NullOrUndefined (Description) , "type" :: NullOrUndefined (ActionConfigurationPropertyType) } -> {"name" :: (ActionConfigurationKey) , "required" :: (Boolean) , "key" :: (Boolean) , "secret" :: (Boolean) , "queryable" :: NullOrUndefined (Boolean) , "description" :: NullOrUndefined (Description) , "type" :: NullOrUndefined (ActionConfigurationPropertyType) } ) -> ActionConfigurationProperty
-newActionConfigurationProperty' _key _name _required _secret customize = (ActionConfigurationProperty <<< customize) { "key": _key, "name": _name, "required": _required, "secret": _secret, "description": (NullOrUndefined Nothing), "queryable": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newActionConfigurationProperty' :: Boolean -> ActionConfigurationKey -> Boolean -> Boolean -> ( { "name" :: (ActionConfigurationKey) , "required" :: (Boolean) , "key" :: (Boolean) , "secret" :: (Boolean) , "queryable" :: Maybe (Boolean) , "description" :: Maybe (Description) , "type" :: Maybe (ActionConfigurationPropertyType) } -> {"name" :: (ActionConfigurationKey) , "required" :: (Boolean) , "key" :: (Boolean) , "secret" :: (Boolean) , "queryable" :: Maybe (Boolean) , "description" :: Maybe (Description) , "type" :: Maybe (ActionConfigurationPropertyType) } ) -> ActionConfigurationProperty
+newActionConfigurationProperty' _key _name _required _secret customize = (ActionConfigurationProperty <<< customize) { "key": _key, "name": _name, "required": _required, "secret": _secret, "description": Nothing, "queryable": Nothing, "type": Nothing }
 
 
 
@@ -259,7 +258,7 @@ instance encodeActionConfigurationValue :: Encode ActionConfigurationValue where
 
 -- | <p>Represents the context of an action within the stage of a pipeline to a job worker.</p>
 newtype ActionContext = ActionContext 
-  { "name" :: NullOrUndefined (ActionName)
+  { "name" :: Maybe (ActionName)
   }
 derive instance newtypeActionContext :: Newtype ActionContext _
 derive instance repGenericActionContext :: Generic ActionContext _
@@ -269,12 +268,12 @@ instance encodeActionContext :: Encode ActionContext where encode = genericEncod
 
 -- | Constructs ActionContext from required parameters
 newActionContext :: ActionContext
-newActionContext  = ActionContext { "name": (NullOrUndefined Nothing) }
+newActionContext  = ActionContext { "name": Nothing }
 
 -- | Constructs ActionContext's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionContext' :: ( { "name" :: NullOrUndefined (ActionName) } -> {"name" :: NullOrUndefined (ActionName) } ) -> ActionContext
-newActionContext'  customize = (ActionContext <<< customize) { "name": (NullOrUndefined Nothing) }
+newActionContext' :: ( { "name" :: Maybe (ActionName) } -> {"name" :: Maybe (ActionName) } ) -> ActionContext
+newActionContext'  customize = (ActionContext <<< customize) { "name": Nothing }
 
 
 
@@ -282,11 +281,11 @@ newActionContext'  customize = (ActionContext <<< customize) { "name": (NullOrUn
 newtype ActionDeclaration = ActionDeclaration 
   { "name" :: (ActionName)
   , "actionTypeId" :: (ActionTypeId)
-  , "runOrder" :: NullOrUndefined (ActionRunOrder)
-  , "configuration" :: NullOrUndefined (ActionConfigurationMap)
-  , "outputArtifacts" :: NullOrUndefined (OutputArtifactList)
-  , "inputArtifacts" :: NullOrUndefined (InputArtifactList)
-  , "roleArn" :: NullOrUndefined (RoleArn)
+  , "runOrder" :: Maybe (ActionRunOrder)
+  , "configuration" :: Maybe (ActionConfigurationMap)
+  , "outputArtifacts" :: Maybe (OutputArtifactList)
+  , "inputArtifacts" :: Maybe (InputArtifactList)
+  , "roleArn" :: Maybe (RoleArn)
   }
 derive instance newtypeActionDeclaration :: Newtype ActionDeclaration _
 derive instance repGenericActionDeclaration :: Generic ActionDeclaration _
@@ -296,26 +295,26 @@ instance encodeActionDeclaration :: Encode ActionDeclaration where encode = gene
 
 -- | Constructs ActionDeclaration from required parameters
 newActionDeclaration :: ActionTypeId -> ActionName -> ActionDeclaration
-newActionDeclaration _actionTypeId _name = ActionDeclaration { "actionTypeId": _actionTypeId, "name": _name, "configuration": (NullOrUndefined Nothing), "inputArtifacts": (NullOrUndefined Nothing), "outputArtifacts": (NullOrUndefined Nothing), "roleArn": (NullOrUndefined Nothing), "runOrder": (NullOrUndefined Nothing) }
+newActionDeclaration _actionTypeId _name = ActionDeclaration { "actionTypeId": _actionTypeId, "name": _name, "configuration": Nothing, "inputArtifacts": Nothing, "outputArtifacts": Nothing, "roleArn": Nothing, "runOrder": Nothing }
 
 -- | Constructs ActionDeclaration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionDeclaration' :: ActionTypeId -> ActionName -> ( { "name" :: (ActionName) , "actionTypeId" :: (ActionTypeId) , "runOrder" :: NullOrUndefined (ActionRunOrder) , "configuration" :: NullOrUndefined (ActionConfigurationMap) , "outputArtifacts" :: NullOrUndefined (OutputArtifactList) , "inputArtifacts" :: NullOrUndefined (InputArtifactList) , "roleArn" :: NullOrUndefined (RoleArn) } -> {"name" :: (ActionName) , "actionTypeId" :: (ActionTypeId) , "runOrder" :: NullOrUndefined (ActionRunOrder) , "configuration" :: NullOrUndefined (ActionConfigurationMap) , "outputArtifacts" :: NullOrUndefined (OutputArtifactList) , "inputArtifacts" :: NullOrUndefined (InputArtifactList) , "roleArn" :: NullOrUndefined (RoleArn) } ) -> ActionDeclaration
-newActionDeclaration' _actionTypeId _name customize = (ActionDeclaration <<< customize) { "actionTypeId": _actionTypeId, "name": _name, "configuration": (NullOrUndefined Nothing), "inputArtifacts": (NullOrUndefined Nothing), "outputArtifacts": (NullOrUndefined Nothing), "roleArn": (NullOrUndefined Nothing), "runOrder": (NullOrUndefined Nothing) }
+newActionDeclaration' :: ActionTypeId -> ActionName -> ( { "name" :: (ActionName) , "actionTypeId" :: (ActionTypeId) , "runOrder" :: Maybe (ActionRunOrder) , "configuration" :: Maybe (ActionConfigurationMap) , "outputArtifacts" :: Maybe (OutputArtifactList) , "inputArtifacts" :: Maybe (InputArtifactList) , "roleArn" :: Maybe (RoleArn) } -> {"name" :: (ActionName) , "actionTypeId" :: (ActionTypeId) , "runOrder" :: Maybe (ActionRunOrder) , "configuration" :: Maybe (ActionConfigurationMap) , "outputArtifacts" :: Maybe (OutputArtifactList) , "inputArtifacts" :: Maybe (InputArtifactList) , "roleArn" :: Maybe (RoleArn) } ) -> ActionDeclaration
+newActionDeclaration' _actionTypeId _name customize = (ActionDeclaration <<< customize) { "actionTypeId": _actionTypeId, "name": _name, "configuration": Nothing, "inputArtifacts": Nothing, "outputArtifacts": Nothing, "roleArn": Nothing, "runOrder": Nothing }
 
 
 
 -- | <p>Represents information about the run of an action.</p>
 newtype ActionExecution = ActionExecution 
-  { "status" :: NullOrUndefined (ActionExecutionStatus)
-  , "summary" :: NullOrUndefined (ExecutionSummary)
-  , "lastStatusChange" :: NullOrUndefined (Types.Timestamp)
-  , "token" :: NullOrUndefined (ActionExecutionToken)
-  , "lastUpdatedBy" :: NullOrUndefined (LastUpdatedBy)
-  , "externalExecutionId" :: NullOrUndefined (ExecutionId)
-  , "externalExecutionUrl" :: NullOrUndefined (Url)
-  , "percentComplete" :: NullOrUndefined (Percentage)
-  , "errorDetails" :: NullOrUndefined (ErrorDetails)
+  { "status" :: Maybe (ActionExecutionStatus)
+  , "summary" :: Maybe (ExecutionSummary)
+  , "lastStatusChange" :: Maybe (Types.Timestamp)
+  , "token" :: Maybe (ActionExecutionToken)
+  , "lastUpdatedBy" :: Maybe (LastUpdatedBy)
+  , "externalExecutionId" :: Maybe (ExecutionId)
+  , "externalExecutionUrl" :: Maybe (Url)
+  , "percentComplete" :: Maybe (Percentage)
+  , "errorDetails" :: Maybe (ErrorDetails)
   }
 derive instance newtypeActionExecution :: Newtype ActionExecution _
 derive instance repGenericActionExecution :: Generic ActionExecution _
@@ -325,12 +324,12 @@ instance encodeActionExecution :: Encode ActionExecution where encode = genericE
 
 -- | Constructs ActionExecution from required parameters
 newActionExecution :: ActionExecution
-newActionExecution  = ActionExecution { "errorDetails": (NullOrUndefined Nothing), "externalExecutionId": (NullOrUndefined Nothing), "externalExecutionUrl": (NullOrUndefined Nothing), "lastStatusChange": (NullOrUndefined Nothing), "lastUpdatedBy": (NullOrUndefined Nothing), "percentComplete": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "summary": (NullOrUndefined Nothing), "token": (NullOrUndefined Nothing) }
+newActionExecution  = ActionExecution { "errorDetails": Nothing, "externalExecutionId": Nothing, "externalExecutionUrl": Nothing, "lastStatusChange": Nothing, "lastUpdatedBy": Nothing, "percentComplete": Nothing, "status": Nothing, "summary": Nothing, "token": Nothing }
 
 -- | Constructs ActionExecution's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionExecution' :: ( { "status" :: NullOrUndefined (ActionExecutionStatus) , "summary" :: NullOrUndefined (ExecutionSummary) , "lastStatusChange" :: NullOrUndefined (Types.Timestamp) , "token" :: NullOrUndefined (ActionExecutionToken) , "lastUpdatedBy" :: NullOrUndefined (LastUpdatedBy) , "externalExecutionId" :: NullOrUndefined (ExecutionId) , "externalExecutionUrl" :: NullOrUndefined (Url) , "percentComplete" :: NullOrUndefined (Percentage) , "errorDetails" :: NullOrUndefined (ErrorDetails) } -> {"status" :: NullOrUndefined (ActionExecutionStatus) , "summary" :: NullOrUndefined (ExecutionSummary) , "lastStatusChange" :: NullOrUndefined (Types.Timestamp) , "token" :: NullOrUndefined (ActionExecutionToken) , "lastUpdatedBy" :: NullOrUndefined (LastUpdatedBy) , "externalExecutionId" :: NullOrUndefined (ExecutionId) , "externalExecutionUrl" :: NullOrUndefined (Url) , "percentComplete" :: NullOrUndefined (Percentage) , "errorDetails" :: NullOrUndefined (ErrorDetails) } ) -> ActionExecution
-newActionExecution'  customize = (ActionExecution <<< customize) { "errorDetails": (NullOrUndefined Nothing), "externalExecutionId": (NullOrUndefined Nothing), "externalExecutionUrl": (NullOrUndefined Nothing), "lastStatusChange": (NullOrUndefined Nothing), "lastUpdatedBy": (NullOrUndefined Nothing), "percentComplete": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "summary": (NullOrUndefined Nothing), "token": (NullOrUndefined Nothing) }
+newActionExecution' :: ( { "status" :: Maybe (ActionExecutionStatus) , "summary" :: Maybe (ExecutionSummary) , "lastStatusChange" :: Maybe (Types.Timestamp) , "token" :: Maybe (ActionExecutionToken) , "lastUpdatedBy" :: Maybe (LastUpdatedBy) , "externalExecutionId" :: Maybe (ExecutionId) , "externalExecutionUrl" :: Maybe (Url) , "percentComplete" :: Maybe (Percentage) , "errorDetails" :: Maybe (ErrorDetails) } -> {"status" :: Maybe (ActionExecutionStatus) , "summary" :: Maybe (ExecutionSummary) , "lastStatusChange" :: Maybe (Types.Timestamp) , "token" :: Maybe (ActionExecutionToken) , "lastUpdatedBy" :: Maybe (LastUpdatedBy) , "externalExecutionId" :: Maybe (ExecutionId) , "externalExecutionUrl" :: Maybe (Url) , "percentComplete" :: Maybe (Percentage) , "errorDetails" :: Maybe (ErrorDetails) } ) -> ActionExecution
+newActionExecution'  customize = (ActionExecution <<< customize) { "errorDetails": Nothing, "externalExecutionId": Nothing, "externalExecutionUrl": Nothing, "lastStatusChange": Nothing, "lastUpdatedBy": Nothing, "percentComplete": Nothing, "status": Nothing, "summary": Nothing, "token": Nothing }
 
 
 
@@ -423,11 +422,11 @@ instance encodeActionRunOrder :: Encode ActionRunOrder where encode = genericEnc
 
 -- | <p>Represents information about the state of an action.</p>
 newtype ActionState = ActionState 
-  { "actionName" :: NullOrUndefined (ActionName)
-  , "currentRevision" :: NullOrUndefined (ActionRevision)
-  , "latestExecution" :: NullOrUndefined (ActionExecution)
-  , "entityUrl" :: NullOrUndefined (Url)
-  , "revisionUrl" :: NullOrUndefined (Url)
+  { "actionName" :: Maybe (ActionName)
+  , "currentRevision" :: Maybe (ActionRevision)
+  , "latestExecution" :: Maybe (ActionExecution)
+  , "entityUrl" :: Maybe (Url)
+  , "revisionUrl" :: Maybe (Url)
   }
 derive instance newtypeActionState :: Newtype ActionState _
 derive instance repGenericActionState :: Generic ActionState _
@@ -437,12 +436,12 @@ instance encodeActionState :: Encode ActionState where encode = genericEncode op
 
 -- | Constructs ActionState from required parameters
 newActionState :: ActionState
-newActionState  = ActionState { "actionName": (NullOrUndefined Nothing), "currentRevision": (NullOrUndefined Nothing), "entityUrl": (NullOrUndefined Nothing), "latestExecution": (NullOrUndefined Nothing), "revisionUrl": (NullOrUndefined Nothing) }
+newActionState  = ActionState { "actionName": Nothing, "currentRevision": Nothing, "entityUrl": Nothing, "latestExecution": Nothing, "revisionUrl": Nothing }
 
 -- | Constructs ActionState's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionState' :: ( { "actionName" :: NullOrUndefined (ActionName) , "currentRevision" :: NullOrUndefined (ActionRevision) , "latestExecution" :: NullOrUndefined (ActionExecution) , "entityUrl" :: NullOrUndefined (Url) , "revisionUrl" :: NullOrUndefined (Url) } -> {"actionName" :: NullOrUndefined (ActionName) , "currentRevision" :: NullOrUndefined (ActionRevision) , "latestExecution" :: NullOrUndefined (ActionExecution) , "entityUrl" :: NullOrUndefined (Url) , "revisionUrl" :: NullOrUndefined (Url) } ) -> ActionState
-newActionState'  customize = (ActionState <<< customize) { "actionName": (NullOrUndefined Nothing), "currentRevision": (NullOrUndefined Nothing), "entityUrl": (NullOrUndefined Nothing), "latestExecution": (NullOrUndefined Nothing), "revisionUrl": (NullOrUndefined Nothing) }
+newActionState' :: ( { "actionName" :: Maybe (ActionName) , "currentRevision" :: Maybe (ActionRevision) , "latestExecution" :: Maybe (ActionExecution) , "entityUrl" :: Maybe (Url) , "revisionUrl" :: Maybe (Url) } -> {"actionName" :: Maybe (ActionName) , "currentRevision" :: Maybe (ActionRevision) , "latestExecution" :: Maybe (ActionExecution) , "entityUrl" :: Maybe (Url) , "revisionUrl" :: Maybe (Url) } ) -> ActionState
+newActionState'  customize = (ActionState <<< customize) { "actionName": Nothing, "currentRevision": Nothing, "entityUrl": Nothing, "latestExecution": Nothing, "revisionUrl": Nothing }
 
 
 
@@ -458,8 +457,8 @@ instance encodeActionStateList :: Encode ActionStateList where encode = genericE
 -- | <p>Returns information about the details of an action type.</p>
 newtype ActionType = ActionType 
   { "id" :: (ActionTypeId)
-  , "settings" :: NullOrUndefined (ActionTypeSettings)
-  , "actionConfigurationProperties" :: NullOrUndefined (ActionConfigurationPropertyList)
+  , "settings" :: Maybe (ActionTypeSettings)
+  , "actionConfigurationProperties" :: Maybe (ActionConfigurationPropertyList)
   , "inputArtifactDetails" :: (ArtifactDetails)
   , "outputArtifactDetails" :: (ArtifactDetails)
   }
@@ -471,12 +470,12 @@ instance encodeActionType :: Encode ActionType where encode = genericEncode opti
 
 -- | Constructs ActionType from required parameters
 newActionType :: ActionTypeId -> ArtifactDetails -> ArtifactDetails -> ActionType
-newActionType _id _inputArtifactDetails _outputArtifactDetails = ActionType { "id": _id, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "actionConfigurationProperties": (NullOrUndefined Nothing), "settings": (NullOrUndefined Nothing) }
+newActionType _id _inputArtifactDetails _outputArtifactDetails = ActionType { "id": _id, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "actionConfigurationProperties": Nothing, "settings": Nothing }
 
 -- | Constructs ActionType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionType' :: ActionTypeId -> ArtifactDetails -> ArtifactDetails -> ( { "id" :: (ActionTypeId) , "settings" :: NullOrUndefined (ActionTypeSettings) , "actionConfigurationProperties" :: NullOrUndefined (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } -> {"id" :: (ActionTypeId) , "settings" :: NullOrUndefined (ActionTypeSettings) , "actionConfigurationProperties" :: NullOrUndefined (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } ) -> ActionType
-newActionType' _id _inputArtifactDetails _outputArtifactDetails customize = (ActionType <<< customize) { "id": _id, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "actionConfigurationProperties": (NullOrUndefined Nothing), "settings": (NullOrUndefined Nothing) }
+newActionType' :: ActionTypeId -> ArtifactDetails -> ArtifactDetails -> ( { "id" :: (ActionTypeId) , "settings" :: Maybe (ActionTypeSettings) , "actionConfigurationProperties" :: Maybe (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } -> {"id" :: (ActionTypeId) , "settings" :: Maybe (ActionTypeSettings) , "actionConfigurationProperties" :: Maybe (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } ) -> ActionType
+newActionType' _id _inputArtifactDetails _outputArtifactDetails customize = (ActionType <<< customize) { "id": _id, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "actionConfigurationProperties": Nothing, "settings": Nothing }
 
 
 
@@ -525,10 +524,10 @@ instance encodeActionTypeNotFoundException :: Encode ActionTypeNotFoundException
 
 -- | <p>Returns information about the settings for an action type.</p>
 newtype ActionTypeSettings = ActionTypeSettings 
-  { "thirdPartyConfigurationUrl" :: NullOrUndefined (Url)
-  , "entityUrlTemplate" :: NullOrUndefined (UrlTemplate)
-  , "executionUrlTemplate" :: NullOrUndefined (UrlTemplate)
-  , "revisionUrlTemplate" :: NullOrUndefined (UrlTemplate)
+  { "thirdPartyConfigurationUrl" :: Maybe (Url)
+  , "entityUrlTemplate" :: Maybe (UrlTemplate)
+  , "executionUrlTemplate" :: Maybe (UrlTemplate)
+  , "revisionUrlTemplate" :: Maybe (UrlTemplate)
   }
 derive instance newtypeActionTypeSettings :: Newtype ActionTypeSettings _
 derive instance repGenericActionTypeSettings :: Generic ActionTypeSettings _
@@ -538,12 +537,12 @@ instance encodeActionTypeSettings :: Encode ActionTypeSettings where encode = ge
 
 -- | Constructs ActionTypeSettings from required parameters
 newActionTypeSettings :: ActionTypeSettings
-newActionTypeSettings  = ActionTypeSettings { "entityUrlTemplate": (NullOrUndefined Nothing), "executionUrlTemplate": (NullOrUndefined Nothing), "revisionUrlTemplate": (NullOrUndefined Nothing), "thirdPartyConfigurationUrl": (NullOrUndefined Nothing) }
+newActionTypeSettings  = ActionTypeSettings { "entityUrlTemplate": Nothing, "executionUrlTemplate": Nothing, "revisionUrlTemplate": Nothing, "thirdPartyConfigurationUrl": Nothing }
 
 -- | Constructs ActionTypeSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActionTypeSettings' :: ( { "thirdPartyConfigurationUrl" :: NullOrUndefined (Url) , "entityUrlTemplate" :: NullOrUndefined (UrlTemplate) , "executionUrlTemplate" :: NullOrUndefined (UrlTemplate) , "revisionUrlTemplate" :: NullOrUndefined (UrlTemplate) } -> {"thirdPartyConfigurationUrl" :: NullOrUndefined (Url) , "entityUrlTemplate" :: NullOrUndefined (UrlTemplate) , "executionUrlTemplate" :: NullOrUndefined (UrlTemplate) , "revisionUrlTemplate" :: NullOrUndefined (UrlTemplate) } ) -> ActionTypeSettings
-newActionTypeSettings'  customize = (ActionTypeSettings <<< customize) { "entityUrlTemplate": (NullOrUndefined Nothing), "executionUrlTemplate": (NullOrUndefined Nothing), "revisionUrlTemplate": (NullOrUndefined Nothing), "thirdPartyConfigurationUrl": (NullOrUndefined Nothing) }
+newActionTypeSettings' :: ( { "thirdPartyConfigurationUrl" :: Maybe (Url) , "entityUrlTemplate" :: Maybe (UrlTemplate) , "executionUrlTemplate" :: Maybe (UrlTemplate) , "revisionUrlTemplate" :: Maybe (UrlTemplate) } -> {"thirdPartyConfigurationUrl" :: Maybe (Url) , "entityUrlTemplate" :: Maybe (UrlTemplate) , "executionUrlTemplate" :: Maybe (UrlTemplate) , "revisionUrlTemplate" :: Maybe (UrlTemplate) } ) -> ActionTypeSettings
+newActionTypeSettings'  customize = (ActionTypeSettings <<< customize) { "entityUrlTemplate": Nothing, "executionUrlTemplate": Nothing, "revisionUrlTemplate": Nothing, "thirdPartyConfigurationUrl": Nothing }
 
 
 
@@ -608,9 +607,9 @@ instance encodeApprovalToken :: Encode ApprovalToken where encode = genericEncod
 
 -- | <p>Represents information about an artifact that will be worked upon by actions in the pipeline.</p>
 newtype Artifact = Artifact 
-  { "name" :: NullOrUndefined (ArtifactName)
-  , "revision" :: NullOrUndefined (Revision)
-  , "location" :: NullOrUndefined (ArtifactLocation)
+  { "name" :: Maybe (ArtifactName)
+  , "revision" :: Maybe (Revision)
+  , "location" :: Maybe (ArtifactLocation)
   }
 derive instance newtypeArtifact :: Newtype Artifact _
 derive instance repGenericArtifact :: Generic Artifact _
@@ -620,12 +619,12 @@ instance encodeArtifact :: Encode Artifact where encode = genericEncode options
 
 -- | Constructs Artifact from required parameters
 newArtifact :: Artifact
-newArtifact  = Artifact { "location": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing) }
+newArtifact  = Artifact { "location": Nothing, "name": Nothing, "revision": Nothing }
 
 -- | Constructs Artifact's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArtifact' :: ( { "name" :: NullOrUndefined (ArtifactName) , "revision" :: NullOrUndefined (Revision) , "location" :: NullOrUndefined (ArtifactLocation) } -> {"name" :: NullOrUndefined (ArtifactName) , "revision" :: NullOrUndefined (Revision) , "location" :: NullOrUndefined (ArtifactLocation) } ) -> Artifact
-newArtifact'  customize = (Artifact <<< customize) { "location": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing) }
+newArtifact' :: ( { "name" :: Maybe (ArtifactName) , "revision" :: Maybe (Revision) , "location" :: Maybe (ArtifactLocation) } -> {"name" :: Maybe (ArtifactName) , "revision" :: Maybe (Revision) , "location" :: Maybe (ArtifactLocation) } ) -> Artifact
+newArtifact'  customize = (Artifact <<< customize) { "location": Nothing, "name": Nothing, "revision": Nothing }
 
 
 
@@ -662,8 +661,8 @@ instance encodeArtifactList :: Encode ArtifactList where encode = genericEncode 
 
 -- | <p>Represents information about the location of an artifact.</p>
 newtype ArtifactLocation = ArtifactLocation 
-  { "type" :: NullOrUndefined (ArtifactLocationType)
-  , "s3Location" :: NullOrUndefined (S3ArtifactLocation)
+  { "type" :: Maybe (ArtifactLocationType)
+  , "s3Location" :: Maybe (S3ArtifactLocation)
   }
 derive instance newtypeArtifactLocation :: Newtype ArtifactLocation _
 derive instance repGenericArtifactLocation :: Generic ArtifactLocation _
@@ -673,12 +672,12 @@ instance encodeArtifactLocation :: Encode ArtifactLocation where encode = generi
 
 -- | Constructs ArtifactLocation from required parameters
 newArtifactLocation :: ArtifactLocation
-newArtifactLocation  = ArtifactLocation { "s3Location": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newArtifactLocation  = ArtifactLocation { "s3Location": Nothing, "type": Nothing }
 
 -- | Constructs ArtifactLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArtifactLocation' :: ( { "type" :: NullOrUndefined (ArtifactLocationType) , "s3Location" :: NullOrUndefined (S3ArtifactLocation) } -> {"type" :: NullOrUndefined (ArtifactLocationType) , "s3Location" :: NullOrUndefined (S3ArtifactLocation) } ) -> ArtifactLocation
-newArtifactLocation'  customize = (ArtifactLocation <<< customize) { "s3Location": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newArtifactLocation' :: ( { "type" :: Maybe (ArtifactLocationType) , "s3Location" :: Maybe (S3ArtifactLocation) } -> {"type" :: Maybe (ArtifactLocationType) , "s3Location" :: Maybe (S3ArtifactLocation) } ) -> ArtifactLocation
+newArtifactLocation'  customize = (ArtifactLocation <<< customize) { "s3Location": Nothing, "type": Nothing }
 
 
 
@@ -702,12 +701,12 @@ instance encodeArtifactName :: Encode ArtifactName where encode = genericEncode 
 
 -- | <p>Represents revision details of an artifact. </p>
 newtype ArtifactRevision = ArtifactRevision 
-  { "name" :: NullOrUndefined (ArtifactName)
-  , "revisionId" :: NullOrUndefined (Revision)
-  , "revisionChangeIdentifier" :: NullOrUndefined (RevisionChangeIdentifier)
-  , "revisionSummary" :: NullOrUndefined (RevisionSummary)
-  , "created" :: NullOrUndefined (Types.Timestamp)
-  , "revisionUrl" :: NullOrUndefined (Url)
+  { "name" :: Maybe (ArtifactName)
+  , "revisionId" :: Maybe (Revision)
+  , "revisionChangeIdentifier" :: Maybe (RevisionChangeIdentifier)
+  , "revisionSummary" :: Maybe (RevisionSummary)
+  , "created" :: Maybe (Types.Timestamp)
+  , "revisionUrl" :: Maybe (Url)
   }
 derive instance newtypeArtifactRevision :: Newtype ArtifactRevision _
 derive instance repGenericArtifactRevision :: Generic ArtifactRevision _
@@ -717,12 +716,12 @@ instance encodeArtifactRevision :: Encode ArtifactRevision where encode = generi
 
 -- | Constructs ArtifactRevision from required parameters
 newArtifactRevision :: ArtifactRevision
-newArtifactRevision  = ArtifactRevision { "created": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "revisionChangeIdentifier": (NullOrUndefined Nothing), "revisionId": (NullOrUndefined Nothing), "revisionSummary": (NullOrUndefined Nothing), "revisionUrl": (NullOrUndefined Nothing) }
+newArtifactRevision  = ArtifactRevision { "created": Nothing, "name": Nothing, "revisionChangeIdentifier": Nothing, "revisionId": Nothing, "revisionSummary": Nothing, "revisionUrl": Nothing }
 
 -- | Constructs ArtifactRevision's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArtifactRevision' :: ( { "name" :: NullOrUndefined (ArtifactName) , "revisionId" :: NullOrUndefined (Revision) , "revisionChangeIdentifier" :: NullOrUndefined (RevisionChangeIdentifier) , "revisionSummary" :: NullOrUndefined (RevisionSummary) , "created" :: NullOrUndefined (Types.Timestamp) , "revisionUrl" :: NullOrUndefined (Url) } -> {"name" :: NullOrUndefined (ArtifactName) , "revisionId" :: NullOrUndefined (Revision) , "revisionChangeIdentifier" :: NullOrUndefined (RevisionChangeIdentifier) , "revisionSummary" :: NullOrUndefined (RevisionSummary) , "created" :: NullOrUndefined (Types.Timestamp) , "revisionUrl" :: NullOrUndefined (Url) } ) -> ArtifactRevision
-newArtifactRevision'  customize = (ArtifactRevision <<< customize) { "created": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "revisionChangeIdentifier": (NullOrUndefined Nothing), "revisionId": (NullOrUndefined Nothing), "revisionSummary": (NullOrUndefined Nothing), "revisionUrl": (NullOrUndefined Nothing) }
+newArtifactRevision' :: ( { "name" :: Maybe (ArtifactName) , "revisionId" :: Maybe (Revision) , "revisionChangeIdentifier" :: Maybe (RevisionChangeIdentifier) , "revisionSummary" :: Maybe (RevisionSummary) , "created" :: Maybe (Types.Timestamp) , "revisionUrl" :: Maybe (Url) } -> {"name" :: Maybe (ArtifactName) , "revisionId" :: Maybe (Revision) , "revisionChangeIdentifier" :: Maybe (RevisionChangeIdentifier) , "revisionSummary" :: Maybe (RevisionSummary) , "created" :: Maybe (Types.Timestamp) , "revisionUrl" :: Maybe (Url) } ) -> ArtifactRevision
+newArtifactRevision'  customize = (ArtifactRevision <<< customize) { "created": Nothing, "name": Nothing, "revisionChangeIdentifier": Nothing, "revisionId": Nothing, "revisionSummary": Nothing, "revisionUrl": Nothing }
 
 
 
@@ -739,7 +738,7 @@ instance encodeArtifactRevisionList :: Encode ArtifactRevisionList where encode 
 newtype ArtifactStore = ArtifactStore 
   { "type" :: (ArtifactStoreType)
   , "location" :: (ArtifactStoreLocation)
-  , "encryptionKey" :: NullOrUndefined (EncryptionKey)
+  , "encryptionKey" :: Maybe (EncryptionKey)
   }
 derive instance newtypeArtifactStore :: Newtype ArtifactStore _
 derive instance repGenericArtifactStore :: Generic ArtifactStore _
@@ -749,12 +748,12 @@ instance encodeArtifactStore :: Encode ArtifactStore where encode = genericEncod
 
 -- | Constructs ArtifactStore from required parameters
 newArtifactStore :: ArtifactStoreLocation -> ArtifactStoreType -> ArtifactStore
-newArtifactStore _location _type = ArtifactStore { "location": _location, "type": _type, "encryptionKey": (NullOrUndefined Nothing) }
+newArtifactStore _location _type = ArtifactStore { "location": _location, "type": _type, "encryptionKey": Nothing }
 
 -- | Constructs ArtifactStore's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArtifactStore' :: ArtifactStoreLocation -> ArtifactStoreType -> ( { "type" :: (ArtifactStoreType) , "location" :: (ArtifactStoreLocation) , "encryptionKey" :: NullOrUndefined (EncryptionKey) } -> {"type" :: (ArtifactStoreType) , "location" :: (ArtifactStoreLocation) , "encryptionKey" :: NullOrUndefined (EncryptionKey) } ) -> ArtifactStore
-newArtifactStore' _location _type customize = (ArtifactStore <<< customize) { "location": _location, "type": _type, "encryptionKey": (NullOrUndefined Nothing) }
+newArtifactStore' :: ArtifactStoreLocation -> ArtifactStoreType -> ( { "type" :: (ArtifactStoreType) , "location" :: (ArtifactStoreLocation) , "encryptionKey" :: Maybe (EncryptionKey) } -> {"type" :: (ArtifactStoreType) , "location" :: (ArtifactStoreLocation) , "encryptionKey" :: Maybe (EncryptionKey) } ) -> ArtifactStore
+newArtifactStore' _location _type customize = (ArtifactStore <<< customize) { "location": _location, "type": _type, "encryptionKey": Nothing }
 
 
 
@@ -857,8 +856,8 @@ newtype CreateCustomActionTypeInput = CreateCustomActionTypeInput
   { "category" :: (ActionCategory)
   , "provider" :: (ActionProvider)
   , "version" :: (Version)
-  , "settings" :: NullOrUndefined (ActionTypeSettings)
-  , "configurationProperties" :: NullOrUndefined (ActionConfigurationPropertyList)
+  , "settings" :: Maybe (ActionTypeSettings)
+  , "configurationProperties" :: Maybe (ActionConfigurationPropertyList)
   , "inputArtifactDetails" :: (ArtifactDetails)
   , "outputArtifactDetails" :: (ArtifactDetails)
   }
@@ -870,12 +869,12 @@ instance encodeCreateCustomActionTypeInput :: Encode CreateCustomActionTypeInput
 
 -- | Constructs CreateCustomActionTypeInput from required parameters
 newCreateCustomActionTypeInput :: ActionCategory -> ArtifactDetails -> ArtifactDetails -> ActionProvider -> Version -> CreateCustomActionTypeInput
-newCreateCustomActionTypeInput _category _inputArtifactDetails _outputArtifactDetails _provider _version = CreateCustomActionTypeInput { "category": _category, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "provider": _provider, "version": _version, "configurationProperties": (NullOrUndefined Nothing), "settings": (NullOrUndefined Nothing) }
+newCreateCustomActionTypeInput _category _inputArtifactDetails _outputArtifactDetails _provider _version = CreateCustomActionTypeInput { "category": _category, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "provider": _provider, "version": _version, "configurationProperties": Nothing, "settings": Nothing }
 
 -- | Constructs CreateCustomActionTypeInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCustomActionTypeInput' :: ActionCategory -> ArtifactDetails -> ArtifactDetails -> ActionProvider -> Version -> ( { "category" :: (ActionCategory) , "provider" :: (ActionProvider) , "version" :: (Version) , "settings" :: NullOrUndefined (ActionTypeSettings) , "configurationProperties" :: NullOrUndefined (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } -> {"category" :: (ActionCategory) , "provider" :: (ActionProvider) , "version" :: (Version) , "settings" :: NullOrUndefined (ActionTypeSettings) , "configurationProperties" :: NullOrUndefined (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } ) -> CreateCustomActionTypeInput
-newCreateCustomActionTypeInput' _category _inputArtifactDetails _outputArtifactDetails _provider _version customize = (CreateCustomActionTypeInput <<< customize) { "category": _category, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "provider": _provider, "version": _version, "configurationProperties": (NullOrUndefined Nothing), "settings": (NullOrUndefined Nothing) }
+newCreateCustomActionTypeInput' :: ActionCategory -> ArtifactDetails -> ArtifactDetails -> ActionProvider -> Version -> ( { "category" :: (ActionCategory) , "provider" :: (ActionProvider) , "version" :: (Version) , "settings" :: Maybe (ActionTypeSettings) , "configurationProperties" :: Maybe (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } -> {"category" :: (ActionCategory) , "provider" :: (ActionProvider) , "version" :: (Version) , "settings" :: Maybe (ActionTypeSettings) , "configurationProperties" :: Maybe (ActionConfigurationPropertyList) , "inputArtifactDetails" :: (ArtifactDetails) , "outputArtifactDetails" :: (ArtifactDetails) } ) -> CreateCustomActionTypeInput
+newCreateCustomActionTypeInput' _category _inputArtifactDetails _outputArtifactDetails _provider _version customize = (CreateCustomActionTypeInput <<< customize) { "category": _category, "inputArtifactDetails": _inputArtifactDetails, "outputArtifactDetails": _outputArtifactDetails, "provider": _provider, "version": _version, "configurationProperties": Nothing, "settings": Nothing }
 
 
 
@@ -923,7 +922,7 @@ newCreatePipelineInput' _pipeline customize = (CreatePipelineInput <<< customize
 
 -- | <p>Represents the output of a CreatePipeline action.</p>
 newtype CreatePipelineOutput = CreatePipelineOutput 
-  { "pipeline" :: NullOrUndefined (PipelineDeclaration)
+  { "pipeline" :: Maybe (PipelineDeclaration)
   }
 derive instance newtypeCreatePipelineOutput :: Newtype CreatePipelineOutput _
 derive instance repGenericCreatePipelineOutput :: Generic CreatePipelineOutput _
@@ -933,12 +932,12 @@ instance encodeCreatePipelineOutput :: Encode CreatePipelineOutput where encode 
 
 -- | Constructs CreatePipelineOutput from required parameters
 newCreatePipelineOutput :: CreatePipelineOutput
-newCreatePipelineOutput  = CreatePipelineOutput { "pipeline": (NullOrUndefined Nothing) }
+newCreatePipelineOutput  = CreatePipelineOutput { "pipeline": Nothing }
 
 -- | Constructs CreatePipelineOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePipelineOutput' :: ( { "pipeline" :: NullOrUndefined (PipelineDeclaration) } -> {"pipeline" :: NullOrUndefined (PipelineDeclaration) } ) -> CreatePipelineOutput
-newCreatePipelineOutput'  customize = (CreatePipelineOutput <<< customize) { "pipeline": (NullOrUndefined Nothing) }
+newCreatePipelineOutput' :: ( { "pipeline" :: Maybe (PipelineDeclaration) } -> {"pipeline" :: Maybe (PipelineDeclaration) } ) -> CreatePipelineOutput
+newCreatePipelineOutput'  customize = (CreatePipelineOutput <<< customize) { "pipeline": Nothing }
 
 
 
@@ -946,8 +945,8 @@ newCreatePipelineOutput'  customize = (CreatePipelineOutput <<< customize) { "pi
 newtype CurrentRevision = CurrentRevision 
   { "revision" :: (Revision)
   , "changeIdentifier" :: (RevisionChangeIdentifier)
-  , "created" :: NullOrUndefined (Time)
-  , "revisionSummary" :: NullOrUndefined (RevisionSummary)
+  , "created" :: Maybe (Time)
+  , "revisionSummary" :: Maybe (RevisionSummary)
   }
 derive instance newtypeCurrentRevision :: Newtype CurrentRevision _
 derive instance repGenericCurrentRevision :: Generic CurrentRevision _
@@ -957,12 +956,12 @@ instance encodeCurrentRevision :: Encode CurrentRevision where encode = genericE
 
 -- | Constructs CurrentRevision from required parameters
 newCurrentRevision :: RevisionChangeIdentifier -> Revision -> CurrentRevision
-newCurrentRevision _changeIdentifier _revision = CurrentRevision { "changeIdentifier": _changeIdentifier, "revision": _revision, "created": (NullOrUndefined Nothing), "revisionSummary": (NullOrUndefined Nothing) }
+newCurrentRevision _changeIdentifier _revision = CurrentRevision { "changeIdentifier": _changeIdentifier, "revision": _revision, "created": Nothing, "revisionSummary": Nothing }
 
 -- | Constructs CurrentRevision's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCurrentRevision' :: RevisionChangeIdentifier -> Revision -> ( { "revision" :: (Revision) , "changeIdentifier" :: (RevisionChangeIdentifier) , "created" :: NullOrUndefined (Time) , "revisionSummary" :: NullOrUndefined (RevisionSummary) } -> {"revision" :: (Revision) , "changeIdentifier" :: (RevisionChangeIdentifier) , "created" :: NullOrUndefined (Time) , "revisionSummary" :: NullOrUndefined (RevisionSummary) } ) -> CurrentRevision
-newCurrentRevision' _changeIdentifier _revision customize = (CurrentRevision <<< customize) { "changeIdentifier": _changeIdentifier, "revision": _revision, "created": (NullOrUndefined Nothing), "revisionSummary": (NullOrUndefined Nothing) }
+newCurrentRevision' :: RevisionChangeIdentifier -> Revision -> ( { "revision" :: (Revision) , "changeIdentifier" :: (RevisionChangeIdentifier) , "created" :: Maybe (Time) , "revisionSummary" :: Maybe (RevisionSummary) } -> {"revision" :: (Revision) , "changeIdentifier" :: (RevisionChangeIdentifier) , "created" :: Maybe (Time) , "revisionSummary" :: Maybe (RevisionSummary) } ) -> CurrentRevision
+newCurrentRevision' _changeIdentifier _revision customize = (CurrentRevision <<< customize) { "changeIdentifier": _changeIdentifier, "revision": _revision, "created": Nothing, "revisionSummary": Nothing }
 
 
 
@@ -1126,8 +1125,8 @@ instance encodeEncryptionKeyType :: Encode EncryptionKeyType where encode = gene
 
 -- | <p>Represents information about an error in AWS CodePipeline.</p>
 newtype ErrorDetails = ErrorDetails 
-  { "code" :: NullOrUndefined (Code)
-  , "message" :: NullOrUndefined (Message)
+  { "code" :: Maybe (Code)
+  , "message" :: Maybe (Message)
   }
 derive instance newtypeErrorDetails :: Newtype ErrorDetails _
 derive instance repGenericErrorDetails :: Generic ErrorDetails _
@@ -1137,20 +1136,20 @@ instance encodeErrorDetails :: Encode ErrorDetails where encode = genericEncode 
 
 -- | Constructs ErrorDetails from required parameters
 newErrorDetails :: ErrorDetails
-newErrorDetails  = ErrorDetails { "code": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newErrorDetails  = ErrorDetails { "code": Nothing, "message": Nothing }
 
 -- | Constructs ErrorDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newErrorDetails' :: ( { "code" :: NullOrUndefined (Code) , "message" :: NullOrUndefined (Message) } -> {"code" :: NullOrUndefined (Code) , "message" :: NullOrUndefined (Message) } ) -> ErrorDetails
-newErrorDetails'  customize = (ErrorDetails <<< customize) { "code": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newErrorDetails' :: ( { "code" :: Maybe (Code) , "message" :: Maybe (Message) } -> {"code" :: Maybe (Code) , "message" :: Maybe (Message) } ) -> ErrorDetails
+newErrorDetails'  customize = (ErrorDetails <<< customize) { "code": Nothing, "message": Nothing }
 
 
 
 -- | <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
 newtype ExecutionDetails = ExecutionDetails 
-  { "summary" :: NullOrUndefined (ExecutionSummary)
-  , "externalExecutionId" :: NullOrUndefined (ExecutionId)
-  , "percentComplete" :: NullOrUndefined (Percentage)
+  { "summary" :: Maybe (ExecutionSummary)
+  , "externalExecutionId" :: Maybe (ExecutionId)
+  , "percentComplete" :: Maybe (Percentage)
   }
 derive instance newtypeExecutionDetails :: Newtype ExecutionDetails _
 derive instance repGenericExecutionDetails :: Generic ExecutionDetails _
@@ -1160,12 +1159,12 @@ instance encodeExecutionDetails :: Encode ExecutionDetails where encode = generi
 
 -- | Constructs ExecutionDetails from required parameters
 newExecutionDetails :: ExecutionDetails
-newExecutionDetails  = ExecutionDetails { "externalExecutionId": (NullOrUndefined Nothing), "percentComplete": (NullOrUndefined Nothing), "summary": (NullOrUndefined Nothing) }
+newExecutionDetails  = ExecutionDetails { "externalExecutionId": Nothing, "percentComplete": Nothing, "summary": Nothing }
 
 -- | Constructs ExecutionDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExecutionDetails' :: ( { "summary" :: NullOrUndefined (ExecutionSummary) , "externalExecutionId" :: NullOrUndefined (ExecutionId) , "percentComplete" :: NullOrUndefined (Percentage) } -> {"summary" :: NullOrUndefined (ExecutionSummary) , "externalExecutionId" :: NullOrUndefined (ExecutionId) , "percentComplete" :: NullOrUndefined (Percentage) } ) -> ExecutionDetails
-newExecutionDetails'  customize = (ExecutionDetails <<< customize) { "externalExecutionId": (NullOrUndefined Nothing), "percentComplete": (NullOrUndefined Nothing), "summary": (NullOrUndefined Nothing) }
+newExecutionDetails' :: ( { "summary" :: Maybe (ExecutionSummary) , "externalExecutionId" :: Maybe (ExecutionId) , "percentComplete" :: Maybe (Percentage) } -> {"summary" :: Maybe (ExecutionSummary) , "externalExecutionId" :: Maybe (ExecutionId) , "percentComplete" :: Maybe (Percentage) } ) -> ExecutionDetails
+newExecutionDetails'  customize = (ExecutionDetails <<< customize) { "externalExecutionId": Nothing, "percentComplete": Nothing, "summary": Nothing }
 
 
 
@@ -1191,7 +1190,7 @@ instance encodeExecutionSummary :: Encode ExecutionSummary where encode = generi
 newtype FailureDetails = FailureDetails 
   { "type" :: (FailureType)
   , "message" :: (Message)
-  , "externalExecutionId" :: NullOrUndefined (ExecutionId)
+  , "externalExecutionId" :: Maybe (ExecutionId)
   }
 derive instance newtypeFailureDetails :: Newtype FailureDetails _
 derive instance repGenericFailureDetails :: Generic FailureDetails _
@@ -1201,12 +1200,12 @@ instance encodeFailureDetails :: Encode FailureDetails where encode = genericEnc
 
 -- | Constructs FailureDetails from required parameters
 newFailureDetails :: Message -> FailureType -> FailureDetails
-newFailureDetails _message _type = FailureDetails { "message": _message, "type": _type, "externalExecutionId": (NullOrUndefined Nothing) }
+newFailureDetails _message _type = FailureDetails { "message": _message, "type": _type, "externalExecutionId": Nothing }
 
 -- | Constructs FailureDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFailureDetails' :: Message -> FailureType -> ( { "type" :: (FailureType) , "message" :: (Message) , "externalExecutionId" :: NullOrUndefined (ExecutionId) } -> {"type" :: (FailureType) , "message" :: (Message) , "externalExecutionId" :: NullOrUndefined (ExecutionId) } ) -> FailureDetails
-newFailureDetails' _message _type customize = (FailureDetails <<< customize) { "message": _message, "type": _type, "externalExecutionId": (NullOrUndefined Nothing) }
+newFailureDetails' :: Message -> FailureType -> ( { "type" :: (FailureType) , "message" :: (Message) , "externalExecutionId" :: Maybe (ExecutionId) } -> {"type" :: (FailureType) , "message" :: (Message) , "externalExecutionId" :: Maybe (ExecutionId) } ) -> FailureDetails
+newFailureDetails' _message _type customize = (FailureDetails <<< customize) { "message": _message, "type": _type, "externalExecutionId": Nothing }
 
 
 
@@ -1242,7 +1241,7 @@ newGetJobDetailsInput' _jobId customize = (GetJobDetailsInput <<< customize) { "
 
 -- | <p>Represents the output of a GetJobDetails action.</p>
 newtype GetJobDetailsOutput = GetJobDetailsOutput 
-  { "jobDetails" :: NullOrUndefined (JobDetails)
+  { "jobDetails" :: Maybe (JobDetails)
   }
 derive instance newtypeGetJobDetailsOutput :: Newtype GetJobDetailsOutput _
 derive instance repGenericGetJobDetailsOutput :: Generic GetJobDetailsOutput _
@@ -1252,12 +1251,12 @@ instance encodeGetJobDetailsOutput :: Encode GetJobDetailsOutput where encode = 
 
 -- | Constructs GetJobDetailsOutput from required parameters
 newGetJobDetailsOutput :: GetJobDetailsOutput
-newGetJobDetailsOutput  = GetJobDetailsOutput { "jobDetails": (NullOrUndefined Nothing) }
+newGetJobDetailsOutput  = GetJobDetailsOutput { "jobDetails": Nothing }
 
 -- | Constructs GetJobDetailsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobDetailsOutput' :: ( { "jobDetails" :: NullOrUndefined (JobDetails) } -> {"jobDetails" :: NullOrUndefined (JobDetails) } ) -> GetJobDetailsOutput
-newGetJobDetailsOutput'  customize = (GetJobDetailsOutput <<< customize) { "jobDetails": (NullOrUndefined Nothing) }
+newGetJobDetailsOutput' :: ( { "jobDetails" :: Maybe (JobDetails) } -> {"jobDetails" :: Maybe (JobDetails) } ) -> GetJobDetailsOutput
+newGetJobDetailsOutput'  customize = (GetJobDetailsOutput <<< customize) { "jobDetails": Nothing }
 
 
 
@@ -1285,7 +1284,7 @@ newGetPipelineExecutionInput' _pipelineExecutionId _pipelineName customize = (Ge
 
 -- | <p>Represents the output of a GetPipelineExecution action.</p>
 newtype GetPipelineExecutionOutput = GetPipelineExecutionOutput 
-  { "pipelineExecution" :: NullOrUndefined (PipelineExecution)
+  { "pipelineExecution" :: Maybe (PipelineExecution)
   }
 derive instance newtypeGetPipelineExecutionOutput :: Newtype GetPipelineExecutionOutput _
 derive instance repGenericGetPipelineExecutionOutput :: Generic GetPipelineExecutionOutput _
@@ -1295,19 +1294,19 @@ instance encodeGetPipelineExecutionOutput :: Encode GetPipelineExecutionOutput w
 
 -- | Constructs GetPipelineExecutionOutput from required parameters
 newGetPipelineExecutionOutput :: GetPipelineExecutionOutput
-newGetPipelineExecutionOutput  = GetPipelineExecutionOutput { "pipelineExecution": (NullOrUndefined Nothing) }
+newGetPipelineExecutionOutput  = GetPipelineExecutionOutput { "pipelineExecution": Nothing }
 
 -- | Constructs GetPipelineExecutionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPipelineExecutionOutput' :: ( { "pipelineExecution" :: NullOrUndefined (PipelineExecution) } -> {"pipelineExecution" :: NullOrUndefined (PipelineExecution) } ) -> GetPipelineExecutionOutput
-newGetPipelineExecutionOutput'  customize = (GetPipelineExecutionOutput <<< customize) { "pipelineExecution": (NullOrUndefined Nothing) }
+newGetPipelineExecutionOutput' :: ( { "pipelineExecution" :: Maybe (PipelineExecution) } -> {"pipelineExecution" :: Maybe (PipelineExecution) } ) -> GetPipelineExecutionOutput
+newGetPipelineExecutionOutput'  customize = (GetPipelineExecutionOutput <<< customize) { "pipelineExecution": Nothing }
 
 
 
 -- | <p>Represents the input of a GetPipeline action.</p>
 newtype GetPipelineInput = GetPipelineInput 
   { "name" :: (PipelineName)
-  , "version" :: NullOrUndefined (PipelineVersion)
+  , "version" :: Maybe (PipelineVersion)
   }
 derive instance newtypeGetPipelineInput :: Newtype GetPipelineInput _
 derive instance repGenericGetPipelineInput :: Generic GetPipelineInput _
@@ -1317,19 +1316,19 @@ instance encodeGetPipelineInput :: Encode GetPipelineInput where encode = generi
 
 -- | Constructs GetPipelineInput from required parameters
 newGetPipelineInput :: PipelineName -> GetPipelineInput
-newGetPipelineInput _name = GetPipelineInput { "name": _name, "version": (NullOrUndefined Nothing) }
+newGetPipelineInput _name = GetPipelineInput { "name": _name, "version": Nothing }
 
 -- | Constructs GetPipelineInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPipelineInput' :: PipelineName -> ( { "name" :: (PipelineName) , "version" :: NullOrUndefined (PipelineVersion) } -> {"name" :: (PipelineName) , "version" :: NullOrUndefined (PipelineVersion) } ) -> GetPipelineInput
-newGetPipelineInput' _name customize = (GetPipelineInput <<< customize) { "name": _name, "version": (NullOrUndefined Nothing) }
+newGetPipelineInput' :: PipelineName -> ( { "name" :: (PipelineName) , "version" :: Maybe (PipelineVersion) } -> {"name" :: (PipelineName) , "version" :: Maybe (PipelineVersion) } ) -> GetPipelineInput
+newGetPipelineInput' _name customize = (GetPipelineInput <<< customize) { "name": _name, "version": Nothing }
 
 
 
 -- | <p>Represents the output of a GetPipeline action.</p>
 newtype GetPipelineOutput = GetPipelineOutput 
-  { "pipeline" :: NullOrUndefined (PipelineDeclaration)
-  , "metadata" :: NullOrUndefined (PipelineMetadata)
+  { "pipeline" :: Maybe (PipelineDeclaration)
+  , "metadata" :: Maybe (PipelineMetadata)
   }
 derive instance newtypeGetPipelineOutput :: Newtype GetPipelineOutput _
 derive instance repGenericGetPipelineOutput :: Generic GetPipelineOutput _
@@ -1339,12 +1338,12 @@ instance encodeGetPipelineOutput :: Encode GetPipelineOutput where encode = gene
 
 -- | Constructs GetPipelineOutput from required parameters
 newGetPipelineOutput :: GetPipelineOutput
-newGetPipelineOutput  = GetPipelineOutput { "metadata": (NullOrUndefined Nothing), "pipeline": (NullOrUndefined Nothing) }
+newGetPipelineOutput  = GetPipelineOutput { "metadata": Nothing, "pipeline": Nothing }
 
 -- | Constructs GetPipelineOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPipelineOutput' :: ( { "pipeline" :: NullOrUndefined (PipelineDeclaration) , "metadata" :: NullOrUndefined (PipelineMetadata) } -> {"pipeline" :: NullOrUndefined (PipelineDeclaration) , "metadata" :: NullOrUndefined (PipelineMetadata) } ) -> GetPipelineOutput
-newGetPipelineOutput'  customize = (GetPipelineOutput <<< customize) { "metadata": (NullOrUndefined Nothing), "pipeline": (NullOrUndefined Nothing) }
+newGetPipelineOutput' :: ( { "pipeline" :: Maybe (PipelineDeclaration) , "metadata" :: Maybe (PipelineMetadata) } -> {"pipeline" :: Maybe (PipelineDeclaration) , "metadata" :: Maybe (PipelineMetadata) } ) -> GetPipelineOutput
+newGetPipelineOutput'  customize = (GetPipelineOutput <<< customize) { "metadata": Nothing, "pipeline": Nothing }
 
 
 
@@ -1371,11 +1370,11 @@ newGetPipelineStateInput' _name customize = (GetPipelineStateInput <<< customize
 
 -- | <p>Represents the output of a GetPipelineState action.</p>
 newtype GetPipelineStateOutput = GetPipelineStateOutput 
-  { "pipelineName" :: NullOrUndefined (PipelineName)
-  , "pipelineVersion" :: NullOrUndefined (PipelineVersion)
-  , "stageStates" :: NullOrUndefined (StageStateList)
-  , "created" :: NullOrUndefined (Types.Timestamp)
-  , "updated" :: NullOrUndefined (Types.Timestamp)
+  { "pipelineName" :: Maybe (PipelineName)
+  , "pipelineVersion" :: Maybe (PipelineVersion)
+  , "stageStates" :: Maybe (StageStateList)
+  , "created" :: Maybe (Types.Timestamp)
+  , "updated" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeGetPipelineStateOutput :: Newtype GetPipelineStateOutput _
 derive instance repGenericGetPipelineStateOutput :: Generic GetPipelineStateOutput _
@@ -1385,12 +1384,12 @@ instance encodeGetPipelineStateOutput :: Encode GetPipelineStateOutput where enc
 
 -- | Constructs GetPipelineStateOutput from required parameters
 newGetPipelineStateOutput :: GetPipelineStateOutput
-newGetPipelineStateOutput  = GetPipelineStateOutput { "created": (NullOrUndefined Nothing), "pipelineName": (NullOrUndefined Nothing), "pipelineVersion": (NullOrUndefined Nothing), "stageStates": (NullOrUndefined Nothing), "updated": (NullOrUndefined Nothing) }
+newGetPipelineStateOutput  = GetPipelineStateOutput { "created": Nothing, "pipelineName": Nothing, "pipelineVersion": Nothing, "stageStates": Nothing, "updated": Nothing }
 
 -- | Constructs GetPipelineStateOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPipelineStateOutput' :: ( { "pipelineName" :: NullOrUndefined (PipelineName) , "pipelineVersion" :: NullOrUndefined (PipelineVersion) , "stageStates" :: NullOrUndefined (StageStateList) , "created" :: NullOrUndefined (Types.Timestamp) , "updated" :: NullOrUndefined (Types.Timestamp) } -> {"pipelineName" :: NullOrUndefined (PipelineName) , "pipelineVersion" :: NullOrUndefined (PipelineVersion) , "stageStates" :: NullOrUndefined (StageStateList) , "created" :: NullOrUndefined (Types.Timestamp) , "updated" :: NullOrUndefined (Types.Timestamp) } ) -> GetPipelineStateOutput
-newGetPipelineStateOutput'  customize = (GetPipelineStateOutput <<< customize) { "created": (NullOrUndefined Nothing), "pipelineName": (NullOrUndefined Nothing), "pipelineVersion": (NullOrUndefined Nothing), "stageStates": (NullOrUndefined Nothing), "updated": (NullOrUndefined Nothing) }
+newGetPipelineStateOutput' :: ( { "pipelineName" :: Maybe (PipelineName) , "pipelineVersion" :: Maybe (PipelineVersion) , "stageStates" :: Maybe (StageStateList) , "created" :: Maybe (Types.Timestamp) , "updated" :: Maybe (Types.Timestamp) } -> {"pipelineName" :: Maybe (PipelineName) , "pipelineVersion" :: Maybe (PipelineVersion) , "stageStates" :: Maybe (StageStateList) , "created" :: Maybe (Types.Timestamp) , "updated" :: Maybe (Types.Timestamp) } ) -> GetPipelineStateOutput
+newGetPipelineStateOutput'  customize = (GetPipelineStateOutput <<< customize) { "created": Nothing, "pipelineName": Nothing, "pipelineVersion": Nothing, "stageStates": Nothing, "updated": Nothing }
 
 
 
@@ -1418,7 +1417,7 @@ newGetThirdPartyJobDetailsInput' _clientToken _jobId customize = (GetThirdPartyJ
 
 -- | <p>Represents the output of a GetThirdPartyJobDetails action.</p>
 newtype GetThirdPartyJobDetailsOutput = GetThirdPartyJobDetailsOutput 
-  { "jobDetails" :: NullOrUndefined (ThirdPartyJobDetails)
+  { "jobDetails" :: Maybe (ThirdPartyJobDetails)
   }
 derive instance newtypeGetThirdPartyJobDetailsOutput :: Newtype GetThirdPartyJobDetailsOutput _
 derive instance repGenericGetThirdPartyJobDetailsOutput :: Generic GetThirdPartyJobDetailsOutput _
@@ -1428,12 +1427,12 @@ instance encodeGetThirdPartyJobDetailsOutput :: Encode GetThirdPartyJobDetailsOu
 
 -- | Constructs GetThirdPartyJobDetailsOutput from required parameters
 newGetThirdPartyJobDetailsOutput :: GetThirdPartyJobDetailsOutput
-newGetThirdPartyJobDetailsOutput  = GetThirdPartyJobDetailsOutput { "jobDetails": (NullOrUndefined Nothing) }
+newGetThirdPartyJobDetailsOutput  = GetThirdPartyJobDetailsOutput { "jobDetails": Nothing }
 
 -- | Constructs GetThirdPartyJobDetailsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetThirdPartyJobDetailsOutput' :: ( { "jobDetails" :: NullOrUndefined (ThirdPartyJobDetails) } -> {"jobDetails" :: NullOrUndefined (ThirdPartyJobDetails) } ) -> GetThirdPartyJobDetailsOutput
-newGetThirdPartyJobDetailsOutput'  customize = (GetThirdPartyJobDetailsOutput <<< customize) { "jobDetails": (NullOrUndefined Nothing) }
+newGetThirdPartyJobDetailsOutput' :: ( { "jobDetails" :: Maybe (ThirdPartyJobDetails) } -> {"jobDetails" :: Maybe (ThirdPartyJobDetails) } ) -> GetThirdPartyJobDetailsOutput
+newGetThirdPartyJobDetailsOutput'  customize = (GetThirdPartyJobDetailsOutput <<< customize) { "jobDetails": Nothing }
 
 
 
@@ -1569,10 +1568,10 @@ instance encodeInvalidStructureException :: Encode InvalidStructureException whe
 
 -- | <p>Represents information about a job.</p>
 newtype Job = Job 
-  { "id" :: NullOrUndefined (JobId)
-  , "data" :: NullOrUndefined (JobData)
-  , "nonce" :: NullOrUndefined (Nonce)
-  , "accountId" :: NullOrUndefined (AccountId)
+  { "id" :: Maybe (JobId)
+  , "data" :: Maybe (JobData)
+  , "nonce" :: Maybe (Nonce)
+  , "accountId" :: Maybe (AccountId)
   }
 derive instance newtypeJob :: Newtype Job _
 derive instance repGenericJob :: Generic Job _
@@ -1582,25 +1581,25 @@ instance encodeJob :: Encode Job where encode = genericEncode options
 
 -- | Constructs Job from required parameters
 newJob :: Job
-newJob  = Job { "accountId": (NullOrUndefined Nothing), "data": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing), "nonce": (NullOrUndefined Nothing) }
+newJob  = Job { "accountId": Nothing, "data": Nothing, "id": Nothing, "nonce": Nothing }
 
 -- | Constructs Job's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJob' :: ( { "id" :: NullOrUndefined (JobId) , "data" :: NullOrUndefined (JobData) , "nonce" :: NullOrUndefined (Nonce) , "accountId" :: NullOrUndefined (AccountId) } -> {"id" :: NullOrUndefined (JobId) , "data" :: NullOrUndefined (JobData) , "nonce" :: NullOrUndefined (Nonce) , "accountId" :: NullOrUndefined (AccountId) } ) -> Job
-newJob'  customize = (Job <<< customize) { "accountId": (NullOrUndefined Nothing), "data": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing), "nonce": (NullOrUndefined Nothing) }
+newJob' :: ( { "id" :: Maybe (JobId) , "data" :: Maybe (JobData) , "nonce" :: Maybe (Nonce) , "accountId" :: Maybe (AccountId) } -> {"id" :: Maybe (JobId) , "data" :: Maybe (JobData) , "nonce" :: Maybe (Nonce) , "accountId" :: Maybe (AccountId) } ) -> Job
+newJob'  customize = (Job <<< customize) { "accountId": Nothing, "data": Nothing, "id": Nothing, "nonce": Nothing }
 
 
 
 -- | <p>Represents additional information about a job required for a job worker to complete the job.</p>
 newtype JobData = JobData 
-  { "actionTypeId" :: NullOrUndefined (ActionTypeId)
-  , "actionConfiguration" :: NullOrUndefined (ActionConfiguration)
-  , "pipelineContext" :: NullOrUndefined (PipelineContext)
-  , "inputArtifacts" :: NullOrUndefined (ArtifactList)
-  , "outputArtifacts" :: NullOrUndefined (ArtifactList)
-  , "artifactCredentials" :: NullOrUndefined (AWSSessionCredentials)
-  , "continuationToken" :: NullOrUndefined (ContinuationToken)
-  , "encryptionKey" :: NullOrUndefined (EncryptionKey)
+  { "actionTypeId" :: Maybe (ActionTypeId)
+  , "actionConfiguration" :: Maybe (ActionConfiguration)
+  , "pipelineContext" :: Maybe (PipelineContext)
+  , "inputArtifacts" :: Maybe (ArtifactList)
+  , "outputArtifacts" :: Maybe (ArtifactList)
+  , "artifactCredentials" :: Maybe (AWSSessionCredentials)
+  , "continuationToken" :: Maybe (ContinuationToken)
+  , "encryptionKey" :: Maybe (EncryptionKey)
   }
 derive instance newtypeJobData :: Newtype JobData _
 derive instance repGenericJobData :: Generic JobData _
@@ -1610,20 +1609,20 @@ instance encodeJobData :: Encode JobData where encode = genericEncode options
 
 -- | Constructs JobData from required parameters
 newJobData :: JobData
-newJobData  = JobData { "actionConfiguration": (NullOrUndefined Nothing), "actionTypeId": (NullOrUndefined Nothing), "artifactCredentials": (NullOrUndefined Nothing), "continuationToken": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "inputArtifacts": (NullOrUndefined Nothing), "outputArtifacts": (NullOrUndefined Nothing), "pipelineContext": (NullOrUndefined Nothing) }
+newJobData  = JobData { "actionConfiguration": Nothing, "actionTypeId": Nothing, "artifactCredentials": Nothing, "continuationToken": Nothing, "encryptionKey": Nothing, "inputArtifacts": Nothing, "outputArtifacts": Nothing, "pipelineContext": Nothing }
 
 -- | Constructs JobData's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobData' :: ( { "actionTypeId" :: NullOrUndefined (ActionTypeId) , "actionConfiguration" :: NullOrUndefined (ActionConfiguration) , "pipelineContext" :: NullOrUndefined (PipelineContext) , "inputArtifacts" :: NullOrUndefined (ArtifactList) , "outputArtifacts" :: NullOrUndefined (ArtifactList) , "artifactCredentials" :: NullOrUndefined (AWSSessionCredentials) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "encryptionKey" :: NullOrUndefined (EncryptionKey) } -> {"actionTypeId" :: NullOrUndefined (ActionTypeId) , "actionConfiguration" :: NullOrUndefined (ActionConfiguration) , "pipelineContext" :: NullOrUndefined (PipelineContext) , "inputArtifacts" :: NullOrUndefined (ArtifactList) , "outputArtifacts" :: NullOrUndefined (ArtifactList) , "artifactCredentials" :: NullOrUndefined (AWSSessionCredentials) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "encryptionKey" :: NullOrUndefined (EncryptionKey) } ) -> JobData
-newJobData'  customize = (JobData <<< customize) { "actionConfiguration": (NullOrUndefined Nothing), "actionTypeId": (NullOrUndefined Nothing), "artifactCredentials": (NullOrUndefined Nothing), "continuationToken": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "inputArtifacts": (NullOrUndefined Nothing), "outputArtifacts": (NullOrUndefined Nothing), "pipelineContext": (NullOrUndefined Nothing) }
+newJobData' :: ( { "actionTypeId" :: Maybe (ActionTypeId) , "actionConfiguration" :: Maybe (ActionConfiguration) , "pipelineContext" :: Maybe (PipelineContext) , "inputArtifacts" :: Maybe (ArtifactList) , "outputArtifacts" :: Maybe (ArtifactList) , "artifactCredentials" :: Maybe (AWSSessionCredentials) , "continuationToken" :: Maybe (ContinuationToken) , "encryptionKey" :: Maybe (EncryptionKey) } -> {"actionTypeId" :: Maybe (ActionTypeId) , "actionConfiguration" :: Maybe (ActionConfiguration) , "pipelineContext" :: Maybe (PipelineContext) , "inputArtifacts" :: Maybe (ArtifactList) , "outputArtifacts" :: Maybe (ArtifactList) , "artifactCredentials" :: Maybe (AWSSessionCredentials) , "continuationToken" :: Maybe (ContinuationToken) , "encryptionKey" :: Maybe (EncryptionKey) } ) -> JobData
+newJobData'  customize = (JobData <<< customize) { "actionConfiguration": Nothing, "actionTypeId": Nothing, "artifactCredentials": Nothing, "continuationToken": Nothing, "encryptionKey": Nothing, "inputArtifacts": Nothing, "outputArtifacts": Nothing, "pipelineContext": Nothing }
 
 
 
 -- | <p>Represents information about the details of a job.</p>
 newtype JobDetails = JobDetails 
-  { "id" :: NullOrUndefined (JobId)
-  , "data" :: NullOrUndefined (JobData)
-  , "accountId" :: NullOrUndefined (AccountId)
+  { "id" :: Maybe (JobId)
+  , "data" :: Maybe (JobData)
+  , "accountId" :: Maybe (AccountId)
   }
 derive instance newtypeJobDetails :: Newtype JobDetails _
 derive instance repGenericJobDetails :: Generic JobDetails _
@@ -1633,12 +1632,12 @@ instance encodeJobDetails :: Encode JobDetails where encode = genericEncode opti
 
 -- | Constructs JobDetails from required parameters
 newJobDetails :: JobDetails
-newJobDetails  = JobDetails { "accountId": (NullOrUndefined Nothing), "data": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing) }
+newJobDetails  = JobDetails { "accountId": Nothing, "data": Nothing, "id": Nothing }
 
 -- | Constructs JobDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobDetails' :: ( { "id" :: NullOrUndefined (JobId) , "data" :: NullOrUndefined (JobData) , "accountId" :: NullOrUndefined (AccountId) } -> {"id" :: NullOrUndefined (JobId) , "data" :: NullOrUndefined (JobData) , "accountId" :: NullOrUndefined (AccountId) } ) -> JobDetails
-newJobDetails'  customize = (JobDetails <<< customize) { "accountId": (NullOrUndefined Nothing), "data": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing) }
+newJobDetails' :: ( { "id" :: Maybe (JobId) , "data" :: Maybe (JobData) , "accountId" :: Maybe (AccountId) } -> {"id" :: Maybe (JobId) , "data" :: Maybe (JobData) , "accountId" :: Maybe (AccountId) } ) -> JobDetails
+newJobDetails'  customize = (JobDetails <<< customize) { "accountId": Nothing, "data": Nothing, "id": Nothing }
 
 
 
@@ -1718,8 +1717,8 @@ instance encodeLimitExceededException :: Encode LimitExceededException where enc
 
 -- | <p>Represents the input of a ListActionTypes action.</p>
 newtype ListActionTypesInput = ListActionTypesInput 
-  { "actionOwnerFilter" :: NullOrUndefined (ActionOwner)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "actionOwnerFilter" :: Maybe (ActionOwner)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListActionTypesInput :: Newtype ListActionTypesInput _
 derive instance repGenericListActionTypesInput :: Generic ListActionTypesInput _
@@ -1729,19 +1728,19 @@ instance encodeListActionTypesInput :: Encode ListActionTypesInput where encode 
 
 -- | Constructs ListActionTypesInput from required parameters
 newListActionTypesInput :: ListActionTypesInput
-newListActionTypesInput  = ListActionTypesInput { "actionOwnerFilter": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListActionTypesInput  = ListActionTypesInput { "actionOwnerFilter": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListActionTypesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListActionTypesInput' :: ( { "actionOwnerFilter" :: NullOrUndefined (ActionOwner) , "nextToken" :: NullOrUndefined (NextToken) } -> {"actionOwnerFilter" :: NullOrUndefined (ActionOwner) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListActionTypesInput
-newListActionTypesInput'  customize = (ListActionTypesInput <<< customize) { "actionOwnerFilter": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListActionTypesInput' :: ( { "actionOwnerFilter" :: Maybe (ActionOwner) , "nextToken" :: Maybe (NextToken) } -> {"actionOwnerFilter" :: Maybe (ActionOwner) , "nextToken" :: Maybe (NextToken) } ) -> ListActionTypesInput
+newListActionTypesInput'  customize = (ListActionTypesInput <<< customize) { "actionOwnerFilter": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListActionTypes action.</p>
 newtype ListActionTypesOutput = ListActionTypesOutput 
   { "actionTypes" :: (ActionTypeList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListActionTypesOutput :: Newtype ListActionTypesOutput _
 derive instance repGenericListActionTypesOutput :: Generic ListActionTypesOutput _
@@ -1751,20 +1750,20 @@ instance encodeListActionTypesOutput :: Encode ListActionTypesOutput where encod
 
 -- | Constructs ListActionTypesOutput from required parameters
 newListActionTypesOutput :: ActionTypeList -> ListActionTypesOutput
-newListActionTypesOutput _actionTypes = ListActionTypesOutput { "actionTypes": _actionTypes, "nextToken": (NullOrUndefined Nothing) }
+newListActionTypesOutput _actionTypes = ListActionTypesOutput { "actionTypes": _actionTypes, "nextToken": Nothing }
 
 -- | Constructs ListActionTypesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListActionTypesOutput' :: ActionTypeList -> ( { "actionTypes" :: (ActionTypeList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"actionTypes" :: (ActionTypeList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListActionTypesOutput
-newListActionTypesOutput' _actionTypes customize = (ListActionTypesOutput <<< customize) { "actionTypes": _actionTypes, "nextToken": (NullOrUndefined Nothing) }
+newListActionTypesOutput' :: ActionTypeList -> ( { "actionTypes" :: (ActionTypeList) , "nextToken" :: Maybe (NextToken) } -> {"actionTypes" :: (ActionTypeList) , "nextToken" :: Maybe (NextToken) } ) -> ListActionTypesOutput
+newListActionTypesOutput' _actionTypes customize = (ListActionTypesOutput <<< customize) { "actionTypes": _actionTypes, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a ListPipelineExecutions action.</p>
 newtype ListPipelineExecutionsInput = ListPipelineExecutionsInput 
   { "pipelineName" :: (PipelineName)
-  , "maxResults" :: NullOrUndefined (MaxResults)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPipelineExecutionsInput :: Newtype ListPipelineExecutionsInput _
 derive instance repGenericListPipelineExecutionsInput :: Generic ListPipelineExecutionsInput _
@@ -1774,19 +1773,19 @@ instance encodeListPipelineExecutionsInput :: Encode ListPipelineExecutionsInput
 
 -- | Constructs ListPipelineExecutionsInput from required parameters
 newListPipelineExecutionsInput :: PipelineName -> ListPipelineExecutionsInput
-newListPipelineExecutionsInput _pipelineName = ListPipelineExecutionsInput { "pipelineName": _pipelineName, "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListPipelineExecutionsInput _pipelineName = ListPipelineExecutionsInput { "pipelineName": _pipelineName, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListPipelineExecutionsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPipelineExecutionsInput' :: PipelineName -> ( { "pipelineName" :: (PipelineName) , "maxResults" :: NullOrUndefined (MaxResults) , "nextToken" :: NullOrUndefined (NextToken) } -> {"pipelineName" :: (PipelineName) , "maxResults" :: NullOrUndefined (MaxResults) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListPipelineExecutionsInput
-newListPipelineExecutionsInput' _pipelineName customize = (ListPipelineExecutionsInput <<< customize) { "pipelineName": _pipelineName, "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListPipelineExecutionsInput' :: PipelineName -> ( { "pipelineName" :: (PipelineName) , "maxResults" :: Maybe (MaxResults) , "nextToken" :: Maybe (NextToken) } -> {"pipelineName" :: (PipelineName) , "maxResults" :: Maybe (MaxResults) , "nextToken" :: Maybe (NextToken) } ) -> ListPipelineExecutionsInput
+newListPipelineExecutionsInput' _pipelineName customize = (ListPipelineExecutionsInput <<< customize) { "pipelineName": _pipelineName, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListPipelineExecutions action.</p>
 newtype ListPipelineExecutionsOutput = ListPipelineExecutionsOutput 
-  { "pipelineExecutionSummaries" :: NullOrUndefined (PipelineExecutionSummaryList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "pipelineExecutionSummaries" :: Maybe (PipelineExecutionSummaryList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPipelineExecutionsOutput :: Newtype ListPipelineExecutionsOutput _
 derive instance repGenericListPipelineExecutionsOutput :: Generic ListPipelineExecutionsOutput _
@@ -1796,18 +1795,18 @@ instance encodeListPipelineExecutionsOutput :: Encode ListPipelineExecutionsOutp
 
 -- | Constructs ListPipelineExecutionsOutput from required parameters
 newListPipelineExecutionsOutput :: ListPipelineExecutionsOutput
-newListPipelineExecutionsOutput  = ListPipelineExecutionsOutput { "nextToken": (NullOrUndefined Nothing), "pipelineExecutionSummaries": (NullOrUndefined Nothing) }
+newListPipelineExecutionsOutput  = ListPipelineExecutionsOutput { "nextToken": Nothing, "pipelineExecutionSummaries": Nothing }
 
 -- | Constructs ListPipelineExecutionsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPipelineExecutionsOutput' :: ( { "pipelineExecutionSummaries" :: NullOrUndefined (PipelineExecutionSummaryList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"pipelineExecutionSummaries" :: NullOrUndefined (PipelineExecutionSummaryList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListPipelineExecutionsOutput
-newListPipelineExecutionsOutput'  customize = (ListPipelineExecutionsOutput <<< customize) { "nextToken": (NullOrUndefined Nothing), "pipelineExecutionSummaries": (NullOrUndefined Nothing) }
+newListPipelineExecutionsOutput' :: ( { "pipelineExecutionSummaries" :: Maybe (PipelineExecutionSummaryList) , "nextToken" :: Maybe (NextToken) } -> {"pipelineExecutionSummaries" :: Maybe (PipelineExecutionSummaryList) , "nextToken" :: Maybe (NextToken) } ) -> ListPipelineExecutionsOutput
+newListPipelineExecutionsOutput'  customize = (ListPipelineExecutionsOutput <<< customize) { "nextToken": Nothing, "pipelineExecutionSummaries": Nothing }
 
 
 
 -- | <p>Represents the input of a ListPipelines action.</p>
 newtype ListPipelinesInput = ListPipelinesInput 
-  { "nextToken" :: NullOrUndefined (NextToken)
+  { "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPipelinesInput :: Newtype ListPipelinesInput _
 derive instance repGenericListPipelinesInput :: Generic ListPipelinesInput _
@@ -1817,19 +1816,19 @@ instance encodeListPipelinesInput :: Encode ListPipelinesInput where encode = ge
 
 -- | Constructs ListPipelinesInput from required parameters
 newListPipelinesInput :: ListPipelinesInput
-newListPipelinesInput  = ListPipelinesInput { "nextToken": (NullOrUndefined Nothing) }
+newListPipelinesInput  = ListPipelinesInput { "nextToken": Nothing }
 
 -- | Constructs ListPipelinesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPipelinesInput' :: ( { "nextToken" :: NullOrUndefined (NextToken) } -> {"nextToken" :: NullOrUndefined (NextToken) } ) -> ListPipelinesInput
-newListPipelinesInput'  customize = (ListPipelinesInput <<< customize) { "nextToken": (NullOrUndefined Nothing) }
+newListPipelinesInput' :: ( { "nextToken" :: Maybe (NextToken) } -> {"nextToken" :: Maybe (NextToken) } ) -> ListPipelinesInput
+newListPipelinesInput'  customize = (ListPipelinesInput <<< customize) { "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListPipelines action.</p>
 newtype ListPipelinesOutput = ListPipelinesOutput 
-  { "pipelines" :: NullOrUndefined (PipelineList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "pipelines" :: Maybe (PipelineList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPipelinesOutput :: Newtype ListPipelinesOutput _
 derive instance repGenericListPipelinesOutput :: Generic ListPipelinesOutput _
@@ -1839,12 +1838,12 @@ instance encodeListPipelinesOutput :: Encode ListPipelinesOutput where encode = 
 
 -- | Constructs ListPipelinesOutput from required parameters
 newListPipelinesOutput :: ListPipelinesOutput
-newListPipelinesOutput  = ListPipelinesOutput { "nextToken": (NullOrUndefined Nothing), "pipelines": (NullOrUndefined Nothing) }
+newListPipelinesOutput  = ListPipelinesOutput { "nextToken": Nothing, "pipelines": Nothing }
 
 -- | Constructs ListPipelinesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPipelinesOutput' :: ( { "pipelines" :: NullOrUndefined (PipelineList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"pipelines" :: NullOrUndefined (PipelineList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListPipelinesOutput
-newListPipelinesOutput'  customize = (ListPipelinesOutput <<< customize) { "nextToken": (NullOrUndefined Nothing), "pipelines": (NullOrUndefined Nothing) }
+newListPipelinesOutput' :: ( { "pipelines" :: Maybe (PipelineList) , "nextToken" :: Maybe (NextToken) } -> {"pipelines" :: Maybe (PipelineList) , "nextToken" :: Maybe (NextToken) } ) -> ListPipelinesOutput
+newListPipelinesOutput'  customize = (ListPipelinesOutput <<< customize) { "nextToken": Nothing, "pipelines": Nothing }
 
 
 
@@ -1971,9 +1970,9 @@ instance encodePipelineArn :: Encode PipelineArn where encode = genericEncode op
 
 -- | <p>Represents information about a pipeline to a job worker.</p>
 newtype PipelineContext = PipelineContext 
-  { "pipelineName" :: NullOrUndefined (PipelineName)
-  , "stage" :: NullOrUndefined (StageContext)
-  , "action" :: NullOrUndefined (ActionContext)
+  { "pipelineName" :: Maybe (PipelineName)
+  , "stage" :: Maybe (StageContext)
+  , "action" :: Maybe (ActionContext)
   }
 derive instance newtypePipelineContext :: Newtype PipelineContext _
 derive instance repGenericPipelineContext :: Generic PipelineContext _
@@ -1983,12 +1982,12 @@ instance encodePipelineContext :: Encode PipelineContext where encode = genericE
 
 -- | Constructs PipelineContext from required parameters
 newPipelineContext :: PipelineContext
-newPipelineContext  = PipelineContext { "action": (NullOrUndefined Nothing), "pipelineName": (NullOrUndefined Nothing), "stage": (NullOrUndefined Nothing) }
+newPipelineContext  = PipelineContext { "action": Nothing, "pipelineName": Nothing, "stage": Nothing }
 
 -- | Constructs PipelineContext's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPipelineContext' :: ( { "pipelineName" :: NullOrUndefined (PipelineName) , "stage" :: NullOrUndefined (StageContext) , "action" :: NullOrUndefined (ActionContext) } -> {"pipelineName" :: NullOrUndefined (PipelineName) , "stage" :: NullOrUndefined (StageContext) , "action" :: NullOrUndefined (ActionContext) } ) -> PipelineContext
-newPipelineContext'  customize = (PipelineContext <<< customize) { "action": (NullOrUndefined Nothing), "pipelineName": (NullOrUndefined Nothing), "stage": (NullOrUndefined Nothing) }
+newPipelineContext' :: ( { "pipelineName" :: Maybe (PipelineName) , "stage" :: Maybe (StageContext) , "action" :: Maybe (ActionContext) } -> {"pipelineName" :: Maybe (PipelineName) , "stage" :: Maybe (StageContext) , "action" :: Maybe (ActionContext) } ) -> PipelineContext
+newPipelineContext'  customize = (PipelineContext <<< customize) { "action": Nothing, "pipelineName": Nothing, "stage": Nothing }
 
 
 
@@ -1998,7 +1997,7 @@ newtype PipelineDeclaration = PipelineDeclaration
   , "roleArn" :: (RoleArn)
   , "artifactStore" :: (ArtifactStore)
   , "stages" :: (PipelineStageDeclarationList)
-  , "version" :: NullOrUndefined (PipelineVersion)
+  , "version" :: Maybe (PipelineVersion)
   }
 derive instance newtypePipelineDeclaration :: Newtype PipelineDeclaration _
 derive instance repGenericPipelineDeclaration :: Generic PipelineDeclaration _
@@ -2008,22 +2007,22 @@ instance encodePipelineDeclaration :: Encode PipelineDeclaration where encode = 
 
 -- | Constructs PipelineDeclaration from required parameters
 newPipelineDeclaration :: ArtifactStore -> PipelineName -> RoleArn -> PipelineStageDeclarationList -> PipelineDeclaration
-newPipelineDeclaration _artifactStore _name _roleArn _stages = PipelineDeclaration { "artifactStore": _artifactStore, "name": _name, "roleArn": _roleArn, "stages": _stages, "version": (NullOrUndefined Nothing) }
+newPipelineDeclaration _artifactStore _name _roleArn _stages = PipelineDeclaration { "artifactStore": _artifactStore, "name": _name, "roleArn": _roleArn, "stages": _stages, "version": Nothing }
 
 -- | Constructs PipelineDeclaration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPipelineDeclaration' :: ArtifactStore -> PipelineName -> RoleArn -> PipelineStageDeclarationList -> ( { "name" :: (PipelineName) , "roleArn" :: (RoleArn) , "artifactStore" :: (ArtifactStore) , "stages" :: (PipelineStageDeclarationList) , "version" :: NullOrUndefined (PipelineVersion) } -> {"name" :: (PipelineName) , "roleArn" :: (RoleArn) , "artifactStore" :: (ArtifactStore) , "stages" :: (PipelineStageDeclarationList) , "version" :: NullOrUndefined (PipelineVersion) } ) -> PipelineDeclaration
-newPipelineDeclaration' _artifactStore _name _roleArn _stages customize = (PipelineDeclaration <<< customize) { "artifactStore": _artifactStore, "name": _name, "roleArn": _roleArn, "stages": _stages, "version": (NullOrUndefined Nothing) }
+newPipelineDeclaration' :: ArtifactStore -> PipelineName -> RoleArn -> PipelineStageDeclarationList -> ( { "name" :: (PipelineName) , "roleArn" :: (RoleArn) , "artifactStore" :: (ArtifactStore) , "stages" :: (PipelineStageDeclarationList) , "version" :: Maybe (PipelineVersion) } -> {"name" :: (PipelineName) , "roleArn" :: (RoleArn) , "artifactStore" :: (ArtifactStore) , "stages" :: (PipelineStageDeclarationList) , "version" :: Maybe (PipelineVersion) } ) -> PipelineDeclaration
+newPipelineDeclaration' _artifactStore _name _roleArn _stages customize = (PipelineDeclaration <<< customize) { "artifactStore": _artifactStore, "name": _name, "roleArn": _roleArn, "stages": _stages, "version": Nothing }
 
 
 
 -- | <p>Represents information about an execution of a pipeline.</p>
 newtype PipelineExecution = PipelineExecution 
-  { "pipelineName" :: NullOrUndefined (PipelineName)
-  , "pipelineVersion" :: NullOrUndefined (PipelineVersion)
-  , "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId)
-  , "status" :: NullOrUndefined (PipelineExecutionStatus)
-  , "artifactRevisions" :: NullOrUndefined (ArtifactRevisionList)
+  { "pipelineName" :: Maybe (PipelineName)
+  , "pipelineVersion" :: Maybe (PipelineVersion)
+  , "pipelineExecutionId" :: Maybe (PipelineExecutionId)
+  , "status" :: Maybe (PipelineExecutionStatus)
+  , "artifactRevisions" :: Maybe (ArtifactRevisionList)
   }
 derive instance newtypePipelineExecution :: Newtype PipelineExecution _
 derive instance repGenericPipelineExecution :: Generic PipelineExecution _
@@ -2033,12 +2032,12 @@ instance encodePipelineExecution :: Encode PipelineExecution where encode = gene
 
 -- | Constructs PipelineExecution from required parameters
 newPipelineExecution :: PipelineExecution
-newPipelineExecution  = PipelineExecution { "artifactRevisions": (NullOrUndefined Nothing), "pipelineExecutionId": (NullOrUndefined Nothing), "pipelineName": (NullOrUndefined Nothing), "pipelineVersion": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newPipelineExecution  = PipelineExecution { "artifactRevisions": Nothing, "pipelineExecutionId": Nothing, "pipelineName": Nothing, "pipelineVersion": Nothing, "status": Nothing }
 
 -- | Constructs PipelineExecution's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPipelineExecution' :: ( { "pipelineName" :: NullOrUndefined (PipelineName) , "pipelineVersion" :: NullOrUndefined (PipelineVersion) , "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) , "status" :: NullOrUndefined (PipelineExecutionStatus) , "artifactRevisions" :: NullOrUndefined (ArtifactRevisionList) } -> {"pipelineName" :: NullOrUndefined (PipelineName) , "pipelineVersion" :: NullOrUndefined (PipelineVersion) , "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) , "status" :: NullOrUndefined (PipelineExecutionStatus) , "artifactRevisions" :: NullOrUndefined (ArtifactRevisionList) } ) -> PipelineExecution
-newPipelineExecution'  customize = (PipelineExecution <<< customize) { "artifactRevisions": (NullOrUndefined Nothing), "pipelineExecutionId": (NullOrUndefined Nothing), "pipelineName": (NullOrUndefined Nothing), "pipelineVersion": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newPipelineExecution' :: ( { "pipelineName" :: Maybe (PipelineName) , "pipelineVersion" :: Maybe (PipelineVersion) , "pipelineExecutionId" :: Maybe (PipelineExecutionId) , "status" :: Maybe (PipelineExecutionStatus) , "artifactRevisions" :: Maybe (ArtifactRevisionList) } -> {"pipelineName" :: Maybe (PipelineName) , "pipelineVersion" :: Maybe (PipelineVersion) , "pipelineExecutionId" :: Maybe (PipelineExecutionId) , "status" :: Maybe (PipelineExecutionStatus) , "artifactRevisions" :: Maybe (ArtifactRevisionList) } ) -> PipelineExecution
+newPipelineExecution'  customize = (PipelineExecution <<< customize) { "artifactRevisions": Nothing, "pipelineExecutionId": Nothing, "pipelineName": Nothing, "pipelineVersion": Nothing, "status": Nothing }
 
 
 
@@ -2072,10 +2071,10 @@ instance encodePipelineExecutionStatus :: Encode PipelineExecutionStatus where e
 
 -- | <p>Summary information about a pipeline execution.</p>
 newtype PipelineExecutionSummary = PipelineExecutionSummary 
-  { "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId)
-  , "status" :: NullOrUndefined (PipelineExecutionStatus)
-  , "startTime" :: NullOrUndefined (Types.Timestamp)
-  , "lastUpdateTime" :: NullOrUndefined (Types.Timestamp)
+  { "pipelineExecutionId" :: Maybe (PipelineExecutionId)
+  , "status" :: Maybe (PipelineExecutionStatus)
+  , "startTime" :: Maybe (Types.Timestamp)
+  , "lastUpdateTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypePipelineExecutionSummary :: Newtype PipelineExecutionSummary _
 derive instance repGenericPipelineExecutionSummary :: Generic PipelineExecutionSummary _
@@ -2085,12 +2084,12 @@ instance encodePipelineExecutionSummary :: Encode PipelineExecutionSummary where
 
 -- | Constructs PipelineExecutionSummary from required parameters
 newPipelineExecutionSummary :: PipelineExecutionSummary
-newPipelineExecutionSummary  = PipelineExecutionSummary { "lastUpdateTime": (NullOrUndefined Nothing), "pipelineExecutionId": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newPipelineExecutionSummary  = PipelineExecutionSummary { "lastUpdateTime": Nothing, "pipelineExecutionId": Nothing, "startTime": Nothing, "status": Nothing }
 
 -- | Constructs PipelineExecutionSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPipelineExecutionSummary' :: ( { "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) , "status" :: NullOrUndefined (PipelineExecutionStatus) , "startTime" :: NullOrUndefined (Types.Timestamp) , "lastUpdateTime" :: NullOrUndefined (Types.Timestamp) } -> {"pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) , "status" :: NullOrUndefined (PipelineExecutionStatus) , "startTime" :: NullOrUndefined (Types.Timestamp) , "lastUpdateTime" :: NullOrUndefined (Types.Timestamp) } ) -> PipelineExecutionSummary
-newPipelineExecutionSummary'  customize = (PipelineExecutionSummary <<< customize) { "lastUpdateTime": (NullOrUndefined Nothing), "pipelineExecutionId": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newPipelineExecutionSummary' :: ( { "pipelineExecutionId" :: Maybe (PipelineExecutionId) , "status" :: Maybe (PipelineExecutionStatus) , "startTime" :: Maybe (Types.Timestamp) , "lastUpdateTime" :: Maybe (Types.Timestamp) } -> {"pipelineExecutionId" :: Maybe (PipelineExecutionId) , "status" :: Maybe (PipelineExecutionStatus) , "startTime" :: Maybe (Types.Timestamp) , "lastUpdateTime" :: Maybe (Types.Timestamp) } ) -> PipelineExecutionSummary
+newPipelineExecutionSummary'  customize = (PipelineExecutionSummary <<< customize) { "lastUpdateTime": Nothing, "pipelineExecutionId": Nothing, "startTime": Nothing, "status": Nothing }
 
 
 
@@ -2114,9 +2113,9 @@ instance encodePipelineList :: Encode PipelineList where encode = genericEncode 
 
 -- | <p>Information about a pipeline.</p>
 newtype PipelineMetadata = PipelineMetadata 
-  { "pipelineArn" :: NullOrUndefined (PipelineArn)
-  , "created" :: NullOrUndefined (Types.Timestamp)
-  , "updated" :: NullOrUndefined (Types.Timestamp)
+  { "pipelineArn" :: Maybe (PipelineArn)
+  , "created" :: Maybe (Types.Timestamp)
+  , "updated" :: Maybe (Types.Timestamp)
   }
 derive instance newtypePipelineMetadata :: Newtype PipelineMetadata _
 derive instance repGenericPipelineMetadata :: Generic PipelineMetadata _
@@ -2126,12 +2125,12 @@ instance encodePipelineMetadata :: Encode PipelineMetadata where encode = generi
 
 -- | Constructs PipelineMetadata from required parameters
 newPipelineMetadata :: PipelineMetadata
-newPipelineMetadata  = PipelineMetadata { "created": (NullOrUndefined Nothing), "pipelineArn": (NullOrUndefined Nothing), "updated": (NullOrUndefined Nothing) }
+newPipelineMetadata  = PipelineMetadata { "created": Nothing, "pipelineArn": Nothing, "updated": Nothing }
 
 -- | Constructs PipelineMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPipelineMetadata' :: ( { "pipelineArn" :: NullOrUndefined (PipelineArn) , "created" :: NullOrUndefined (Types.Timestamp) , "updated" :: NullOrUndefined (Types.Timestamp) } -> {"pipelineArn" :: NullOrUndefined (PipelineArn) , "created" :: NullOrUndefined (Types.Timestamp) , "updated" :: NullOrUndefined (Types.Timestamp) } ) -> PipelineMetadata
-newPipelineMetadata'  customize = (PipelineMetadata <<< customize) { "created": (NullOrUndefined Nothing), "pipelineArn": (NullOrUndefined Nothing), "updated": (NullOrUndefined Nothing) }
+newPipelineMetadata' :: ( { "pipelineArn" :: Maybe (PipelineArn) , "created" :: Maybe (Types.Timestamp) , "updated" :: Maybe (Types.Timestamp) } -> {"pipelineArn" :: Maybe (PipelineArn) , "created" :: Maybe (Types.Timestamp) , "updated" :: Maybe (Types.Timestamp) } ) -> PipelineMetadata
+newPipelineMetadata'  customize = (PipelineMetadata <<< customize) { "created": Nothing, "pipelineArn": Nothing, "updated": Nothing }
 
 
 
@@ -2175,10 +2174,10 @@ instance encodePipelineStageDeclarationList :: Encode PipelineStageDeclarationLi
 
 -- | <p>Returns a summary of a pipeline.</p>
 newtype PipelineSummary = PipelineSummary 
-  { "name" :: NullOrUndefined (PipelineName)
-  , "version" :: NullOrUndefined (PipelineVersion)
-  , "created" :: NullOrUndefined (Types.Timestamp)
-  , "updated" :: NullOrUndefined (Types.Timestamp)
+  { "name" :: Maybe (PipelineName)
+  , "version" :: Maybe (PipelineVersion)
+  , "created" :: Maybe (Types.Timestamp)
+  , "updated" :: Maybe (Types.Timestamp)
   }
 derive instance newtypePipelineSummary :: Newtype PipelineSummary _
 derive instance repGenericPipelineSummary :: Generic PipelineSummary _
@@ -2188,12 +2187,12 @@ instance encodePipelineSummary :: Encode PipelineSummary where encode = genericE
 
 -- | Constructs PipelineSummary from required parameters
 newPipelineSummary :: PipelineSummary
-newPipelineSummary  = PipelineSummary { "created": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "updated": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newPipelineSummary  = PipelineSummary { "created": Nothing, "name": Nothing, "updated": Nothing, "version": Nothing }
 
 -- | Constructs PipelineSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPipelineSummary' :: ( { "name" :: NullOrUndefined (PipelineName) , "version" :: NullOrUndefined (PipelineVersion) , "created" :: NullOrUndefined (Types.Timestamp) , "updated" :: NullOrUndefined (Types.Timestamp) } -> {"name" :: NullOrUndefined (PipelineName) , "version" :: NullOrUndefined (PipelineVersion) , "created" :: NullOrUndefined (Types.Timestamp) , "updated" :: NullOrUndefined (Types.Timestamp) } ) -> PipelineSummary
-newPipelineSummary'  customize = (PipelineSummary <<< customize) { "created": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "updated": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newPipelineSummary' :: ( { "name" :: Maybe (PipelineName) , "version" :: Maybe (PipelineVersion) , "created" :: Maybe (Types.Timestamp) , "updated" :: Maybe (Types.Timestamp) } -> {"name" :: Maybe (PipelineName) , "version" :: Maybe (PipelineVersion) , "created" :: Maybe (Types.Timestamp) , "updated" :: Maybe (Types.Timestamp) } ) -> PipelineSummary
+newPipelineSummary'  customize = (PipelineSummary <<< customize) { "created": Nothing, "name": Nothing, "updated": Nothing, "version": Nothing }
 
 
 
@@ -2219,8 +2218,8 @@ instance encodePipelineVersionNotFoundException :: Encode PipelineVersionNotFoun
 -- | <p>Represents the input of a PollForJobs action.</p>
 newtype PollForJobsInput = PollForJobsInput 
   { "actionTypeId" :: (ActionTypeId)
-  , "maxBatchSize" :: NullOrUndefined (MaxBatchSize)
-  , "queryParam" :: NullOrUndefined (QueryParamMap)
+  , "maxBatchSize" :: Maybe (MaxBatchSize)
+  , "queryParam" :: Maybe (QueryParamMap)
   }
 derive instance newtypePollForJobsInput :: Newtype PollForJobsInput _
 derive instance repGenericPollForJobsInput :: Generic PollForJobsInput _
@@ -2230,18 +2229,18 @@ instance encodePollForJobsInput :: Encode PollForJobsInput where encode = generi
 
 -- | Constructs PollForJobsInput from required parameters
 newPollForJobsInput :: ActionTypeId -> PollForJobsInput
-newPollForJobsInput _actionTypeId = PollForJobsInput { "actionTypeId": _actionTypeId, "maxBatchSize": (NullOrUndefined Nothing), "queryParam": (NullOrUndefined Nothing) }
+newPollForJobsInput _actionTypeId = PollForJobsInput { "actionTypeId": _actionTypeId, "maxBatchSize": Nothing, "queryParam": Nothing }
 
 -- | Constructs PollForJobsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPollForJobsInput' :: ActionTypeId -> ( { "actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: NullOrUndefined (MaxBatchSize) , "queryParam" :: NullOrUndefined (QueryParamMap) } -> {"actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: NullOrUndefined (MaxBatchSize) , "queryParam" :: NullOrUndefined (QueryParamMap) } ) -> PollForJobsInput
-newPollForJobsInput' _actionTypeId customize = (PollForJobsInput <<< customize) { "actionTypeId": _actionTypeId, "maxBatchSize": (NullOrUndefined Nothing), "queryParam": (NullOrUndefined Nothing) }
+newPollForJobsInput' :: ActionTypeId -> ( { "actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: Maybe (MaxBatchSize) , "queryParam" :: Maybe (QueryParamMap) } -> {"actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: Maybe (MaxBatchSize) , "queryParam" :: Maybe (QueryParamMap) } ) -> PollForJobsInput
+newPollForJobsInput' _actionTypeId customize = (PollForJobsInput <<< customize) { "actionTypeId": _actionTypeId, "maxBatchSize": Nothing, "queryParam": Nothing }
 
 
 
 -- | <p>Represents the output of a PollForJobs action.</p>
 newtype PollForJobsOutput = PollForJobsOutput 
-  { "jobs" :: NullOrUndefined (JobList)
+  { "jobs" :: Maybe (JobList)
   }
 derive instance newtypePollForJobsOutput :: Newtype PollForJobsOutput _
 derive instance repGenericPollForJobsOutput :: Generic PollForJobsOutput _
@@ -2251,19 +2250,19 @@ instance encodePollForJobsOutput :: Encode PollForJobsOutput where encode = gene
 
 -- | Constructs PollForJobsOutput from required parameters
 newPollForJobsOutput :: PollForJobsOutput
-newPollForJobsOutput  = PollForJobsOutput { "jobs": (NullOrUndefined Nothing) }
+newPollForJobsOutput  = PollForJobsOutput { "jobs": Nothing }
 
 -- | Constructs PollForJobsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPollForJobsOutput' :: ( { "jobs" :: NullOrUndefined (JobList) } -> {"jobs" :: NullOrUndefined (JobList) } ) -> PollForJobsOutput
-newPollForJobsOutput'  customize = (PollForJobsOutput <<< customize) { "jobs": (NullOrUndefined Nothing) }
+newPollForJobsOutput' :: ( { "jobs" :: Maybe (JobList) } -> {"jobs" :: Maybe (JobList) } ) -> PollForJobsOutput
+newPollForJobsOutput'  customize = (PollForJobsOutput <<< customize) { "jobs": Nothing }
 
 
 
 -- | <p>Represents the input of a PollForThirdPartyJobs action.</p>
 newtype PollForThirdPartyJobsInput = PollForThirdPartyJobsInput 
   { "actionTypeId" :: (ActionTypeId)
-  , "maxBatchSize" :: NullOrUndefined (MaxBatchSize)
+  , "maxBatchSize" :: Maybe (MaxBatchSize)
   }
 derive instance newtypePollForThirdPartyJobsInput :: Newtype PollForThirdPartyJobsInput _
 derive instance repGenericPollForThirdPartyJobsInput :: Generic PollForThirdPartyJobsInput _
@@ -2273,18 +2272,18 @@ instance encodePollForThirdPartyJobsInput :: Encode PollForThirdPartyJobsInput w
 
 -- | Constructs PollForThirdPartyJobsInput from required parameters
 newPollForThirdPartyJobsInput :: ActionTypeId -> PollForThirdPartyJobsInput
-newPollForThirdPartyJobsInput _actionTypeId = PollForThirdPartyJobsInput { "actionTypeId": _actionTypeId, "maxBatchSize": (NullOrUndefined Nothing) }
+newPollForThirdPartyJobsInput _actionTypeId = PollForThirdPartyJobsInput { "actionTypeId": _actionTypeId, "maxBatchSize": Nothing }
 
 -- | Constructs PollForThirdPartyJobsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPollForThirdPartyJobsInput' :: ActionTypeId -> ( { "actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: NullOrUndefined (MaxBatchSize) } -> {"actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: NullOrUndefined (MaxBatchSize) } ) -> PollForThirdPartyJobsInput
-newPollForThirdPartyJobsInput' _actionTypeId customize = (PollForThirdPartyJobsInput <<< customize) { "actionTypeId": _actionTypeId, "maxBatchSize": (NullOrUndefined Nothing) }
+newPollForThirdPartyJobsInput' :: ActionTypeId -> ( { "actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: Maybe (MaxBatchSize) } -> {"actionTypeId" :: (ActionTypeId) , "maxBatchSize" :: Maybe (MaxBatchSize) } ) -> PollForThirdPartyJobsInput
+newPollForThirdPartyJobsInput' _actionTypeId customize = (PollForThirdPartyJobsInput <<< customize) { "actionTypeId": _actionTypeId, "maxBatchSize": Nothing }
 
 
 
 -- | <p>Represents the output of a PollForThirdPartyJobs action.</p>
 newtype PollForThirdPartyJobsOutput = PollForThirdPartyJobsOutput 
-  { "jobs" :: NullOrUndefined (ThirdPartyJobList)
+  { "jobs" :: Maybe (ThirdPartyJobList)
   }
 derive instance newtypePollForThirdPartyJobsOutput :: Newtype PollForThirdPartyJobsOutput _
 derive instance repGenericPollForThirdPartyJobsOutput :: Generic PollForThirdPartyJobsOutput _
@@ -2294,12 +2293,12 @@ instance encodePollForThirdPartyJobsOutput :: Encode PollForThirdPartyJobsOutput
 
 -- | Constructs PollForThirdPartyJobsOutput from required parameters
 newPollForThirdPartyJobsOutput :: PollForThirdPartyJobsOutput
-newPollForThirdPartyJobsOutput  = PollForThirdPartyJobsOutput { "jobs": (NullOrUndefined Nothing) }
+newPollForThirdPartyJobsOutput  = PollForThirdPartyJobsOutput { "jobs": Nothing }
 
 -- | Constructs PollForThirdPartyJobsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPollForThirdPartyJobsOutput' :: ( { "jobs" :: NullOrUndefined (ThirdPartyJobList) } -> {"jobs" :: NullOrUndefined (ThirdPartyJobList) } ) -> PollForThirdPartyJobsOutput
-newPollForThirdPartyJobsOutput'  customize = (PollForThirdPartyJobsOutput <<< customize) { "jobs": (NullOrUndefined Nothing) }
+newPollForThirdPartyJobsOutput' :: ( { "jobs" :: Maybe (ThirdPartyJobList) } -> {"jobs" :: Maybe (ThirdPartyJobList) } ) -> PollForThirdPartyJobsOutput
+newPollForThirdPartyJobsOutput'  customize = (PollForThirdPartyJobsOutput <<< customize) { "jobs": Nothing }
 
 
 
@@ -2329,8 +2328,8 @@ newPutActionRevisionInput' _actionName _actionRevision _pipelineName _stageName 
 
 -- | <p>Represents the output of a PutActionRevision action.</p>
 newtype PutActionRevisionOutput = PutActionRevisionOutput 
-  { "newRevision" :: NullOrUndefined (Boolean)
-  , "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId)
+  { "newRevision" :: Maybe (Boolean)
+  , "pipelineExecutionId" :: Maybe (PipelineExecutionId)
   }
 derive instance newtypePutActionRevisionOutput :: Newtype PutActionRevisionOutput _
 derive instance repGenericPutActionRevisionOutput :: Generic PutActionRevisionOutput _
@@ -2340,12 +2339,12 @@ instance encodePutActionRevisionOutput :: Encode PutActionRevisionOutput where e
 
 -- | Constructs PutActionRevisionOutput from required parameters
 newPutActionRevisionOutput :: PutActionRevisionOutput
-newPutActionRevisionOutput  = PutActionRevisionOutput { "newRevision": (NullOrUndefined Nothing), "pipelineExecutionId": (NullOrUndefined Nothing) }
+newPutActionRevisionOutput  = PutActionRevisionOutput { "newRevision": Nothing, "pipelineExecutionId": Nothing }
 
 -- | Constructs PutActionRevisionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutActionRevisionOutput' :: ( { "newRevision" :: NullOrUndefined (Boolean) , "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) } -> {"newRevision" :: NullOrUndefined (Boolean) , "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) } ) -> PutActionRevisionOutput
-newPutActionRevisionOutput'  customize = (PutActionRevisionOutput <<< customize) { "newRevision": (NullOrUndefined Nothing), "pipelineExecutionId": (NullOrUndefined Nothing) }
+newPutActionRevisionOutput' :: ( { "newRevision" :: Maybe (Boolean) , "pipelineExecutionId" :: Maybe (PipelineExecutionId) } -> {"newRevision" :: Maybe (Boolean) , "pipelineExecutionId" :: Maybe (PipelineExecutionId) } ) -> PutActionRevisionOutput
+newPutActionRevisionOutput'  customize = (PutActionRevisionOutput <<< customize) { "newRevision": Nothing, "pipelineExecutionId": Nothing }
 
 
 
@@ -2376,7 +2375,7 @@ newPutApprovalResultInput' _actionName _pipelineName _result _stageName _token c
 
 -- | <p>Represents the output of a PutApprovalResult action.</p>
 newtype PutApprovalResultOutput = PutApprovalResultOutput 
-  { "approvedAt" :: NullOrUndefined (Types.Timestamp)
+  { "approvedAt" :: Maybe (Types.Timestamp)
   }
 derive instance newtypePutApprovalResultOutput :: Newtype PutApprovalResultOutput _
 derive instance repGenericPutApprovalResultOutput :: Generic PutApprovalResultOutput _
@@ -2386,12 +2385,12 @@ instance encodePutApprovalResultOutput :: Encode PutApprovalResultOutput where e
 
 -- | Constructs PutApprovalResultOutput from required parameters
 newPutApprovalResultOutput :: PutApprovalResultOutput
-newPutApprovalResultOutput  = PutApprovalResultOutput { "approvedAt": (NullOrUndefined Nothing) }
+newPutApprovalResultOutput  = PutApprovalResultOutput { "approvedAt": Nothing }
 
 -- | Constructs PutApprovalResultOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutApprovalResultOutput' :: ( { "approvedAt" :: NullOrUndefined (Types.Timestamp) } -> {"approvedAt" :: NullOrUndefined (Types.Timestamp) } ) -> PutApprovalResultOutput
-newPutApprovalResultOutput'  customize = (PutApprovalResultOutput <<< customize) { "approvedAt": (NullOrUndefined Nothing) }
+newPutApprovalResultOutput' :: ( { "approvedAt" :: Maybe (Types.Timestamp) } -> {"approvedAt" :: Maybe (Types.Timestamp) } ) -> PutApprovalResultOutput
+newPutApprovalResultOutput'  customize = (PutApprovalResultOutput <<< customize) { "approvedAt": Nothing }
 
 
 
@@ -2420,9 +2419,9 @@ newPutJobFailureResultInput' _failureDetails _jobId customize = (PutJobFailureRe
 -- | <p>Represents the input of a PutJobSuccessResult action.</p>
 newtype PutJobSuccessResultInput = PutJobSuccessResultInput 
   { "jobId" :: (JobId)
-  , "currentRevision" :: NullOrUndefined (CurrentRevision)
-  , "continuationToken" :: NullOrUndefined (ContinuationToken)
-  , "executionDetails" :: NullOrUndefined (ExecutionDetails)
+  , "currentRevision" :: Maybe (CurrentRevision)
+  , "continuationToken" :: Maybe (ContinuationToken)
+  , "executionDetails" :: Maybe (ExecutionDetails)
   }
 derive instance newtypePutJobSuccessResultInput :: Newtype PutJobSuccessResultInput _
 derive instance repGenericPutJobSuccessResultInput :: Generic PutJobSuccessResultInput _
@@ -2432,12 +2431,12 @@ instance encodePutJobSuccessResultInput :: Encode PutJobSuccessResultInput where
 
 -- | Constructs PutJobSuccessResultInput from required parameters
 newPutJobSuccessResultInput :: JobId -> PutJobSuccessResultInput
-newPutJobSuccessResultInput _jobId = PutJobSuccessResultInput { "jobId": _jobId, "continuationToken": (NullOrUndefined Nothing), "currentRevision": (NullOrUndefined Nothing), "executionDetails": (NullOrUndefined Nothing) }
+newPutJobSuccessResultInput _jobId = PutJobSuccessResultInput { "jobId": _jobId, "continuationToken": Nothing, "currentRevision": Nothing, "executionDetails": Nothing }
 
 -- | Constructs PutJobSuccessResultInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutJobSuccessResultInput' :: JobId -> ( { "jobId" :: (JobId) , "currentRevision" :: NullOrUndefined (CurrentRevision) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "executionDetails" :: NullOrUndefined (ExecutionDetails) } -> {"jobId" :: (JobId) , "currentRevision" :: NullOrUndefined (CurrentRevision) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "executionDetails" :: NullOrUndefined (ExecutionDetails) } ) -> PutJobSuccessResultInput
-newPutJobSuccessResultInput' _jobId customize = (PutJobSuccessResultInput <<< customize) { "jobId": _jobId, "continuationToken": (NullOrUndefined Nothing), "currentRevision": (NullOrUndefined Nothing), "executionDetails": (NullOrUndefined Nothing) }
+newPutJobSuccessResultInput' :: JobId -> ( { "jobId" :: (JobId) , "currentRevision" :: Maybe (CurrentRevision) , "continuationToken" :: Maybe (ContinuationToken) , "executionDetails" :: Maybe (ExecutionDetails) } -> {"jobId" :: (JobId) , "currentRevision" :: Maybe (CurrentRevision) , "continuationToken" :: Maybe (ContinuationToken) , "executionDetails" :: Maybe (ExecutionDetails) } ) -> PutJobSuccessResultInput
+newPutJobSuccessResultInput' _jobId customize = (PutJobSuccessResultInput <<< customize) { "jobId": _jobId, "continuationToken": Nothing, "currentRevision": Nothing, "executionDetails": Nothing }
 
 
 
@@ -2468,9 +2467,9 @@ newPutThirdPartyJobFailureResultInput' _clientToken _failureDetails _jobId custo
 newtype PutThirdPartyJobSuccessResultInput = PutThirdPartyJobSuccessResultInput 
   { "jobId" :: (ThirdPartyJobId)
   , "clientToken" :: (ClientToken)
-  , "currentRevision" :: NullOrUndefined (CurrentRevision)
-  , "continuationToken" :: NullOrUndefined (ContinuationToken)
-  , "executionDetails" :: NullOrUndefined (ExecutionDetails)
+  , "currentRevision" :: Maybe (CurrentRevision)
+  , "continuationToken" :: Maybe (ContinuationToken)
+  , "executionDetails" :: Maybe (ExecutionDetails)
   }
 derive instance newtypePutThirdPartyJobSuccessResultInput :: Newtype PutThirdPartyJobSuccessResultInput _
 derive instance repGenericPutThirdPartyJobSuccessResultInput :: Generic PutThirdPartyJobSuccessResultInput _
@@ -2480,12 +2479,12 @@ instance encodePutThirdPartyJobSuccessResultInput :: Encode PutThirdPartyJobSucc
 
 -- | Constructs PutThirdPartyJobSuccessResultInput from required parameters
 newPutThirdPartyJobSuccessResultInput :: ClientToken -> ThirdPartyJobId -> PutThirdPartyJobSuccessResultInput
-newPutThirdPartyJobSuccessResultInput _clientToken _jobId = PutThirdPartyJobSuccessResultInput { "clientToken": _clientToken, "jobId": _jobId, "continuationToken": (NullOrUndefined Nothing), "currentRevision": (NullOrUndefined Nothing), "executionDetails": (NullOrUndefined Nothing) }
+newPutThirdPartyJobSuccessResultInput _clientToken _jobId = PutThirdPartyJobSuccessResultInput { "clientToken": _clientToken, "jobId": _jobId, "continuationToken": Nothing, "currentRevision": Nothing, "executionDetails": Nothing }
 
 -- | Constructs PutThirdPartyJobSuccessResultInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutThirdPartyJobSuccessResultInput' :: ClientToken -> ThirdPartyJobId -> ( { "jobId" :: (ThirdPartyJobId) , "clientToken" :: (ClientToken) , "currentRevision" :: NullOrUndefined (CurrentRevision) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "executionDetails" :: NullOrUndefined (ExecutionDetails) } -> {"jobId" :: (ThirdPartyJobId) , "clientToken" :: (ClientToken) , "currentRevision" :: NullOrUndefined (CurrentRevision) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "executionDetails" :: NullOrUndefined (ExecutionDetails) } ) -> PutThirdPartyJobSuccessResultInput
-newPutThirdPartyJobSuccessResultInput' _clientToken _jobId customize = (PutThirdPartyJobSuccessResultInput <<< customize) { "clientToken": _clientToken, "jobId": _jobId, "continuationToken": (NullOrUndefined Nothing), "currentRevision": (NullOrUndefined Nothing), "executionDetails": (NullOrUndefined Nothing) }
+newPutThirdPartyJobSuccessResultInput' :: ClientToken -> ThirdPartyJobId -> ( { "jobId" :: (ThirdPartyJobId) , "clientToken" :: (ClientToken) , "currentRevision" :: Maybe (CurrentRevision) , "continuationToken" :: Maybe (ContinuationToken) , "executionDetails" :: Maybe (ExecutionDetails) } -> {"jobId" :: (ThirdPartyJobId) , "clientToken" :: (ClientToken) , "currentRevision" :: Maybe (CurrentRevision) , "continuationToken" :: Maybe (ContinuationToken) , "executionDetails" :: Maybe (ExecutionDetails) } ) -> PutThirdPartyJobSuccessResultInput
+newPutThirdPartyJobSuccessResultInput' _clientToken _jobId customize = (PutThirdPartyJobSuccessResultInput <<< customize) { "clientToken": _clientToken, "jobId": _jobId, "continuationToken": Nothing, "currentRevision": Nothing, "executionDetails": Nothing }
 
 
 
@@ -2524,7 +2523,7 @@ newRetryStageExecutionInput' _pipelineExecutionId _pipelineName _retryMode _stag
 
 -- | <p>Represents the output of a RetryStageExecution action.</p>
 newtype RetryStageExecutionOutput = RetryStageExecutionOutput 
-  { "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId)
+  { "pipelineExecutionId" :: Maybe (PipelineExecutionId)
   }
 derive instance newtypeRetryStageExecutionOutput :: Newtype RetryStageExecutionOutput _
 derive instance repGenericRetryStageExecutionOutput :: Generic RetryStageExecutionOutput _
@@ -2534,12 +2533,12 @@ instance encodeRetryStageExecutionOutput :: Encode RetryStageExecutionOutput whe
 
 -- | Constructs RetryStageExecutionOutput from required parameters
 newRetryStageExecutionOutput :: RetryStageExecutionOutput
-newRetryStageExecutionOutput  = RetryStageExecutionOutput { "pipelineExecutionId": (NullOrUndefined Nothing) }
+newRetryStageExecutionOutput  = RetryStageExecutionOutput { "pipelineExecutionId": Nothing }
 
 -- | Constructs RetryStageExecutionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRetryStageExecutionOutput' :: ( { "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) } -> {"pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) } ) -> RetryStageExecutionOutput
-newRetryStageExecutionOutput'  customize = (RetryStageExecutionOutput <<< customize) { "pipelineExecutionId": (NullOrUndefined Nothing) }
+newRetryStageExecutionOutput' :: ( { "pipelineExecutionId" :: Maybe (PipelineExecutionId) } -> {"pipelineExecutionId" :: Maybe (PipelineExecutionId) } ) -> RetryStageExecutionOutput
+newRetryStageExecutionOutput'  customize = (RetryStageExecutionOutput <<< customize) { "pipelineExecutionId": Nothing }
 
 
 
@@ -2657,7 +2656,7 @@ instance encodeStageBlockerDeclarationList :: Encode StageBlockerDeclarationList
 
 -- | <p>Represents information about a stage to a job worker.</p>
 newtype StageContext = StageContext 
-  { "name" :: NullOrUndefined (StageName)
+  { "name" :: Maybe (StageName)
   }
 derive instance newtypeStageContext :: Newtype StageContext _
 derive instance repGenericStageContext :: Generic StageContext _
@@ -2667,19 +2666,19 @@ instance encodeStageContext :: Encode StageContext where encode = genericEncode 
 
 -- | Constructs StageContext from required parameters
 newStageContext :: StageContext
-newStageContext  = StageContext { "name": (NullOrUndefined Nothing) }
+newStageContext  = StageContext { "name": Nothing }
 
 -- | Constructs StageContext's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStageContext' :: ( { "name" :: NullOrUndefined (StageName) } -> {"name" :: NullOrUndefined (StageName) } ) -> StageContext
-newStageContext'  customize = (StageContext <<< customize) { "name": (NullOrUndefined Nothing) }
+newStageContext' :: ( { "name" :: Maybe (StageName) } -> {"name" :: Maybe (StageName) } ) -> StageContext
+newStageContext'  customize = (StageContext <<< customize) { "name": Nothing }
 
 
 
 -- | <p>Represents information about a stage and its definition.</p>
 newtype StageDeclaration = StageDeclaration 
   { "name" :: (StageName)
-  , "blockers" :: NullOrUndefined (StageBlockerDeclarationList)
+  , "blockers" :: Maybe (StageBlockerDeclarationList)
   , "actions" :: (StageActionDeclarationList)
   }
 derive instance newtypeStageDeclaration :: Newtype StageDeclaration _
@@ -2690,12 +2689,12 @@ instance encodeStageDeclaration :: Encode StageDeclaration where encode = generi
 
 -- | Constructs StageDeclaration from required parameters
 newStageDeclaration :: StageActionDeclarationList -> StageName -> StageDeclaration
-newStageDeclaration _actions _name = StageDeclaration { "actions": _actions, "name": _name, "blockers": (NullOrUndefined Nothing) }
+newStageDeclaration _actions _name = StageDeclaration { "actions": _actions, "name": _name, "blockers": Nothing }
 
 -- | Constructs StageDeclaration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStageDeclaration' :: StageActionDeclarationList -> StageName -> ( { "name" :: (StageName) , "blockers" :: NullOrUndefined (StageBlockerDeclarationList) , "actions" :: (StageActionDeclarationList) } -> {"name" :: (StageName) , "blockers" :: NullOrUndefined (StageBlockerDeclarationList) , "actions" :: (StageActionDeclarationList) } ) -> StageDeclaration
-newStageDeclaration' _actions _name customize = (StageDeclaration <<< customize) { "actions": _actions, "name": _name, "blockers": (NullOrUndefined Nothing) }
+newStageDeclaration' :: StageActionDeclarationList -> StageName -> ( { "name" :: (StageName) , "blockers" :: Maybe (StageBlockerDeclarationList) , "actions" :: (StageActionDeclarationList) } -> {"name" :: (StageName) , "blockers" :: Maybe (StageBlockerDeclarationList) , "actions" :: (StageActionDeclarationList) } ) -> StageDeclaration
+newStageDeclaration' _actions _name customize = (StageDeclaration <<< customize) { "actions": _actions, "name": _name, "blockers": Nothing }
 
 
 
@@ -2770,10 +2769,10 @@ instance encodeStageRetryMode :: Encode StageRetryMode where encode = genericEnc
 
 -- | <p>Represents information about the state of the stage.</p>
 newtype StageState = StageState 
-  { "stageName" :: NullOrUndefined (StageName)
-  , "inboundTransitionState" :: NullOrUndefined (TransitionState)
-  , "actionStates" :: NullOrUndefined (ActionStateList)
-  , "latestExecution" :: NullOrUndefined (StageExecution)
+  { "stageName" :: Maybe (StageName)
+  , "inboundTransitionState" :: Maybe (TransitionState)
+  , "actionStates" :: Maybe (ActionStateList)
+  , "latestExecution" :: Maybe (StageExecution)
   }
 derive instance newtypeStageState :: Newtype StageState _
 derive instance repGenericStageState :: Generic StageState _
@@ -2783,12 +2782,12 @@ instance encodeStageState :: Encode StageState where encode = genericEncode opti
 
 -- | Constructs StageState from required parameters
 newStageState :: StageState
-newStageState  = StageState { "actionStates": (NullOrUndefined Nothing), "inboundTransitionState": (NullOrUndefined Nothing), "latestExecution": (NullOrUndefined Nothing), "stageName": (NullOrUndefined Nothing) }
+newStageState  = StageState { "actionStates": Nothing, "inboundTransitionState": Nothing, "latestExecution": Nothing, "stageName": Nothing }
 
 -- | Constructs StageState's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStageState' :: ( { "stageName" :: NullOrUndefined (StageName) , "inboundTransitionState" :: NullOrUndefined (TransitionState) , "actionStates" :: NullOrUndefined (ActionStateList) , "latestExecution" :: NullOrUndefined (StageExecution) } -> {"stageName" :: NullOrUndefined (StageName) , "inboundTransitionState" :: NullOrUndefined (TransitionState) , "actionStates" :: NullOrUndefined (ActionStateList) , "latestExecution" :: NullOrUndefined (StageExecution) } ) -> StageState
-newStageState'  customize = (StageState <<< customize) { "actionStates": (NullOrUndefined Nothing), "inboundTransitionState": (NullOrUndefined Nothing), "latestExecution": (NullOrUndefined Nothing), "stageName": (NullOrUndefined Nothing) }
+newStageState' :: ( { "stageName" :: Maybe (StageName) , "inboundTransitionState" :: Maybe (TransitionState) , "actionStates" :: Maybe (ActionStateList) , "latestExecution" :: Maybe (StageExecution) } -> {"stageName" :: Maybe (StageName) , "inboundTransitionState" :: Maybe (TransitionState) , "actionStates" :: Maybe (ActionStateList) , "latestExecution" :: Maybe (StageExecution) } ) -> StageState
+newStageState'  customize = (StageState <<< customize) { "actionStates": Nothing, "inboundTransitionState": Nothing, "latestExecution": Nothing, "stageName": Nothing }
 
 
 
@@ -2833,7 +2832,7 @@ newStartPipelineExecutionInput' _name customize = (StartPipelineExecutionInput <
 
 -- | <p>Represents the output of a StartPipelineExecution action.</p>
 newtype StartPipelineExecutionOutput = StartPipelineExecutionOutput 
-  { "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId)
+  { "pipelineExecutionId" :: Maybe (PipelineExecutionId)
   }
 derive instance newtypeStartPipelineExecutionOutput :: Newtype StartPipelineExecutionOutput _
 derive instance repGenericStartPipelineExecutionOutput :: Generic StartPipelineExecutionOutput _
@@ -2843,19 +2842,19 @@ instance encodeStartPipelineExecutionOutput :: Encode StartPipelineExecutionOutp
 
 -- | Constructs StartPipelineExecutionOutput from required parameters
 newStartPipelineExecutionOutput :: StartPipelineExecutionOutput
-newStartPipelineExecutionOutput  = StartPipelineExecutionOutput { "pipelineExecutionId": (NullOrUndefined Nothing) }
+newStartPipelineExecutionOutput  = StartPipelineExecutionOutput { "pipelineExecutionId": Nothing }
 
 -- | Constructs StartPipelineExecutionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartPipelineExecutionOutput' :: ( { "pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) } -> {"pipelineExecutionId" :: NullOrUndefined (PipelineExecutionId) } ) -> StartPipelineExecutionOutput
-newStartPipelineExecutionOutput'  customize = (StartPipelineExecutionOutput <<< customize) { "pipelineExecutionId": (NullOrUndefined Nothing) }
+newStartPipelineExecutionOutput' :: ( { "pipelineExecutionId" :: Maybe (PipelineExecutionId) } -> {"pipelineExecutionId" :: Maybe (PipelineExecutionId) } ) -> StartPipelineExecutionOutput
+newStartPipelineExecutionOutput'  customize = (StartPipelineExecutionOutput <<< customize) { "pipelineExecutionId": Nothing }
 
 
 
 -- | <p>A response to a PollForThirdPartyJobs request returned by AWS CodePipeline when there is a job to be worked upon by a partner action.</p>
 newtype ThirdPartyJob = ThirdPartyJob 
-  { "clientId" :: NullOrUndefined (ClientId)
-  , "jobId" :: NullOrUndefined (JobId)
+  { "clientId" :: Maybe (ClientId)
+  , "jobId" :: Maybe (JobId)
   }
 derive instance newtypeThirdPartyJob :: Newtype ThirdPartyJob _
 derive instance repGenericThirdPartyJob :: Generic ThirdPartyJob _
@@ -2865,25 +2864,25 @@ instance encodeThirdPartyJob :: Encode ThirdPartyJob where encode = genericEncod
 
 -- | Constructs ThirdPartyJob from required parameters
 newThirdPartyJob :: ThirdPartyJob
-newThirdPartyJob  = ThirdPartyJob { "clientId": (NullOrUndefined Nothing), "jobId": (NullOrUndefined Nothing) }
+newThirdPartyJob  = ThirdPartyJob { "clientId": Nothing, "jobId": Nothing }
 
 -- | Constructs ThirdPartyJob's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThirdPartyJob' :: ( { "clientId" :: NullOrUndefined (ClientId) , "jobId" :: NullOrUndefined (JobId) } -> {"clientId" :: NullOrUndefined (ClientId) , "jobId" :: NullOrUndefined (JobId) } ) -> ThirdPartyJob
-newThirdPartyJob'  customize = (ThirdPartyJob <<< customize) { "clientId": (NullOrUndefined Nothing), "jobId": (NullOrUndefined Nothing) }
+newThirdPartyJob' :: ( { "clientId" :: Maybe (ClientId) , "jobId" :: Maybe (JobId) } -> {"clientId" :: Maybe (ClientId) , "jobId" :: Maybe (JobId) } ) -> ThirdPartyJob
+newThirdPartyJob'  customize = (ThirdPartyJob <<< customize) { "clientId": Nothing, "jobId": Nothing }
 
 
 
 -- | <p>Represents information about the job data for a partner action.</p>
 newtype ThirdPartyJobData = ThirdPartyJobData 
-  { "actionTypeId" :: NullOrUndefined (ActionTypeId)
-  , "actionConfiguration" :: NullOrUndefined (ActionConfiguration)
-  , "pipelineContext" :: NullOrUndefined (PipelineContext)
-  , "inputArtifacts" :: NullOrUndefined (ArtifactList)
-  , "outputArtifacts" :: NullOrUndefined (ArtifactList)
-  , "artifactCredentials" :: NullOrUndefined (AWSSessionCredentials)
-  , "continuationToken" :: NullOrUndefined (ContinuationToken)
-  , "encryptionKey" :: NullOrUndefined (EncryptionKey)
+  { "actionTypeId" :: Maybe (ActionTypeId)
+  , "actionConfiguration" :: Maybe (ActionConfiguration)
+  , "pipelineContext" :: Maybe (PipelineContext)
+  , "inputArtifacts" :: Maybe (ArtifactList)
+  , "outputArtifacts" :: Maybe (ArtifactList)
+  , "artifactCredentials" :: Maybe (AWSSessionCredentials)
+  , "continuationToken" :: Maybe (ContinuationToken)
+  , "encryptionKey" :: Maybe (EncryptionKey)
   }
 derive instance newtypeThirdPartyJobData :: Newtype ThirdPartyJobData _
 derive instance repGenericThirdPartyJobData :: Generic ThirdPartyJobData _
@@ -2893,20 +2892,20 @@ instance encodeThirdPartyJobData :: Encode ThirdPartyJobData where encode = gene
 
 -- | Constructs ThirdPartyJobData from required parameters
 newThirdPartyJobData :: ThirdPartyJobData
-newThirdPartyJobData  = ThirdPartyJobData { "actionConfiguration": (NullOrUndefined Nothing), "actionTypeId": (NullOrUndefined Nothing), "artifactCredentials": (NullOrUndefined Nothing), "continuationToken": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "inputArtifacts": (NullOrUndefined Nothing), "outputArtifacts": (NullOrUndefined Nothing), "pipelineContext": (NullOrUndefined Nothing) }
+newThirdPartyJobData  = ThirdPartyJobData { "actionConfiguration": Nothing, "actionTypeId": Nothing, "artifactCredentials": Nothing, "continuationToken": Nothing, "encryptionKey": Nothing, "inputArtifacts": Nothing, "outputArtifacts": Nothing, "pipelineContext": Nothing }
 
 -- | Constructs ThirdPartyJobData's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThirdPartyJobData' :: ( { "actionTypeId" :: NullOrUndefined (ActionTypeId) , "actionConfiguration" :: NullOrUndefined (ActionConfiguration) , "pipelineContext" :: NullOrUndefined (PipelineContext) , "inputArtifacts" :: NullOrUndefined (ArtifactList) , "outputArtifacts" :: NullOrUndefined (ArtifactList) , "artifactCredentials" :: NullOrUndefined (AWSSessionCredentials) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "encryptionKey" :: NullOrUndefined (EncryptionKey) } -> {"actionTypeId" :: NullOrUndefined (ActionTypeId) , "actionConfiguration" :: NullOrUndefined (ActionConfiguration) , "pipelineContext" :: NullOrUndefined (PipelineContext) , "inputArtifacts" :: NullOrUndefined (ArtifactList) , "outputArtifacts" :: NullOrUndefined (ArtifactList) , "artifactCredentials" :: NullOrUndefined (AWSSessionCredentials) , "continuationToken" :: NullOrUndefined (ContinuationToken) , "encryptionKey" :: NullOrUndefined (EncryptionKey) } ) -> ThirdPartyJobData
-newThirdPartyJobData'  customize = (ThirdPartyJobData <<< customize) { "actionConfiguration": (NullOrUndefined Nothing), "actionTypeId": (NullOrUndefined Nothing), "artifactCredentials": (NullOrUndefined Nothing), "continuationToken": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "inputArtifacts": (NullOrUndefined Nothing), "outputArtifacts": (NullOrUndefined Nothing), "pipelineContext": (NullOrUndefined Nothing) }
+newThirdPartyJobData' :: ( { "actionTypeId" :: Maybe (ActionTypeId) , "actionConfiguration" :: Maybe (ActionConfiguration) , "pipelineContext" :: Maybe (PipelineContext) , "inputArtifacts" :: Maybe (ArtifactList) , "outputArtifacts" :: Maybe (ArtifactList) , "artifactCredentials" :: Maybe (AWSSessionCredentials) , "continuationToken" :: Maybe (ContinuationToken) , "encryptionKey" :: Maybe (EncryptionKey) } -> {"actionTypeId" :: Maybe (ActionTypeId) , "actionConfiguration" :: Maybe (ActionConfiguration) , "pipelineContext" :: Maybe (PipelineContext) , "inputArtifacts" :: Maybe (ArtifactList) , "outputArtifacts" :: Maybe (ArtifactList) , "artifactCredentials" :: Maybe (AWSSessionCredentials) , "continuationToken" :: Maybe (ContinuationToken) , "encryptionKey" :: Maybe (EncryptionKey) } ) -> ThirdPartyJobData
+newThirdPartyJobData'  customize = (ThirdPartyJobData <<< customize) { "actionConfiguration": Nothing, "actionTypeId": Nothing, "artifactCredentials": Nothing, "continuationToken": Nothing, "encryptionKey": Nothing, "inputArtifacts": Nothing, "outputArtifacts": Nothing, "pipelineContext": Nothing }
 
 
 
 -- | <p>The details of a job sent in response to a GetThirdPartyJobDetails request.</p>
 newtype ThirdPartyJobDetails = ThirdPartyJobDetails 
-  { "id" :: NullOrUndefined (ThirdPartyJobId)
-  , "data" :: NullOrUndefined (ThirdPartyJobData)
-  , "nonce" :: NullOrUndefined (Nonce)
+  { "id" :: Maybe (ThirdPartyJobId)
+  , "data" :: Maybe (ThirdPartyJobData)
+  , "nonce" :: Maybe (Nonce)
   }
 derive instance newtypeThirdPartyJobDetails :: Newtype ThirdPartyJobDetails _
 derive instance repGenericThirdPartyJobDetails :: Generic ThirdPartyJobDetails _
@@ -2916,12 +2915,12 @@ instance encodeThirdPartyJobDetails :: Encode ThirdPartyJobDetails where encode 
 
 -- | Constructs ThirdPartyJobDetails from required parameters
 newThirdPartyJobDetails :: ThirdPartyJobDetails
-newThirdPartyJobDetails  = ThirdPartyJobDetails { "data": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing), "nonce": (NullOrUndefined Nothing) }
+newThirdPartyJobDetails  = ThirdPartyJobDetails { "data": Nothing, "id": Nothing, "nonce": Nothing }
 
 -- | Constructs ThirdPartyJobDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThirdPartyJobDetails' :: ( { "id" :: NullOrUndefined (ThirdPartyJobId) , "data" :: NullOrUndefined (ThirdPartyJobData) , "nonce" :: NullOrUndefined (Nonce) } -> {"id" :: NullOrUndefined (ThirdPartyJobId) , "data" :: NullOrUndefined (ThirdPartyJobData) , "nonce" :: NullOrUndefined (Nonce) } ) -> ThirdPartyJobDetails
-newThirdPartyJobDetails'  customize = (ThirdPartyJobDetails <<< customize) { "data": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing), "nonce": (NullOrUndefined Nothing) }
+newThirdPartyJobDetails' :: ( { "id" :: Maybe (ThirdPartyJobId) , "data" :: Maybe (ThirdPartyJobData) , "nonce" :: Maybe (Nonce) } -> {"id" :: Maybe (ThirdPartyJobId) , "data" :: Maybe (ThirdPartyJobData) , "nonce" :: Maybe (Nonce) } ) -> ThirdPartyJobDetails
+newThirdPartyJobDetails'  customize = (ThirdPartyJobDetails <<< customize) { "data": Nothing, "id": Nothing, "nonce": Nothing }
 
 
 
@@ -2954,10 +2953,10 @@ instance encodeTime :: Encode Time where encode = genericEncode options
 
 -- | <p>Represents information about the state of transitions between one stage and another stage.</p>
 newtype TransitionState = TransitionState 
-  { "enabled" :: NullOrUndefined (Enabled)
-  , "lastChangedBy" :: NullOrUndefined (LastChangedBy)
-  , "lastChangedAt" :: NullOrUndefined (LastChangedAt)
-  , "disabledReason" :: NullOrUndefined (DisabledReason)
+  { "enabled" :: Maybe (Enabled)
+  , "lastChangedBy" :: Maybe (LastChangedBy)
+  , "lastChangedAt" :: Maybe (LastChangedAt)
+  , "disabledReason" :: Maybe (DisabledReason)
   }
 derive instance newtypeTransitionState :: Newtype TransitionState _
 derive instance repGenericTransitionState :: Generic TransitionState _
@@ -2967,12 +2966,12 @@ instance encodeTransitionState :: Encode TransitionState where encode = genericE
 
 -- | Constructs TransitionState from required parameters
 newTransitionState :: TransitionState
-newTransitionState  = TransitionState { "disabledReason": (NullOrUndefined Nothing), "enabled": (NullOrUndefined Nothing), "lastChangedAt": (NullOrUndefined Nothing), "lastChangedBy": (NullOrUndefined Nothing) }
+newTransitionState  = TransitionState { "disabledReason": Nothing, "enabled": Nothing, "lastChangedAt": Nothing, "lastChangedBy": Nothing }
 
 -- | Constructs TransitionState's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTransitionState' :: ( { "enabled" :: NullOrUndefined (Enabled) , "lastChangedBy" :: NullOrUndefined (LastChangedBy) , "lastChangedAt" :: NullOrUndefined (LastChangedAt) , "disabledReason" :: NullOrUndefined (DisabledReason) } -> {"enabled" :: NullOrUndefined (Enabled) , "lastChangedBy" :: NullOrUndefined (LastChangedBy) , "lastChangedAt" :: NullOrUndefined (LastChangedAt) , "disabledReason" :: NullOrUndefined (DisabledReason) } ) -> TransitionState
-newTransitionState'  customize = (TransitionState <<< customize) { "disabledReason": (NullOrUndefined Nothing), "enabled": (NullOrUndefined Nothing), "lastChangedAt": (NullOrUndefined Nothing), "lastChangedBy": (NullOrUndefined Nothing) }
+newTransitionState' :: ( { "enabled" :: Maybe (Enabled) , "lastChangedBy" :: Maybe (LastChangedBy) , "lastChangedAt" :: Maybe (LastChangedAt) , "disabledReason" :: Maybe (DisabledReason) } -> {"enabled" :: Maybe (Enabled) , "lastChangedBy" :: Maybe (LastChangedBy) , "lastChangedAt" :: Maybe (LastChangedAt) , "disabledReason" :: Maybe (DisabledReason) } ) -> TransitionState
+newTransitionState'  customize = (TransitionState <<< customize) { "disabledReason": Nothing, "enabled": Nothing, "lastChangedAt": Nothing, "lastChangedBy": Nothing }
 
 
 
@@ -2999,7 +2998,7 @@ newUpdatePipelineInput' _pipeline customize = (UpdatePipelineInput <<< customize
 
 -- | <p>Represents the output of an UpdatePipeline action.</p>
 newtype UpdatePipelineOutput = UpdatePipelineOutput 
-  { "pipeline" :: NullOrUndefined (PipelineDeclaration)
+  { "pipeline" :: Maybe (PipelineDeclaration)
   }
 derive instance newtypeUpdatePipelineOutput :: Newtype UpdatePipelineOutput _
 derive instance repGenericUpdatePipelineOutput :: Generic UpdatePipelineOutput _
@@ -3009,12 +3008,12 @@ instance encodeUpdatePipelineOutput :: Encode UpdatePipelineOutput where encode 
 
 -- | Constructs UpdatePipelineOutput from required parameters
 newUpdatePipelineOutput :: UpdatePipelineOutput
-newUpdatePipelineOutput  = UpdatePipelineOutput { "pipeline": (NullOrUndefined Nothing) }
+newUpdatePipelineOutput  = UpdatePipelineOutput { "pipeline": Nothing }
 
 -- | Constructs UpdatePipelineOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdatePipelineOutput' :: ( { "pipeline" :: NullOrUndefined (PipelineDeclaration) } -> {"pipeline" :: NullOrUndefined (PipelineDeclaration) } ) -> UpdatePipelineOutput
-newUpdatePipelineOutput'  customize = (UpdatePipelineOutput <<< customize) { "pipeline": (NullOrUndefined Nothing) }
+newUpdatePipelineOutput' :: ( { "pipeline" :: Maybe (PipelineDeclaration) } -> {"pipeline" :: Maybe (PipelineDeclaration) } ) -> UpdatePipelineOutput
+newUpdatePipelineOutput'  customize = (UpdatePipelineOutput <<< customize) { "pipeline": Nothing }
 
 
 
